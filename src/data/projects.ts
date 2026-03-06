@@ -298,7 +298,11 @@ export const projects: Project[] = [
     },
   },
 ];
-export const getFeaturedProjects = () => projects.filter((p) => p.featured);
+export const getFeaturedProjects = () => {
+  const featured = projects.filter((p) => p.featured);
+  const pillarOrder = ["ai", "consulting", "creative", "digital"];
+  return featured.sort((a, b) => pillarOrder.indexOf(a.pillar) - pillarOrder.indexOf(b.pillar));
+};
 
 export const getProjectBySlug = (slug: string) => projects.find((p) => p.slug === slug);
 
