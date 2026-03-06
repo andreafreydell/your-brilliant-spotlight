@@ -11,28 +11,28 @@ const industries = ["Fragrance", "Fashion", "Fintech", "Agriculture", "Jewelry",
 
 const pillars = [
   {
-    key: "consulting",
+    key: "ai",
     num: "WAY 1/4",
+    title: "Scaling with AI",
+    desc: "AI image generation, automated product data, content platforms, and self-building agent systems for ecommerce.",
+  },
+  {
+    key: "consulting",
+    num: "WAY 2/4",
     title: "Management Consulting",
     desc: "Financial modeling, fundraising strategy, market analysis, and wholesale systems that scale.",
   },
   {
     key: "creative",
-    num: "WAY 2/4",
+    num: "WAY 3/4",
     title: "Branding & Creative Direction",
     desc: "Identity systems, product design, packaging, photography direction, and corporate presentations.",
   },
   {
     key: "digital",
-    num: "WAY 3/4",
+    num: "WAY 4/4",
     title: "Digital Strategy",
     desc: "Web design, social media systems, content architecture, PR campaigns, and influencer programs.",
-  },
-  {
-    key: "ai",
-    num: "WAY 4/4",
-    title: "Scaling with AI",
-    desc: "AI image generation, automated product data, content platforms, and self-building agent systems for ecommerce.",
   },
 ];
 
