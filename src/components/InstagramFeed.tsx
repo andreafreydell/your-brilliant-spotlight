@@ -15,11 +15,16 @@ const InstagramFeed = () => (
         <Instagram className="w-4 h-4" />
         @andreafreydell
       </a>
-      <div className="w-full overflow-hidden rounded-card">
+      <div className="w-full overflow-hidden rounded-card" style={{ height: "600px" }}>
         <iframe
           src="https://www.instagram.com/andreafreydell/embed"
-          className="w-full border-0"
-          style={{ minHeight: "600px" }}
+          className="border-0 origin-top-left"
+          style={{
+            width: "300%",
+            height: "300%",
+            transform: "scale(0.3333)",
+            transformOrigin: "top left",
+          }}
           allowTransparency
           scrolling="no"
           title="Andrea Freydell Instagram Feed"
