@@ -1,6 +1,5 @@
 import { Instagram } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import instagramGrid from "@/assets/instagram-grid.png";
 
 const INSTAGRAM_URL = "https://www.instagram.com/andreafreydell";
 
@@ -16,14 +15,17 @@ const InstagramFeed = () => (
         <Instagram className="w-4 h-4" />
         @andreafreydell
       </a>
-      <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="block group">
-        <img
-          src={instagramGrid}
-          alt="Andrea Freydell's Instagram feed"
-          className="w-full rounded-card transition-opacity duration-300 group-hover:opacity-90"
+      <div className="w-full overflow-hidden rounded-card">
+        <iframe
+          src="https://www.instagram.com/andreafreydell/embed"
+          className="w-full border-0"
+          style={{ minHeight: "600px" }}
+          allowTransparency
+          scrolling="no"
+          title="Andrea Freydell Instagram Feed"
           loading="lazy"
         />
-      </a>
+      </div>
     </div>
   </ScrollReveal>
 );
