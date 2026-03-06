@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import andreaPortrait from "@/assets/andrea-portrait.webp";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import Divider from "@/components/Divider";
@@ -18,12 +19,7 @@ const About = () => (
       <div className="grid md:grid-cols-5 gap-12 items-start mb-16">
         {/* Portrait */}
         <ScrollReveal className="md:col-span-2">
-          <div
-            className="aspect-[3/4] rounded-btn flex items-center justify-center sticky top-24"
-            style={{ background: 'linear-gradient(160deg, #ddd8cf, #c8d5c4)' }}
-          >
-            <span className="text-xs uppercase tracking-widest text-muted-foreground">Photo</span>
-          </div>
+          <img src={andreaPortrait} alt="Andrea Freydell — strategist and creative director" className="aspect-[3/4] rounded-btn object-cover w-full sticky top-24" loading="lazy" />
         </ScrollReveal>
 
         {/* Bio */}

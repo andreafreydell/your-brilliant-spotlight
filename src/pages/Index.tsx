@@ -1,4 +1,5 @@
 import { useState } from "react";
+import andreaPortrait from "@/assets/andrea-portrait.webp";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -148,9 +149,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
-              <div className="aspect-[3/4] rounded-btn flex items-center justify-center" style={{ background: 'linear-gradient(160deg, #ddd8cf, #c8d5c4)' }}>
-                <span className="text-xs uppercase tracking-widest text-muted-foreground">Photo</span>
-              </div>
+              <img src={andreaPortrait} alt="Andrea Freydell — strategist and creative director" className="aspect-[3/4] rounded-btn object-cover w-full" loading="lazy" />
             </ScrollReveal>
             <ScrollReveal delay={150}>
               <div>
