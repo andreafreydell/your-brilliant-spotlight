@@ -157,16 +157,16 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <ScrollReveal>
-              <img src={andreaPortrait} alt="Andrea Freydell — strategist and creative director" className="aspect-[3/4] rounded-btn object-cover w-full" loading="lazy" />
+              <img src={andreaPortrait} alt="Andrea Freydell — brand strategist, founder and leader" className="aspect-[3/4] rounded-btn object-cover w-full" loading="lazy" decoding="async" />
             </ScrollReveal>
             <ScrollReveal delay={150}>
               <div>
                 <h2 className="text-2xl md:text-3xl font-normal mb-6" style={{ letterSpacing: '-0.01em' }}>Andrea Freydell</h2>
                 <p className="text-muted-foreground font-light leading-relaxed mb-4">
-                  I'm a strategist and creative director based in Colombia. I work at the intersection of brand building, financial thinking, and digital systems — helping companies translate vision into revenue.
+                  I'm a brand strategist, founder and leader based in Colombia, currently Managing Director at Grupo Ambiente — my family's multi-brand home fashion company. I work at the intersection of brand building, financial thinking, and digital systems.
                 </p>
                 <p className="text-muted-foreground font-light leading-relaxed mb-6">
-                  My background spans management consulting, product design, and full-spectrum creative direction across fashion, fragrance, agriculture, fintech, and home & lifestyle.
+                  My background spans private equity, real estate investment, and founding a fashion brand. I've led international expansion, M&A strategy, and operations at scale.
                 </p>
                 <Button asChild variant="outline" className="rounded-btn text-sm font-medium">
                   <Link to="/about">Read More →</Link>
