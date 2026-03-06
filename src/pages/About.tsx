@@ -28,7 +28,7 @@ const About = () => (
             <h1 className="text-4xl md:text-5xl font-light mb-6" style={{ letterSpacing: '-0.02em' }}>Andrea Freydell</h1>
             <div className="space-y-4 text-muted-foreground font-light leading-relaxed">
               <p>
-                I'm a digital strategist and creative director based in Colombia, currently Managing Director at Grupo Ambiente — my family's multi-brand home fashion company. I work at the intersection of brand building, financial thinking, and digital systems.
+                I'm a brand strategist, founder and leader based in Colombia, currently Managing Director at Grupo Ambiente — my family's multi-brand home fashion company. I work at the intersection of brand building, financial thinking, and digital systems.
               </p>
               <p>
                 My background spans private equity, real estate investment, and founding a fashion brand. I've led international expansion, M&A strategy, and operations at scale. Throughout, I've built brands from the ground up—understanding both the financial model and the creative vision required to make them resonate.
