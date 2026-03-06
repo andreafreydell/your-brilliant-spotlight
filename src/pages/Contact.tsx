@@ -25,9 +25,9 @@ const Contact = () => {
     <main className="pt-24 pb-16 px-6">
       <div className="container mx-auto max-w-xl">
         <ScrollReveal>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Let's Build Something</h1>
-          <p className="text-lg text-muted-foreground mb-12">
-            Tell me about your project and I'll get back to you within 48 hours.
+          <h1 className="text-4xl md:text-5xl font-light mb-4" style={{ letterSpacing: '-0.02em' }}>Let's Build Something</h1>
+          <p className="text-lg text-muted-foreground font-light mb-12">
+            Have a project, a brand, or a problem that needs a system? I'd like to hear about it.
           </p>
         </ScrollReveal>
 
@@ -52,7 +52,7 @@ const Contact = () => {
               />
             </div>
             <div>
-              <p className="text-sm font-medium mb-3">What system interests you?</p>
+              <p className="text-sm font-medium mb-3">Which system interests you?</p>
               <div className="flex flex-wrap gap-2">
                 {interests.map((interest) => (
                   <button

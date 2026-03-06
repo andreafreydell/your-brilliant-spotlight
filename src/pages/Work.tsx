@@ -18,9 +18,9 @@ const Work = () => {
     <main className="pt-24 pb-16 px-6">
       <div className="container mx-auto">
         <ScrollReveal>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">The Work</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mb-12">
-            A curated selection of brand strategy, creative direction, and digital projects across industries.
+          <h1 className="text-4xl md:text-5xl font-light mb-4" style={{ letterSpacing: '-0.02em' }}>The Work</h1>
+          <p className="text-lg text-muted-foreground font-light max-w-2xl mb-12">
+            Strategy, brand, and digital — across industries. Every project here follows the same principle: understand the business first, then design the system.
           </p>
         </ScrollReveal>
 
