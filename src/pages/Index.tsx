@@ -1,4 +1,5 @@
 import { useState } from "react";
+import andreaPortrait from "@/assets/andrea-portrait.webp";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
