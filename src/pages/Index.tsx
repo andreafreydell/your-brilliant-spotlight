@@ -31,6 +31,11 @@ const pillars = [
 
 const Index = () => {
   const featured = getFeaturedProjects();
+  const [activePillar, setActivePillar] = useState<string | null>(null);
+
+  const filteredFeatured = activePillar
+    ? featured.filter((p) => p.pillar === activePillar)
+    : featured;
 
   return (
     <main>
@@ -61,19 +66,33 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Three Pillars */}
+      {/* Three Pillars — Filter Buttons */}
       <section className="py-24 px-6">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
-            {pillars.map((p, i) => (
-              <ScrollReveal key={p.title} delay={i * 100}>
-                <div className="text-center p-6">
-                  <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">{p.num}</p>
-                  <h3 className="text-xl font-medium mb-3">{p.title}</h3>
-                  <p className="text-sm text-muted-foreground font-light leading-relaxed">{p.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+            {pillars.map((p, i) => {
+              const isActive = activePillar === p.key;
+              return (
+                <ScrollReveal key={p.title} delay={i * 100}>
+                  <button
+                    onClick={() => setActivePillar(isActive ? null : p.key)}
+                    className={`w-full text-center p-8 rounded-card border-2 transition-all duration-300 cursor-pointer ${
+                      isActive
+                        ? p.key === "consulting"
+                          ? "bg-seafoam border-seafoam shadow-md scale-[1.02]"
+                          : p.key === "creative"
+                          ? "bg-blush-peach border-blush-peach shadow-md scale-[1.02]"
+                          : "bg-sky border-sky shadow-md scale-[1.02]"
+                        : "border-transparent hover:border-border hover:shadow-sm"
+                    }`}
+                  >
+                    <p className="text-xs uppercase tracking-widest text-muted-foreground mb-3">{p.num}</p>
+                    <h3 className="text-xl font-medium mb-3 text-foreground">{p.title}</h3>
+                    <p className="text-sm text-muted-foreground font-light leading-relaxed">{p.desc}</p>
+                  </button>
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -85,19 +104,29 @@ const Index = () => {
         <div className="container mx-auto">
           <ScrollReveal>
             <div className="flex items-end justify-between mb-12">
-              <h2 className="text-2xl md:text-3xl font-normal" style={{ letterSpacing: '-0.01em' }}>Featured Work</h2>
+              <h2 className="text-2xl md:text-3xl font-normal" style={{ letterSpacing: '-0.01em' }}>
+                Featured Work
+                {activePillar && (
+                  <span className="text-lg text-muted-foreground font-light ml-3">
+                    — {pillars.find(pl => pl.key === activePillar)?.title}
+                  </span>
+                )}
+              </h2>
               <Link to="/work" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 View all →
               </Link>
             </div>
           </ScrollReveal>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featured.map((p, i) => (
+            {filteredFeatured.map((p, i) => (
               <ScrollReveal key={p.slug} delay={i * 80}>
                 <ProjectCard {...p} />
               </ScrollReveal>
             ))}
           </div>
+          {filteredFeatured.length === 0 && (
+            <p className="text-center text-muted-foreground py-12">No featured projects in this category.</p>
+          )}
         </div>
       </section>
 
