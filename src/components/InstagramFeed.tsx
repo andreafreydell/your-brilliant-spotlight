@@ -10,12 +10,22 @@ const InstagramFeed = () => (
         href={INSTAGRAM_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="group block w-full rounded-card border border-border p-12 text-center transition-all duration-300 hover:border-foreground/20 hover:shadow-lg"
+        className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-muted-foreground mb-6 hover:text-foreground transition-colors"
       >
-        <Instagram className="w-10 h-10 mx-auto mb-4 text-muted-foreground group-hover:text-foreground transition-colors" />
-        <p className="text-lg font-light mb-2 text-foreground">@andreafreydell</p>
-        <p className="text-sm text-muted-foreground font-light">Follow along on Instagram →</p>
+        <Instagram className="w-4 h-4" />
+        @andreafreydell
       </a>
+      <div className="w-full overflow-hidden rounded-card">
+        <iframe
+          src="https://www.instagram.com/andreafreydell/embed"
+          className="w-full border-0"
+          style={{ height: "800px" }}
+          allowTransparency
+          scrolling="yes"
+          title="Andrea Freydell Instagram Feed"
+          loading="lazy"
+        />
+      </div>
     </div>
   </ScrollReveal>
 );
