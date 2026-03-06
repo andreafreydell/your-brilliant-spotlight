@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import Divider from "@/components/Divider";
 import ContactDialog from "@/components/ContactDialog";
+import InstagramFeed from "@/components/InstagramFeed";
 
 const industries = [
   "Fragrance", "Fashion", "Fintech", "Agriculture", "Jewelry", "Home & Lifestyle",
@@ -41,6 +42,8 @@ const About = () => (
           </div>
         </ScrollReveal>
       </div>
+
+      <InstagramFeed />
 
       <Divider />
 

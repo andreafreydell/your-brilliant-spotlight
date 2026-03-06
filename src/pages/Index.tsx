@@ -7,6 +7,7 @@ import ProjectCard from "@/components/ProjectCard";
 import Divider from "@/components/Divider";
 import { getFeaturedProjects } from "@/data/projects";
 import ContactDialog from "@/components/ContactDialog";
+import InstagramFeed from "@/components/InstagramFeed";
 
 const industries = ["Fragrance", "Fashion", "Fintech", "Agriculture", "Jewelry", "Home & Lifestyle"];
 
@@ -96,6 +97,13 @@ const Index = () => {
                </div>
              </ScrollReveal>
            </div>
+         </div>
+       </section>
+
+       {/* Instagram Feed */}
+       <section className="px-6 pb-12">
+         <div className="container mx-auto">
+           <InstagramFeed />
          </div>
        </section>
 
