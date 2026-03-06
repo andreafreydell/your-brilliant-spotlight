@@ -7,6 +7,17 @@ import ContactDialog from "@/components/ContactDialog";
 const systems = [
   {
     num: "System 1",
+    title: "Scaling with AI",
+    color: "bg-lavender",
+    services: [
+      "AI image generation for product & brand content",
+      "Automated product data & catalog systems",
+      "Content platforms & self-building agent systems",
+      "AI-powered ecommerce optimization",
+    ],
+  },
+  {
+    num: "System 2",
     title: "Management Consulting",
     color: "bg-seafoam",
     services: [
@@ -18,7 +29,7 @@ const systems = [
     ],
   },
   {
-    num: "System 2",
+    num: "System 3",
     title: "Branding & Creative Direction",
     color: "bg-blush-peach",
     services: [
@@ -30,7 +41,7 @@ const systems = [
     ],
   },
   {
-    num: "System 3",
+    num: "System 4",
     title: "Digital Strategy",
     color: "bg-sky",
     services: [
@@ -47,7 +58,7 @@ const Services = () => (
   <main className="pt-24 pb-16 px-6">
     <div className="container mx-auto max-w-4xl">
       <ScrollReveal>
-        <h1 className="text-4xl md:text-5xl font-light mb-4" style={{ letterSpacing: '-0.02em' }}>Three Systems, One Practice</h1>
+        <h1 className="text-4xl md:text-5xl font-light mb-4" style={{ letterSpacing: '-0.02em' }}>Four Systems, One Practice</h1>
         <p className="text-lg text-muted-foreground font-light max-w-2xl mb-16">
           I don't offer services — I build systems. Each engagement starts with understanding the business, then designing the infrastructure to make it work.
         </p>
