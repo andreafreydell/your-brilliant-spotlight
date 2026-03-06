@@ -21,7 +21,7 @@ const InstagramFeed = () => (
           className="w-full border-0"
           style={{ minHeight: "600px" }}
           allowTransparency
-          scrolling="no"
+          scrolling="yes"
           title="Andrea Freydell Instagram Feed"
           loading="lazy"
         />
