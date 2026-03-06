@@ -18,11 +18,11 @@ const InstagramFeed = () => (
       <div className="w-full overflow-hidden rounded-card" style={{ height: "600px" }}>
         <iframe
           src="https://www.instagram.com/andreafreydell/embed"
-          className="border-0 origin-top-left"
+          className="border-0"
           style={{
-            width: "300%",
-            height: "300%",
-            transform: "scale(0.3333)",
+            width: "1000%",
+            height: "1000%",
+            transform: "scale(0.1)",
             transformOrigin: "top left",
           }}
           allowTransparency
