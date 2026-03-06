@@ -28,18 +28,17 @@ const CaseStudy = () => {
             ← Back to Work
           </Link>
           <PillarTag pillar={project.pillar} className="mb-4" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">{project.title}</h1>
-          <p className="text-lg text-muted-foreground mb-8">{project.caseStudy.heroSubtitle}</p>
+          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">{project.microLabel}</p>
+          <h1 className="text-4xl md:text-5xl font-light mb-3" style={{ letterSpacing: '-0.02em' }}>{project.title}</h1>
+          <p className="text-lg text-muted-foreground font-light mb-8">{project.caseStudy.heroSubtitle}</p>
         </ScrollReveal>
 
-        {/* Illustration placeholder */}
+        {/* Hero illustration */}
         <ScrollReveal delay={100}>
-          <div className="aspect-video rounded-card bg-muted flex items-center justify-center mb-16">
-            <svg width="64" height="64" viewBox="0 0 48 48" fill="none" className="text-muted-foreground/30">
-              <rect x="6" y="10" width="36" height="28" rx="4" stroke="currentColor" strokeWidth="2" />
-              <path d="M6 30l10-8 8 6 10-10 8 6" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-            </svg>
-          </div>
+          <div
+            className="w-full aspect-video rounded-card overflow-hidden mb-16"
+            dangerouslySetInnerHTML={{ __html: project.illustration }}
+          />
         </ScrollReveal>
 
         {/* Four Acts */}
@@ -47,8 +46,8 @@ const CaseStudy = () => {
           <ScrollReveal key={act.key} delay={i * 80}>
             <section className="mb-16">
               <p className="text-xs uppercase tracking-widest text-brass font-semibold mb-2">WAY {act.num}</p>
-              <h2 className="text-2xl font-semibold mb-4">{act.title}</h2>
-              <p className="text-muted-foreground leading-relaxed">{project.caseStudy[act.key]}</p>
+              <h2 className="text-2xl font-medium mb-4">{act.title}</h2>
+              <p className="text-muted-foreground font-light leading-relaxed">{project.caseStudy[act.key]}</p>
             </section>
           </ScrollReveal>
         ))}

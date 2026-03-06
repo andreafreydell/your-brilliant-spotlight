@@ -5,36 +5,39 @@ import Divider from "@/components/Divider";
 
 const systems = [
   {
+    num: "System 1",
     title: "Management Consulting",
     color: "bg-seafoam",
     services: [
-      "Brand & portfolio architecture",
-      "Market positioning & competitive analysis",
-      "Operational restructuring",
-      "Go-to-market strategy",
-      "Investor & stakeholder communications",
+      "Financial modeling & projections",
+      "Debt & equity fundraising support",
+      "Competitive & market analysis",
+      "Wholesale distribution strategy",
+      "Sales team training & enablement",
     ],
   },
   {
+    num: "System 2",
     title: "Branding & Creative Direction",
     color: "bg-blush-peach",
     services: [
-      "Visual identity & brand systems",
-      "Creative campaign direction",
-      "Packaging & retail experience design",
-      "Brand voice & messaging frameworks",
-      "Art direction & content strategy",
+      "Brand identity & visual systems",
+      "Product design (physical & digital)",
+      "Packaging & retail display",
+      "Photography art direction & production",
+      "Corporate presentation design",
     ],
   },
   {
+    num: "System 3",
     title: "Digital Strategy",
     color: "bg-sky",
     services: [
-      "Digital transformation roadmaps",
-      "E-commerce architecture & UX",
-      "Platform & product strategy",
-      "Social media & content systems",
-      "CRM & customer journey design",
+      "Website design & conversion optimization",
+      "Social media content & ad systems",
+      "Influencer program architecture",
+      "PR strategy & media placement",
+      "Campaign logic & content calendars",
     ],
   },
 ];
@@ -43,9 +46,9 @@ const Services = () => (
   <main className="pt-24 pb-16 px-6">
     <div className="container mx-auto max-w-4xl">
       <ScrollReveal>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Three Systems, One Practice</h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mb-16">
-          Every engagement draws from three interconnected disciplines. The mix depends on what your brand needs most.
+        <h1 className="text-4xl md:text-5xl font-light mb-4" style={{ letterSpacing: '-0.02em' }}>Three Systems, One Practice</h1>
+        <p className="text-lg text-muted-foreground font-light max-w-2xl mb-16">
+          I don't offer services — I build systems. Each engagement starts with understanding the business, then designing the infrastructure to make it work.
         </p>
       </ScrollReveal>
 
@@ -53,13 +56,14 @@ const Services = () => (
         {systems.map((s, i) => (
           <ScrollReveal key={s.title} delay={i * 100}>
             <div className="rounded-card bg-card border border-border p-8">
+              <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">{s.num}</p>
               <div className="flex items-center gap-4 mb-6">
                 <div className={`w-10 h-10 rounded-full ${s.color}`} />
-                <h2 className="text-xl font-semibold">{s.title}</h2>
+                <h2 className="text-xl font-medium">{s.title}</h2>
               </div>
               <ul className="space-y-3">
                 {s.services.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
+                  <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground font-light">
                     <span className="w-1.5 h-1.5 rounded-full bg-brass mt-1.5 shrink-0" />
                     {item}
                   </li>
@@ -75,14 +79,10 @@ const Services = () => (
       {/* Engagement Format */}
       <ScrollReveal>
         <div className="rounded-card bg-card border border-border p-8 mb-16">
-          <h2 className="text-xl font-semibold mb-4">How Engagements Work</h2>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            I work in focused sprints — typically 2–6 weeks per phase — so we move fast without sacrificing depth.
-            Every engagement starts with a discovery session to understand your business, market, and ambitions.
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            From there, I propose a tailored scope drawing from any combination of the three systems above.
-            You get a clear deliverable timeline, weekly check-ins, and a final handoff designed for your team to run with.
+          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-2">How it Works</p>
+          <h2 className="text-xl font-medium mb-4">Engagement Format</h2>
+          <p className="text-muted-foreground font-light leading-relaxed">
+            Most projects begin with a strategy sprint — 2 to 4 weeks of diagnosis and framework design. From there, we build. Implementation scope depends on the system. Some projects are 6 weeks, some are ongoing retainers.
           </p>
         </div>
       </ScrollReveal>
@@ -90,7 +90,7 @@ const Services = () => (
       {/* CTA */}
       <ScrollReveal>
         <div className="text-center">
-          <h2 className="text-2xl font-semibold mb-4">Ready to start?</h2>
+          <h2 className="text-2xl font-normal mb-4">Ready to start?</h2>
           <Button asChild size="lg" className="rounded-btn">
             <Link to="/contact">Let's Talk →</Link>
           </Button>
