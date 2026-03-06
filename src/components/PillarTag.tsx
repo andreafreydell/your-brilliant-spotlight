@@ -1,17 +1,19 @@
 import { cn } from "@/lib/utils";
 
-type Pillar = "consulting" | "creative" | "digital";
+type Pillar = "consulting" | "creative" | "digital" | "ai";
 
 const pillarStyles: Record<Pillar, string> = {
   consulting: "bg-seafoam text-seafoam-foreground",
   creative: "bg-blush-peach text-blush-peach-foreground",
   digital: "bg-sky text-sky-foreground",
+  ai: "bg-lavender text-lavender-foreground",
 };
 
 const pillarLabels: Record<Pillar, string> = {
   consulting: "Consulting",
   creative: "Creative",
   digital: "Digital",
+  ai: "Scaling with AI",
 };
 
 interface PillarTagProps {

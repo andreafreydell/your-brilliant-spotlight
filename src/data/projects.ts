@@ -231,8 +231,73 @@ export const projects: Project[] = [
       assets: "Secured press coverage across relevant publications and digital outlets. Stories and features gave the brand third-party credibility that strengthened both DTC conversion and wholesale buyer confidence. Press materials became a reusable asset for ongoing media outreach.",
     },
   },
-];
 
+  // ========== PILLAR 4: SCALING WITH AI ==========
+  {
+    slug: "image-genie",
+    title: "Sheet → Image Genie",
+    microLabel: "AI Image Generation",
+    description: "Workflow system that generates realistic product, UGC, and editorial images at scale from a spreadsheet queue — replacing traditional photoshoots.",
+    pillar: "ai",
+    featured: true,
+    illustration: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ai1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d8d0e4"/><stop offset="100%" stop-color="#e4ded5"/></linearGradient></defs><rect width="400" height="300" fill="url(#ai1)"/><rect x="80" y="100" width="100" height="120" rx="4" fill="#FBF8F1" opacity="0.7"/><rect x="90" y="112" width="80" height="4" rx="1" fill="#1F1E1C" opacity="0.1"/><rect x="90" y="122" width="60" height="3" rx="1" fill="#1F1E1C" opacity="0.07"/><rect x="90" y="132" width="70" height="3" rx="1" fill="#1F1E1C" opacity="0.07"/><rect x="90" y="142" width="50" height="3" rx="1" fill="#1F1E1C" opacity="0.07"/><path d="M200 160 L220 140 L240 155 L260 120 L280 150 L280 200 L200 200 Z" fill="#BFD6CF" opacity="0.3"/><rect x="200" y="100" width="100" height="120" rx="6" fill="none" stroke="#B79B63" stroke-width="1.5" opacity="0.4"/><circle cx="230" cy="130" r="12" fill="#E7B9A8" opacity="0.3"/><path d="M180 150 L200 150" stroke="#B79B63" stroke-width="1.5" opacity="0.5" stroke-dasharray="4 3"/><rect x="352" y="260" width="16" height="16" rx="3" fill="#C54A3D" opacity="0.9"/></svg>`,
+    caseStudy: {
+      heroSubtitle: "Replacing traditional photoshoots with AI-generated product imagery at 1000+ images per day",
+      problem: "An e-commerce company was spending significant time and budget on product photography — coordinating photoshoots for every new SKU, lifestyle image, and UGC-style content piece. The turnaround was slow, the cost per image was high, and the volume of content needed for multi-channel retail far exceeded what traditional production could deliver.",
+      shift: "Build a workflow system that could take structured prompts from a spreadsheet and generate highly realistic product, UGC, and editorial images at scale — effectively replacing the photoshoot pipeline with an AI-powered image factory.",
+      system: "Designed a spreadsheet-based prompt queue where each row defined the product, scene, style, lighting, and composition. Built the pipeline connecting structured prompts to image generation models, with quality control checkpoints and batch processing logic. The system supported product-on-white, lifestyle, UGC-style, and editorial formats. Implemented review and approval workflows so the marketing team could iterate on outputs without technical involvement.",
+      assets: "The system generates 1000+ images per day from the spreadsheet queue. Photoshoot costs dropped dramatically. Content production timelines collapsed from weeks to hours. The marketing team now operates an on-demand image pipeline that scales with catalog growth.",
+    },
+  },
+  {
+    slug: "product-data-genie",
+    title: "Sheet → Product Data Genie",
+    microLabel: "AI Catalog Automation",
+    description: "Pipeline using image understanding models to generate complete product data — SEO descriptions, attributes, and brand taxonomies — directly from images.",
+    pillar: "ai",
+    featured: true,
+    illustration: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ai2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d4d0e2"/><stop offset="100%" stop-color="#e2ddd6"/></linearGradient></defs><rect width="400" height="300" fill="url(#ai2)"/><rect x="100" y="90" width="80" height="80" rx="6" fill="#FBF8F1" opacity="0.6"/><circle cx="140" cy="120" r="18" fill="#BFD3E6" opacity="0.3"/><rect x="112" y="145" width="56" height="15" rx="3" fill="#E7B9A8" opacity="0.25"/><path d="M190 130 L210 130" stroke="#B79B63" stroke-width="1.5" opacity="0.5" stroke-dasharray="4 3"/><rect x="220" y="90" width="100" height="80" rx="4" fill="#FBF8F1" opacity="0.7"/><rect x="230" y="102" width="70" height="4" rx="1" fill="#1F1E1C" opacity="0.12"/><rect x="230" y="112" width="60" height="3" rx="1" fill="#1F1E1C" opacity="0.08"/><rect x="230" y="122" width="50" height="3" rx="1" fill="#1F1E1C" opacity="0.06"/><rect x="230" y="136" width="80" height="3" rx="1" fill="#BFD6CF" opacity="0.3"/><rect x="230" y="145" width="65" height="3" rx="1" fill="#BFD6CF" opacity="0.25"/><rect x="230" y="154" width="72" height="3" rx="1" fill="#BFD6CF" opacity="0.2"/><rect x="352" y="260" width="16" height="16" rx="3" fill="#C54A3D" opacity="0.9"/></svg>`,
+    caseStudy: {
+      heroSubtitle: "Eliminating manual catalog writing with AI-powered image-to-data pipelines",
+      problem: "An e-commerce company with thousands of SKUs was manually writing product descriptions, assigning attributes, and categorizing items into proprietary brand taxonomies. The process was slow, inconsistent, and couldn't scale with the speed of new product launches. Catalog quality suffered — missing descriptions, inconsistent formatting, and poor SEO coverage.",
+      shift: "Build a pipeline that uses image understanding models to generate complete product data directly from product images — SEO-optimized descriptions, attributes, material details, and brand-specific taxonomy classifications — eliminating the manual catalog writing bottleneck.",
+      system: "Designed a pipeline where product images are processed through vision-language models that extract visual features — material, color, style, construction details. These outputs feed into structured templates that generate SEO descriptions, attribute lists, and category assignments aligned with the brand's proprietary taxonomy. Built quality scoring and human review layers. The system handles batch processing of new catalog entries and can retroactively enrich existing product data.",
+      assets: "Manual catalog writing was eliminated for new product launches. Product data quality and consistency improved across the entire catalog. SEO descriptions are now generated at scale with proper keyword coverage. The taxonomy classification that previously took days now happens automatically, keeping the catalog organized as it grows.",
+    },
+  },
+  {
+    slug: "ai-content-platform",
+    title: "Internal AI Content Platform",
+    microLabel: "AI Marketing Platform",
+    description: "Internal tool for generating on-brand images, carousels, and campaign assets using structured prompts and competitor benchmarking.",
+    pillar: "ai",
+    featured: true,
+    illustration: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ai3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d0d4e2"/><stop offset="100%" stop-color="#e4ded5"/></linearGradient></defs><rect width="400" height="300" fill="url(#ai3)"/><rect x="80" y="80" width="240" height="140" rx="8" fill="#FBF8F1" opacity="0.7"/><rect x="90" y="90" width="60" height="60" rx="4" fill="#BFD6CF" opacity="0.3"/><rect x="158" y="90" width="60" height="60" rx="4" fill="#E7B9A8" opacity="0.3"/><rect x="226" y="90" width="60" height="60" rx="4" fill="#BFD3E6" opacity="0.3"/><rect x="90" y="160" width="80" height="4" rx="1" fill="#1F1E1C" opacity="0.1"/><rect x="90" y="170" width="60" height="3" rx="1" fill="#1F1E1C" opacity="0.07"/><rect x="90" y="185" width="220" height="24" rx="4" fill="#B79B63" opacity="0.15"/><rect x="100" y="192" width="50" height="10" rx="3" fill="#B79B63" opacity="0.3"/><rect x="352" y="260" width="16" height="16" rx="3" fill="#C54A3D" opacity="0.9"/></svg>`,
+    caseStudy: {
+      heroSubtitle: "A marketing team's AI-powered creative engine for on-brand content at scale",
+      problem: "A marketing team was producing images, carousels, and campaign assets manually — each piece requiring designer time, creative briefs, and multiple revision rounds. Content output couldn't keep up with channel demands across social media, ads, email, and e-commerce. Competitor brands were publishing faster and in higher volume.",
+      shift: "Build an internal AI content generation platform that enables the marketing team to produce on-brand visual assets using structured prompts and competitor benchmarking — without needing a designer for every piece.",
+      system: "Developed an internal platform with structured prompt templates for different content types: product images, social carousels, campaign banners, and ad creative. Integrated competitor benchmarking feeds so the team could reference market trends and competitor aesthetics when generating content. Built brand guardrails — style presets, color palettes, typography rules, and tone-of-voice templates — to ensure all AI-generated content stayed on-brand. Currently expanding the system to automate ad copy generation, brand-correct text placement on images, and AI video generation.",
+      assets: "The marketing team now generates on-brand visual content at 10x the previous speed. Designer bottleneck eliminated for routine content production. Competitor benchmarking built into the workflow keeps creative output market-aware. The platform is expanding into ad copy, text-on-image automation, and video — becoming the team's central creative production engine.",
+    },
+  },
+  {
+    slug: "ecommerce-agents",
+    title: "Self-Building Ecommerce Agents",
+    microLabel: "AI Agent System",
+    description: "AI agents that generate and deploy internal tools for an ecommerce company — from software specs to working applications for ads, SEO, content, and operations.",
+    pillar: "ai",
+    featured: true,
+    illustration: `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ai4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d2cfe0"/><stop offset="100%" stop-color="#e2ddd6"/></linearGradient></defs><rect width="400" height="300" fill="url(#ai4)"/><circle cx="200" cy="120" r="24" fill="#BFD6CF" opacity="0.4"/><circle cx="200" cy="120" r="12" fill="#FBF8F1" opacity="0.5"/><line x1="200" y1="144" x2="140" y2="190" stroke="#B79B63" stroke-width="1.2" opacity="0.4"/><line x1="200" y1="144" x2="200" y2="195" stroke="#B79B63" stroke-width="1.2" opacity="0.4"/><line x1="200" y1="144" x2="260" y2="190" stroke="#B79B63" stroke-width="1.2" opacity="0.4"/><rect x="118" y="190" width="44" height="30" rx="4" fill="#FBF8F1" opacity="0.6"/><rect x="126" y="198" width="28" height="3" rx="1" fill="#1F1E1C" opacity="0.1"/><rect x="126" y="206" width="20" height="3" rx="1" fill="#1F1E1C" opacity="0.07"/><rect x="178" y="195" width="44" height="30" rx="4" fill="#FBF8F1" opacity="0.6"/><rect x="186" y="203" width="28" height="3" rx="1" fill="#1F1E1C" opacity="0.1"/><rect x="186" y="211" width="20" height="3" rx="1" fill="#1F1E1C" opacity="0.07"/><rect x="238" y="190" width="44" height="30" rx="4" fill="#FBF8F1" opacity="0.6"/><rect x="246" y="198" width="28" height="3" rx="1" fill="#1F1E1C" opacity="0.1"/><rect x="246" y="206" width="20" height="3" rx="1" fill="#1F1E1C" opacity="0.07"/><rect x="352" y="260" width="16" height="16" rx="3" fill="#C54A3D" opacity="0.9"/></svg>`,
+    caseStudy: {
+      heroSubtitle: "An experiment in AI agents that plan, spec, and build their own internal tools",
+      problem: "An ecommerce company needed dozens of internal tools — for ad management, SEO optimization, content production, catalog operations, and more — but didn't have the engineering bandwidth to build them. Each tool request sat in a backlog, and teams relied on manual workarounds and spreadsheets in the meantime.",
+      shift: "Experiment with building an AI agent system that could generate and deploy new internal tools autonomously — using LLMs for planning and specification, and Lovable for execution. Instead of a developer building each tool, an AI agent would plan the software, write the spec, and build a working application.",
+      system: "Designed an agent architecture using planning LLMs (Opus/GPT) that analyze business requirements and generate detailed software specifications — feature lists, data models, user flows, and UI requirements. These specs are then fed to Lovable, which builds the actual working applications. The system covers tools for advertising, SEO, content management, catalog operations, and internal workflows. Each generated tool goes through a review and iteration cycle before deployment.",
+      assets: "The system has produced 100+ build specifications and multiple working internal tools now in active use. Tool development that previously required weeks of engineering time now happens in hours. The experiment proved that AI agent systems can meaningfully accelerate internal tooling — and the company continues to expand the scope of what the agents build.",
+    },
+  },
+];
 export const getFeaturedProjects = () => projects.filter((p) => p.featured);
 
 export const getProjectBySlug = (slug: string) => projects.find((p) => p.slug === slug);

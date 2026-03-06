@@ -63,6 +63,10 @@ export default {
           DEFAULT: "hsl(var(--tag-red))",
           foreground: "hsl(var(--tag-red-foreground))",
         },
+        lavender: {
+          DEFAULT: "hsl(var(--lavender))",
+          foreground: "hsl(var(--lavender-foreground))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",

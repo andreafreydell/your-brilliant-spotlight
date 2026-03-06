@@ -8,6 +8,7 @@ const filters = [
   { key: "consulting", label: "Consulting" },
   { key: "creative", label: "Creative" },
   { key: "digital", label: "Digital" },
+  { key: "ai", label: "Scaling with AI" },
 ];
 
 const Work = () => {

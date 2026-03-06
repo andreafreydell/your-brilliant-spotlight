@@ -12,21 +12,27 @@ const industries = ["Fragrance", "Fashion", "Fintech", "Agriculture", "Jewelry",
 const pillars = [
   {
     key: "consulting",
-    num: "WAY 1/3",
+    num: "WAY 1/4",
     title: "Management Consulting",
     desc: "Financial modeling, fundraising strategy, market analysis, and wholesale systems that scale.",
   },
   {
     key: "creative",
-    num: "WAY 2/3",
+    num: "WAY 2/4",
     title: "Branding & Creative Direction",
     desc: "Identity systems, product design, packaging, photography direction, and corporate presentations.",
   },
   {
     key: "digital",
-    num: "WAY 3/3",
+    num: "WAY 3/4",
     title: "Digital Strategy",
     desc: "Web design, social media systems, content architecture, PR campaigns, and influencer programs.",
+  },
+  {
+    key: "ai",
+    num: "WAY 4/4",
+    title: "Scaling with AI",
+    desc: "AI image generation, automated product data, content platforms, and self-building agent systems for ecommerce.",
   },
 ];
 
@@ -70,7 +76,7 @@ const Index = () => {
       {/* Three Pillars — Filter Buttons */}
       <section className="py-24 px-6">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {pillars.map((p, i) => {
               const isActive = activePillar === p.key;
               return (
@@ -83,6 +89,8 @@ const Index = () => {
                           ? "bg-seafoam border-seafoam shadow-md scale-[1.02]"
                           : p.key === "creative"
                           ? "bg-blush-peach border-blush-peach shadow-md scale-[1.02]"
+                          : p.key === "ai"
+                          ? "bg-lavender border-lavender shadow-md scale-[1.02]"
                           : "bg-sky border-sky shadow-md scale-[1.02]"
                         : "border-transparent hover:border-border hover:shadow-sm"
                     }`}
