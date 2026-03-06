@@ -1,0 +1,83 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import ScrollReveal from "@/components/ScrollReveal";
+import { toast } from "sonner";
+
+const interests = ["Consulting", "Creative", "Digital", "Not sure yet"];
+
+const Contact = () => {
+  const [selected, setSelected] = useState<string[]>([]);
+
+  const toggleInterest = (interest: string) => {
+    setSelected((prev) =>
+      prev.includes(interest) ? prev.filter((i) => i !== interest) : [...prev, interest]
+    );
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    toast.success("Thanks! Your message has been received. I'll be in touch soon.");
+  };
+
+  return (
+    <main className="pt-24 pb-16 px-6">
+      <div className="container mx-auto max-w-xl">
+        <ScrollReveal>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Let's Build Something</h1>
+          <p className="text-lg text-muted-foreground mb-12">
+            Tell me about your project and I'll get back to you within 48 hours.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal delay={100}>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+              <Input id="name" placeholder="Your name" required className="rounded-btn" />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+              <Input id="email" type="email" placeholder="you@example.com" required className="rounded-btn" />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium mb-2">What are you working on?</label>
+              <Textarea
+                id="message"
+                placeholder="Tell me about your brand, your challenge, and what success looks like…"
+                rows={5}
+                required
+                className="rounded-md"
+              />
+            </div>
+            <div>
+              <p className="text-sm font-medium mb-3">What system interests you?</p>
+              <div className="flex flex-wrap gap-2">
+                {interests.map((interest) => (
+                  <button
+                    key={interest}
+                    type="button"
+                    onClick={() => toggleInterest(interest)}
+                    className={`px-4 py-2 rounded-btn text-sm font-medium transition-colors ${
+                      selected.includes(interest)
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-muted text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {interest}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <Button type="submit" size="lg" className="w-full rounded-btn">
+              Send it →
+            </Button>
+          </form>
+        </ScrollReveal>
+      </div>
+    </main>
+  );
+};
+
+export default Contact;
