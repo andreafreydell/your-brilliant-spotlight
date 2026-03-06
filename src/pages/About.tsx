@@ -3,6 +3,7 @@ import andreaPortrait from "@/assets/andrea-portrait.webp";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import Divider from "@/components/Divider";
+import ContactDialog from "@/components/ContactDialog";
 
 const industries = [
   "Fragrance", "Fashion", "Fintech", "Agriculture", "Jewelry", "Home & Lifestyle",
@@ -71,9 +72,9 @@ const About = () => (
       <ScrollReveal>
         <div className="text-center py-8">
           <h2 className="text-2xl font-normal mb-4">Let's work together</h2>
-          <Button asChild size="lg" className="rounded-btn">
-            <a href="mailto:maria.freydell.v@gmail.com">Get in Touch →</a>
-          </Button>
+          <ContactDialog>
+            <Button size="lg" className="rounded-btn">Get in Touch →</Button>
+          </ContactDialog>
         </div>
       </ScrollReveal>
     </div>

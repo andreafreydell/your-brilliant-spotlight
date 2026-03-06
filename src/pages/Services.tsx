@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import Divider from "@/components/Divider";
+import ContactDialog from "@/components/ContactDialog";
 
 const systems = [
   {
@@ -91,9 +92,9 @@ const Services = () => (
       <ScrollReveal>
         <div className="text-center">
           <h2 className="text-2xl font-normal mb-4">Ready to start?</h2>
-          <Button asChild size="lg" className="rounded-btn">
-            <a href="mailto:maria.freydell.v@gmail.com">Let's Talk →</a>
-          </Button>
+          <ContactDialog>
+            <Button size="lg" className="rounded-btn">Let's Talk →</Button>
+          </ContactDialog>
         </div>
       </ScrollReveal>
     </div>
