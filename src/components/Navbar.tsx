@@ -34,7 +34,7 @@ const Navbar = () => {
             </Link>
           ))}
           <Button asChild className="rounded-btn text-sm font-medium">
-            <Link to="/contact">Let's Talk →</Link>
+            <a href="mailto:maria.freydell.v@gmail.com">Let's Talk →</a>
           </Button>
         </div>
 
@@ -64,9 +64,9 @@ const Navbar = () => {
             </Link>
           ))}
           <Button asChild className="w-full rounded-btn text-sm font-medium">
-            <Link to="/contact" onClick={() => setMobileOpen(false)}>
+            <a href="mailto:maria.freydell.v@gmail.com" onClick={() => setMobileOpen(false)}>
               Let's Talk →
-            </Link>
+            </a>
           </Button>
         </div>
       )}

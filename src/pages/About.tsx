@@ -72,7 +72,7 @@ const About = () => (
         <div className="text-center py-8">
           <h2 className="text-2xl font-normal mb-4">Let's work together</h2>
           <Button asChild size="lg" className="rounded-btn">
-            <Link to="/contact">Get in Touch →</Link>
+            <a href="mailto:maria.freydell.v@gmail.com">Get in Touch →</a>
           </Button>
         </div>
       </ScrollReveal>
