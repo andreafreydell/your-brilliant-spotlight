@@ -10,22 +10,22 @@ const industries = ["Fragrance", "Fashion", "Fintech", "Agriculture", "Jewelry",
 
 const pillars = [
   {
-    num: "Way 1/3",
+    key: "consulting",
+    num: "WAY 1/3",
     title: "Management Consulting",
     desc: "Financial modeling, fundraising strategy, market analysis, and wholesale systems that scale.",
-    color: "bg-seafoam",
   },
   {
-    num: "Way 2/3",
+    key: "creative",
+    num: "WAY 2/3",
     title: "Branding & Creative Direction",
     desc: "Identity systems, product design, packaging, photography direction, and corporate presentations.",
-    color: "bg-blush-peach",
   },
   {
-    num: "Way 3/3",
+    key: "digital",
+    num: "WAY 3/3",
     title: "Digital Strategy",
     desc: "Web design, social media systems, content architecture, PR campaigns, and influencer programs.",
-    color: "bg-sky",
   },
 ];
 
