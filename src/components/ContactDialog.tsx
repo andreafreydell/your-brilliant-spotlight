@@ -5,7 +5,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Mail, Phone, MessageCircle } from "lucide-react";
+import { Mail } from "lucide-react";
 
 interface ContactDialogProps {
   children: React.ReactNode;
@@ -30,22 +30,6 @@ const ContactDialog = ({ children }: ContactDialogProps) => (
         >
           <Mail size={18} className="text-muted-foreground shrink-0" />
           <span className="text-sm">maria.freydell.v@gmail.com</span>
-        </a>
-        <a
-          href="tel:+17863956992"
-          className="flex items-center gap-3 p-3 rounded-btn border border-border hover:bg-muted transition-colors"
-        >
-          <Phone size={18} className="text-muted-foreground shrink-0" />
-          <span className="text-sm">+1 (786) 395-6992</span>
-        </a>
-        <a
-          href="https://wa.me/573173690097"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-3 p-3 rounded-btn border border-border hover:bg-muted transition-colors"
-        >
-          <MessageCircle size={18} className="text-muted-foreground shrink-0" />
-          <span className="text-sm">+57 317 369 0097 (WhatsApp)</span>
         </a>
       </div>
     </DialogContent>
