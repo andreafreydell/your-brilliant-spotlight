@@ -76,7 +76,7 @@ const Index = () => {
       {/* Three Pillars — Filter Buttons */}
       <section className="py-24 px-6">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {pillars.map((p, i) => {
               const isActive = activePillar === p.key;
               return (
@@ -89,6 +89,8 @@ const Index = () => {
                           ? "bg-seafoam border-seafoam shadow-md scale-[1.02]"
                           : p.key === "creative"
                           ? "bg-blush-peach border-blush-peach shadow-md scale-[1.02]"
+                          : p.key === "ai"
+                          ? "bg-lavender border-lavender shadow-md scale-[1.02]"
                           : "bg-sky border-sky shadow-md scale-[1.02]"
                         : "border-transparent hover:border-border hover:shadow-sm"
                     }`}
