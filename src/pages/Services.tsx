@@ -92,7 +92,7 @@ const Services = () => (
         <div className="text-center">
           <h2 className="text-2xl font-normal mb-4">Ready to start?</h2>
           <Button asChild size="lg" className="rounded-btn">
-            <Link to="/contact">Let's Talk →</Link>
+            <a href="mailto:maria.freydell.v@gmail.com">Let's Talk →</a>
           </Button>
         </div>
       </ScrollReveal>
