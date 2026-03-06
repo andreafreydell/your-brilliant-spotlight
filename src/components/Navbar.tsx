@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ContactDialog from "@/components/ContactDialog";
 
 const navLinks = [
   { to: "/work", label: "Work" },
@@ -33,9 +34,9 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <Button asChild className="rounded-btn text-sm font-medium">
-            <a href="mailto:maria.freydell.v@gmail.com">Let's Talk →</a>
-          </Button>
+          <ContactDialog>
+            <Button className="rounded-btn text-sm font-medium">Contact →</Button>
+          </ContactDialog>
         </div>
 
         {/* Mobile toggle */}
@@ -63,11 +64,11 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <Button asChild className="w-full rounded-btn text-sm font-medium">
-            <a href="mailto:maria.freydell.v@gmail.com" onClick={() => setMobileOpen(false)}>
-              Let's Talk →
-            </a>
-          </Button>
+          <ContactDialog>
+            <Button className="w-full rounded-btn text-sm font-medium" onClick={() => setMobileOpen(false)}>
+              Contact →
+            </Button>
+          </ContactDialog>
         </div>
       )}
     </header>

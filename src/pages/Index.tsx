@@ -6,6 +6,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import ProjectCard from "@/components/ProjectCard";
 import Divider from "@/components/Divider";
 import { getFeaturedProjects } from "@/data/projects";
+import ContactDialog from "@/components/ContactDialog";
 
 const industries = ["Fragrance", "Fashion", "Fintech", "Agriculture", "Jewelry", "Home & Lifestyle"];
 
@@ -185,9 +186,11 @@ const Index = () => {
             <p className="text-muted-foreground font-light mb-8">
               Let's talk about what you're building.
             </p>
-             <Button asChild size="lg" className="rounded-btn bg-tag-red text-tag-red-foreground hover:bg-tag-red/90">
-               <a href="mailto:maria.freydell.v@gmail.com">Get in Touch →</a>
-             </Button>
+             <ContactDialog>
+               <Button size="lg" className="rounded-btn bg-tag-red text-tag-red-foreground hover:bg-tag-red/90">
+                 Get in Touch →
+               </Button>
+             </ContactDialog>
           </ScrollReveal>
         </div>
       </section>
