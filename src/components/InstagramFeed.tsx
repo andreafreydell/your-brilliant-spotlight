@@ -19,7 +19,7 @@ const InstagramFeed = () => (
         <iframe
           src="https://www.instagram.com/andreafreydell/embed"
           className="w-full border-0"
-          style={{ height: "800px" }}
+          style={{ height: "1200px" }}
           allowTransparency
           scrolling="yes"
           title="Andrea Freydell Instagram Feed"
