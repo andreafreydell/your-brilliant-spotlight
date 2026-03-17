@@ -6,38 +6,55 @@ import Divider from "@/components/Divider";
 import ContactDialog from "@/components/ContactDialog";
 import InstagramFeed from "@/components/InstagramFeed";
 
-const industries = [
-  "Fragrance", "Fashion", "Fintech", "Agriculture", "Jewelry", "Home & Lifestyle",
-];
+const industries = ["Fragrance", "Fashion", "Fintech", "Agriculture", "Jewelry", "Home & Lifestyle"];
 
 const tools = [
-  "Figma", "Adobe Creative Suite", "Excel & Financial Modeling", "Notion",
-  "Shopify", "Meta Business Suite", "Google Analytics", "Midjourney", "Claude",
+  "Lovable",
+  "Claude Code + OpenAI Codex (Free Module)",
+  "Claude Cowork (Now Featuring Free Codex Upgrade)",
+  "GitHub",
+  "Notion",
+  "Shopify",
+  "Financial Modeling",
+  "Creative Direction",
+  "AI Image Systems",
 ];
 
 const About = () => (
   <main className="pt-24 pb-16 px-6">
-    <div className="container mx-auto max-w-4xl">
+    <div className="container mx-auto max-w-5xl">
       <div className="grid md:grid-cols-5 gap-12 items-start mb-16">
-        {/* Portrait */}
         <ScrollReveal className="md:col-span-2">
-          <img src={andreaPortrait} alt="Andrea Freydell — strategist and creative director" className="aspect-[3/4] rounded-btn object-cover w-full sticky top-24" loading="lazy" />
+          <img src={andreaPortrait} alt="Andrea Freydell - founder and operator" className="aspect-[3/4] rounded-btn object-cover w-full sticky top-24" loading="lazy" />
         </ScrollReveal>
 
-        {/* Bio */}
         <ScrollReveal delay={100} className="md:col-span-3">
           <div>
-            <h1 className="text-4xl md:text-5xl font-light mb-6" style={{ letterSpacing: '-0.02em' }}>Andrea Freydell</h1>
+            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3">About</p>
+            <h1 className="text-4xl md:text-5xl font-light mb-6" style={{ letterSpacing: "-0.02em" }}>
+              Andrea Freydell
+            </h1>
             <div className="space-y-4 text-muted-foreground font-light leading-relaxed">
               <p>
-                I'm a brand strategist, founder and leader based in Colombia, currently Managing Director at Grupo Ambiente — my family's multi-brand home fashion company. I work at the intersection of brand building, financial thinking, and digital systems.
+                Andrea is a founder and operator building at the intersection of brand, systems, ecommerce, and AI-assisted execution.
+                She leads GEA and Grupo Ambiente and builds practical workflow systems for founders who want more speed, control, and better output.
               </p>
               <p>
-                My background spans private equity, real estate investment, and founding a fashion brand. I've led international expansion, M&A strategy, and operations at scale. Throughout, I've built brands from the ground up—understanding both the financial model and the creative vision required to make them resonate.
+                Her background spans management thinking, brand building, digital strategy, and creative direction. The result is a point of view
+                that stays useful for non-technical founders: serious enough to build from, clear enough to act on.
               </p>
               <p>
-                I don't separate strategy from creativity. The strongest brands are built by people who can read a spreadsheet, design a moodboard, and understand what actually moves customers. That's where I operate.
+                The work is designed for people who care about quality, brand consistency, and execution, but do not want to build their business
+                around a bloated team or a chaotic tool stack.
               </p>
+            </div>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Button asChild className="rounded-btn">
+                <Link to="/courses">Browse Courses</Link>
+              </Button>
+              <Button asChild variant="outline" className="rounded-btn">
+                <Link to="/work">See Proof</Link>
+              </Button>
             </div>
           </div>
         </ScrollReveal>
@@ -47,36 +64,31 @@ const About = () => (
 
       <Divider />
 
-      {/* Industries */}
       <ScrollReveal>
         <div className="mb-16">
-          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Industries</p>
+          <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6">Industries</p>
           <div className="flex flex-wrap gap-2">
-            {industries.map((ind) => (
-              <span key={ind} className="px-3 py-1.5 rounded-full bg-muted text-sm text-muted-foreground font-light">
-                {ind}
+            {industries.map((industry) => (
+              <span key={industry} className="px-3 py-1.5 rounded-full bg-muted text-sm text-muted-foreground font-light">
+                {industry}
               </span>
             ))}
           </div>
         </div>
       </ScrollReveal>
 
-      {/* Tools */}
       <ScrollReveal>
         <div className="mb-16">
-          <p className="text-xs uppercase tracking-widest text-muted-foreground mb-6">Tools & Platforms</p>
-          <p className="text-sm text-muted-foreground font-light">
-            {tools.join(" · ")}
-          </p>
+          <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-6">Tools & Operating Stack</p>
+          <p className="text-sm text-muted-foreground font-light">{tools.join(" / ")}</p>
         </div>
       </ScrollReveal>
 
-      {/* CTA */}
       <ScrollReveal>
         <div className="text-center py-8">
-          <h2 className="text-2xl font-normal mb-4">Let's work together</h2>
+          <h2 className="text-2xl font-normal mb-4">Want help deciding where to start?</h2>
           <ContactDialog>
-            <Button size="lg" className="rounded-btn">Get in Touch →</Button>
+            <Button size="lg" className="rounded-btn">Book Free Consultation</Button>
           </ContactDialog>
         </div>
       </ScrollReveal>

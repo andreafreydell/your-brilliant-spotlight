@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import ContactDialog from "@/components/ContactDialog";
 
 const navLinks = [
-  { to: "/work", label: "Work" },
-  { to: "/services", label: "Services" },
+  { to: "/courses", label: "Courses" },
+  { to: "/work", label: "Proof" },
+  { to: "/services", label: "Ways to Work" },
   { to: "/about", label: "About" },
 ];
 
@@ -15,13 +16,12 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <nav className="container mx-auto flex items-center justify-between h-16 px-6">
         <Link to="/" className="text-lg font-semibold tracking-tight text-foreground">
           Andrea Freydell
         </Link>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
@@ -35,11 +35,10 @@ const Navbar = () => {
             </Link>
           ))}
           <ContactDialog>
-            <Button className="rounded-btn text-sm font-medium">Contact →</Button>
+            <Button className="rounded-btn text-sm font-medium">Book Free Consultation</Button>
           </ContactDialog>
         </div>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden p-2 text-foreground"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -49,7 +48,6 @@ const Navbar = () => {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border px-6 pb-6 space-y-4">
           {navLinks.map((link) => (
@@ -66,7 +64,7 @@ const Navbar = () => {
           ))}
           <ContactDialog>
             <Button className="w-full rounded-btn text-sm font-medium" onClick={() => setMobileOpen(false)}>
-              Contact →
+              Book Free Consultation
             </Button>
           </ContactDialog>
         </div>

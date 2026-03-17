@@ -5,29 +5,32 @@ import { Textarea } from "@/components/ui/textarea";
 import ScrollReveal from "@/components/ScrollReveal";
 import { toast } from "sonner";
 
-const interests = ["Consulting", "Creative", "Digital", "Not sure yet"];
+const interests = ["Courses", "Membership", "Custom build", "Strategic advisory"];
 
 const Contact = () => {
   const [selected, setSelected] = useState<string[]>([]);
 
   const toggleInterest = (interest: string) => {
     setSelected((prev) =>
-      prev.includes(interest) ? prev.filter((i) => i !== interest) : [...prev, interest]
+      prev.includes(interest) ? prev.filter((item) => item !== interest) : [...prev, interest]
     );
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Thanks! Your message has been received. I'll be in touch soon.");
+    toast.success("Thanks! Your message has been received. I will be in touch soon.");
   };
 
   return (
     <main className="pt-24 pb-16 px-6">
       <div className="container mx-auto max-w-xl">
         <ScrollReveal>
-          <h1 className="text-4xl md:text-5xl font-light mb-4" style={{ letterSpacing: '-0.02em' }}>Let's Build Something</h1>
+          <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3">Contact</p>
+          <h1 className="text-4xl md:text-5xl font-light mb-4" style={{ letterSpacing: "-0.02em" }}>
+            Let&apos;s figure out the right entry point.
+          </h1>
           <p className="text-lg text-muted-foreground font-light mb-12">
-            Have a project, a brand, or a problem that needs a system? I'd like to hear about it.
+            Use this page if you want help choosing between the course library, membership, or a custom build.
           </p>
         </ScrollReveal>
 
@@ -45,14 +48,14 @@ const Contact = () => {
               <label htmlFor="message" className="block text-sm font-medium mb-2">What are you working on?</label>
               <Textarea
                 id="message"
-                placeholder="Tell me about your brand, your challenge, and what success looks like…"
+                placeholder="Tell me about your business, your bottleneck, and what success would look like."
                 rows={5}
                 required
                 className="rounded-md"
               />
             </div>
             <div>
-              <p className="text-sm font-medium mb-3">Which system interests you?</p>
+              <p className="text-sm font-medium mb-3">What are you interested in?</p>
               <div className="flex flex-wrap gap-2">
                 {interests.map((interest) => (
                   <button
@@ -71,7 +74,7 @@ const Contact = () => {
               </div>
             </div>
             <Button type="submit" size="lg" className="w-full rounded-btn">
-              Send it →
+              Send it {"->"}
             </Button>
           </form>
         </ScrollReveal>

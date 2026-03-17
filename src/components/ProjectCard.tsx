@@ -16,7 +16,7 @@ const ProjectCard = ({ slug, title, microLabel, description, pillar, illustratio
     to={`/work/${slug}`}
     className="group block rounded-card bg-card border border-border overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-foreground/5 hover:-translate-y-1 hover:border-foreground/20"
   >
-    {/* Illustration — full bleed SVG */}
+    {/* Illustration - full bleed SVG */}
     <div
       className="w-full aspect-[4/3]"
       dangerouslySetInnerHTML={{ __html: illustration }}
@@ -31,7 +31,7 @@ const ProjectCard = ({ slug, title, microLabel, description, pillar, illustratio
       </h3>
       <p className="text-sm text-muted-foreground leading-relaxed mb-4">{description}</p>
       <span className="text-sm font-medium text-dusty-teal inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-        View Case Study <span>→</span>
+        View Case Study <span>{"->"}</span>
       </span>
     </div>
   </Link>

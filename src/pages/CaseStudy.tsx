@@ -22,18 +22,16 @@ const CaseStudy = () => {
   return (
     <main className="pt-24 pb-16 px-6">
       <div className="container mx-auto max-w-3xl">
-        {/* Hero */}
         <ScrollReveal>
           <Link to="/work" className="text-sm text-muted-foreground hover:text-foreground transition-colors mb-8 inline-block">
-            ← Back to Work
+            {"<- Back to Proof"}
           </Link>
           <PillarTag pillar={project.pillar} className="mb-4" />
           <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">{project.microLabel}</p>
-          <h1 className="text-4xl md:text-5xl font-light mb-3" style={{ letterSpacing: '-0.02em' }}>{project.title}</h1>
+          <h1 className="text-4xl md:text-5xl font-light mb-3" style={{ letterSpacing: "-0.02em" }}>{project.title}</h1>
           <p className="text-lg text-muted-foreground font-light mb-8">{project.caseStudy.heroSubtitle}</p>
         </ScrollReveal>
 
-        {/* Hero illustration */}
         <ScrollReveal delay={100}>
           <div
             className="w-full aspect-video rounded-card overflow-hidden mb-16"
@@ -41,7 +39,6 @@ const CaseStudy = () => {
           />
         </ScrollReveal>
 
-        {/* Four Acts */}
         {acts.map((act, i) => (
           <ScrollReveal key={act.key} delay={i * 80}>
             <section className="mb-16">
@@ -54,19 +51,42 @@ const CaseStudy = () => {
 
         <Divider />
 
-        {/* Navigation */}
+        <ScrollReveal>
+          <div className="rounded-card border border-border bg-card p-8 mb-16">
+            <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3">Want this applied to your business?</p>
+            <p className="text-muted-foreground font-light leading-relaxed mb-6">
+              If you want to build stronger systems with this level of strategy, brand control, and execution, start with the
+              course library or book a free consultation for a more custom recommendation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/courses"
+                className="inline-flex items-center justify-center rounded-[1.25rem] bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                Browse Courses
+              </Link>
+              <Link
+                to="/services"
+                className="inline-flex items-center justify-center rounded-[1.25rem] border border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+              >
+                Book Free Consultation
+              </Link>
+            </div>
+          </div>
+        </ScrollReveal>
+
         <div className="flex justify-between items-center">
           <Link
             to={`/work/${prev.slug}`}
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
-            ← {prev.title}
+            {"<- "}{prev.title}
           </Link>
           <Link
             to={`/work/${next.slug}`}
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
-            {next.title} →
+            {next.title} {"->"}
           </Link>
         </div>
       </div>

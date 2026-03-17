@@ -19,13 +19,13 @@ const Work = () => {
     <main className="pt-24 pb-16 px-6">
       <div className="container mx-auto">
         <ScrollReveal>
-          <h1 className="text-4xl md:text-5xl font-light mb-4" style={{ letterSpacing: '-0.02em' }}>The Work</h1>
+          <h1 className="text-4xl md:text-5xl font-light mb-4" style={{ letterSpacing: "-0.02em" }}>Proof & Case Studies</h1>
           <p className="text-lg text-muted-foreground font-light max-w-2xl mb-12">
-            Strategy, brand, and digital — across industries. Every project here follows the same principle: understand the business first, then design the system.
+            These projects show the strategic, creative, digital, and AI systems thinking behind the work. Use them if you want to
+            see the level of taste, range, and execution that informs the products and custom builds.
           </p>
         </ScrollReveal>
 
-        {/* Filters */}
         <ScrollReveal delay={100}>
           <div className="flex flex-wrap gap-2 mb-12">
             {filters.map((f) => (
@@ -44,7 +44,6 @@ const Work = () => {
           </div>
         </ScrollReveal>
 
-        {/* Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((p, i) => (
             <ScrollReveal key={p.slug} delay={i * 60}>
