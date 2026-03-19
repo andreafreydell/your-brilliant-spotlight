@@ -58,6 +58,7 @@ const Index = () => {
 
   return (
     <main>
+      {/* ── HERO ── */}
       <section className="relative overflow-hidden px-6 pt-28 pb-20 md:pt-36 md:pb-28">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--lavender)/0.28)_0%,transparent_52%),radial-gradient(ellipse_at_bottom_right,hsl(var(--seafoam)/0.22)_0%,transparent_48%)]" />
         <div className="container relative mx-auto">
@@ -81,17 +82,14 @@ const Index = () => {
               </ScrollReveal>
               <ScrollReveal delay={220}>
                 <div className="flex flex-col gap-4 sm:flex-row">
-                  <Button asChild size="lg" className="rounded-btn text-sm font-medium">
-                    <a href="#offers">{t("home.hero.cta1")}</a>
-                  </Button>
-                  <Button asChild variant="outline" size="lg" className="rounded-btn text-sm font-medium">
-                    <a href="#course-roadmap">{t("home.hero.cta2")}</a>
-                  </Button>
                   <ContactDialog>
-                    <Button variant="outline" size="lg" className="rounded-btn text-sm font-medium">
-                      {t("nav.cta")}
+                    <Button size="lg" className="rounded-btn text-sm font-medium">
+                      {t("home.hero.cta1")}
                     </Button>
                   </ContactDialog>
+                  <Button asChild variant="outline" size="lg" className="rounded-btn text-sm font-medium">
+                    <a href="#steal-my-system">{t("home.hero.cta2")}</a>
+                  </Button>
                 </div>
               </ScrollReveal>
             </div>
@@ -119,6 +117,7 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ── ABOUT (trust builder) ── */}
       <section className="px-6 py-20 md:py-24">
         <div className="container mx-auto max-w-5xl">
           <div className="grid items-start gap-12 md:grid-cols-5">
@@ -140,12 +139,13 @@ const Index = () => {
                 <div className="space-y-4 font-light leading-relaxed text-muted-foreground">
                   <p>{t("home.about.bio1")}</p>
                   <p>{t("home.about.bio2")}</p>
-                  <p>{t("home.about.bio3")}</p>
                 </div>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                  <Button asChild className="rounded-btn">
-                    <Link to="/about">{t("home.about.readMore")}</Link>
-                  </Button>
+                  <ContactDialog>
+                    <Button className="rounded-btn">
+                      {t("nav.cta")}
+                    </Button>
+                  </ContactDialog>
                   <Button asChild variant="outline" className="rounded-btn">
                     <Link to="/work">{t("home.about.seeProof")}</Link>
                   </Button>
@@ -158,7 +158,8 @@ const Index = () => {
 
       <Divider />
 
-      <section id="offers" className="px-6 pb-10">
+      {/* ── WAYS TO WORK (offers — Work With Me first) ── */}
+      <section id="offers" className="px-6 py-20 md:py-24">
         <div className="container mx-auto">
           <ScrollReveal>
             <div className="mb-8 max-w-2xl">
@@ -183,7 +184,8 @@ const Index = () => {
 
       <Divider />
 
-      <section id="course-roadmap" className="px-6 py-20 md:py-24">
+      {/* ── STEAL MY SYSTEM (roadmap) ── */}
+      <section id="steal-my-system" className="px-6 py-20 md:py-24">
         <div className="container mx-auto max-w-4xl">
           <ScrollReveal>
             <div className="mb-12 text-center">
@@ -198,7 +200,7 @@ const Index = () => {
           </ScrollReveal>
 
           <div className="grid gap-8 md:grid-cols-2">
-            {/* Phase 1 — Foundations */}
+            {/* Phase 1 — Free Foundations */}
             <ScrollReveal>
               <div className="rounded-card border border-border bg-card p-8">
                 <p className="mb-1 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.roadmap.phase1")}</p>
@@ -223,7 +225,7 @@ const Index = () => {
               </div>
             </ScrollReveal>
 
-            {/* Phase 2 — Pick your lane */}
+            {/* Phase 2 — Copy My Workflows */}
             <ScrollReveal delay={80}>
               <div className="rounded-card border border-border bg-card p-8">
                 <p className="mb-1 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.roadmap.phase2")}</p>
@@ -244,6 +246,18 @@ const Index = () => {
                     );
                   })}
                 </div>
+                <div className="mt-6 pt-4 border-t border-border">
+                  <p className="text-sm text-muted-foreground">
+                    {t("home.cta.subtitle")}
+                  </p>
+                  <div className="mt-4">
+                    <ContactDialog>
+                      <Button size="sm" className="rounded-btn text-sm">
+                        {t("nav.cta")}
+                      </Button>
+                    </ContactDialog>
+                  </div>
+                </div>
               </div>
             </ScrollReveal>
           </div>
@@ -260,6 +274,7 @@ const Index = () => {
 
       <Divider />
 
+      {/* ── PROOF ── */}
       <section className="px-6 py-20 md:py-24">
         <div className="container mx-auto">
           <ScrollReveal>
@@ -293,10 +308,11 @@ const Index = () => {
 
       <Divider />
 
+      {/* ── CTA + FAQ ── */}
       <section className="px-6 py-20 md:py-24">
         <div className="container mx-auto grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <ScrollReveal>
-            <div className="rounded-card border border-border bg-card p-8 md:p-10">
+            <div className="rounded-card border border-brass/40 bg-brass/5 p-8 md:p-10">
               <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.cta.label")}</p>
               <h2 className="mb-4 text-3xl font-normal" style={{ letterSpacing: "-0.01em" }}>
                 {t("home.cta.title")}
@@ -313,14 +329,14 @@ const Index = () => {
                 ))}
               </ul>
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button asChild className="rounded-btn">
-                  <Link to="/courses">{t("home.cta.browseCourses")}</Link>
-                </Button>
                 <ContactDialog>
-                  <Button variant="outline" className="rounded-btn">
+                  <Button className="rounded-btn">
                     {t("nav.cta")}
                   </Button>
                 </ContactDialog>
+                <Button asChild variant="outline" className="rounded-btn">
+                  <Link to="/courses">{t("home.cta.browseCourses")}</Link>
+                </Button>
               </div>
             </div>
           </ScrollReveal>
