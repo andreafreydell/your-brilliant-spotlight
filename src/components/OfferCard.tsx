@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import type { Offer } from "@/data/coursePlatform";
 import { useLanguage } from "@/contexts/LanguageContext";
+import ContactDialog from "@/components/ContactDialog";
 
 interface OfferCardProps {
   offer: Offer;
