@@ -26,7 +26,7 @@ import ProjectCard from "@/components/ProjectCard";
 import ContactDialog from "@/components/ContactDialog";
 import OfferCard from "@/components/OfferCard";
 import { getFeaturedProjects } from "@/data/projects";
-import { courses, homeFaqs, offers } from "@/data/coursePlatform";
+import { courses, offers } from "@/data/coursePlatform";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const heroHighlightKeys = [
