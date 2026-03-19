@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/accordion";
 import ScrollReveal from "@/components/ScrollReveal";
 import Divider from "@/components/Divider";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCardMini from "@/components/ProjectCardMini";
 import ContactDialog from "@/components/ContactDialog";
 import OfferCard from "@/components/OfferCard";
 import { getFeaturedProjects } from "@/data/projects";
