@@ -26,7 +26,7 @@ import ProjectCard from "@/components/ProjectCard";
 import ContactDialog from "@/components/ContactDialog";
 import OfferCard from "@/components/OfferCard";
 import { getFeaturedProjects } from "@/data/projects";
-import { courses, homeFaqs, offers } from "@/data/coursePlatform";
+import { courses, offers } from "@/data/coursePlatform";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const heroHighlightKeys = [
@@ -397,11 +397,16 @@ const Index = () => {
             <div className="rounded-card border border-border bg-card p-8 md:p-10">
               <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.faq.label")}</p>
               <Accordion type="single" collapsible className="w-full">
-                {homeFaqs.map((faq, index) => (
-                  <AccordionItem key={faq.question} value={`faq-${index}`}>
-                    <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+                {[
+                  { q: t("faq.q1"), a: t("faq.a1") },
+                  { q: t("faq.q2"), a: t("faq.a2") },
+                  { q: t("faq.q3"), a: t("faq.a3") },
+                  { q: t("faq.q4"), a: t("faq.a4") },
+                ].map((faq, index) => (
+                  <AccordionItem key={index} value={`faq-${index}`}>
+                    <AccordionTrigger className="text-left">{faq.q}</AccordionTrigger>
                     <AccordionContent className="leading-relaxed text-muted-foreground">
-                      {faq.answer}
+                      {faq.a}
                     </AccordionContent>
                   </AccordionItem>
                 ))}

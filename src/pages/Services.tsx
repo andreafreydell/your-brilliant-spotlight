@@ -10,75 +10,51 @@ const Services = () => {
 
   const waysToWork = [
     {
-      titleKey: "Course Library",
-      description: t("services.label") === "Formas de Trabajar Juntos"
-        ? "Para fundadores que quieren plantillas de implementación estructuradas y auto-servicio en las rutas de bases y flujos avanzados."
-        : "For founders who want structured, self-serve implementation blueprints across the foundations and advanced workflow tracks.",
-      items: t("services.label") === "Formas de Trabajar Juntos"
-        ? ["Cursos individuales", "Paquetes", "Rutas de implementación claras"]
-        : ["Standalone courses", "Bundles", "Clear implementation paths"],
+      title: t("services.courseLibrary.title"),
+      description: t("services.courseLibrary.desc"),
+      items: [t("services.courseLibrary.item1"), t("services.courseLibrary.item2"), t("services.courseLibrary.item3")],
     },
     {
-      titleKey: "Membership",
-      description: t("services.label") === "Formas de Trabajar Juntos"
-        ? "Para compradores que quieren la biblioteca actual más futuros lanzamientos, una cadencia de lanzamiento mensual y una relación más continua con la plataforma."
-        : "For buyers who want the current library plus future builds, a monthly release cadence, and a more ongoing relationship with the platform.",
-      items: t("services.label") === "Formas de Trabajar Juntos"
-        ? ["Todos los cursos actuales", "Futuros lanzamientos incluidos", "Capa de producto orientada a la comunidad"]
-        : ["All current courses", "Future workflow releases", "Community-oriented product layer"],
+      title: t("services.membership.title"),
+      description: t("services.membership.desc"),
+      items: [t("services.membership.item1"), t("services.membership.item2"), t("services.membership.item3")],
     },
     {
-      titleKey: t("services.label") === "Formas de Trabajar Juntos" ? "Proyectos Personalizados" : "Custom Builds",
-      description: t("services.label") === "Formas de Trabajar Juntos"
-        ? "Para negocios cuyo caso de uso no encaja limpiamente en el catálogo y necesita una arquitectura de flujo de trabajo más específica."
-        : "For businesses whose use case does not fit neatly into the catalog and needs a more specific workflow architecture.",
-      items: t("services.label") === "Formas de Trabajar Juntos"
-        ? ["Diagnóstico y alcance", "Stack recomendado", "Ruta de proyecto personalizado"]
-        : ["Diagnosis and scope", "Recommended stack", "Custom build path"],
+      title: t("services.customBuilds.title"),
+      description: t("services.customBuilds.desc"),
+      items: [t("services.customBuilds.item1"), t("services.customBuilds.item2"), t("services.customBuilds.item3")],
     },
     {
-      titleKey: t("services.label") === "Formas de Trabajar Juntos" ? "Asesoría Estratégica" : "Strategic Advisory",
-      description: t("services.label") === "Formas de Trabajar Juntos"
-        ? "Para fundadores que necesitan ayuda decidiendo qué construir primero, cómo estructurar el stack y dónde la IA debería realmente crear palanca."
-        : "For founders who need help deciding what to build first, how to structure the stack, and where AI should actually create leverage.",
-      items: t("services.label") === "Formas de Trabajar Juntos"
-        ? ["Mapeo de prioridades", "Decisiones de stack", "Secuenciación de flujos"]
-        : ["Priority mapping", "Stack decisions", "Workflow sequencing"],
+      title: t("services.advisory.title"),
+      description: t("services.advisory.desc"),
+      items: [t("services.advisory.item1"), t("services.advisory.item2"), t("services.advisory.item3")],
     },
   ];
 
   const backgroundSystems = [
     {
       num: "Background 1",
-      title: t("services.label") === "Formas de Trabajar Juntos" ? "Escalando con IA" : "Scaling with AI",
+      title: t("services.bg1.title"),
       color: "bg-lavender",
-      services: t("services.label") === "Formas de Trabajar Juntos"
-        ? ["Construcción de flujos y capas operativas asistidas por IA", "Sistemas de imagen y contenido", "Lógica de herramientas internas para equipos lean"]
-        : ["Workflow builds and AI-assisted operating layers", "Image and content systems", "Internal tooling logic for lean teams"],
+      services: [t("services.bg1.s1"), t("services.bg1.s2"), t("services.bg1.s3")],
     },
     {
       num: "Background 2",
-      title: t("services.label") === "Formas de Trabajar Juntos" ? "Consultoría de Gestión" : "Management Consulting",
+      title: t("services.bg2.title"),
       color: "bg-seafoam",
-      services: t("services.label") === "Formas de Trabajar Juntos"
-        ? ["Marco financiero y operativo", "Decisiones de crecimiento basadas en lógica de negocio", "Claridad estratégica antes de la ejecución"]
-        : ["Financial and operational framing", "Growth decisions grounded in business logic", "Strategic clarity before execution"],
+      services: [t("services.bg2.s1"), t("services.bg2.s2"), t("services.bg2.s3")],
     },
     {
       num: "Background 3",
-      title: t("services.label") === "Formas de Trabajar Juntos" ? "Branding y Dirección Creativa" : "Branding & Creative Direction",
+      title: t("services.bg3.title"),
       color: "bg-blush-peach",
-      services: t("services.label") === "Formas de Trabajar Juntos"
-        ? ["Calidad de marca como input operativo", "Sistemas creativos y dirección visual", "Mejor gusto integrado en los flujos"]
-        : ["Brand quality as an operating input", "Creative systems and visual direction", "Stronger taste embedded into workflows"],
+      services: [t("services.bg3.s1"), t("services.bg3.s2"), t("services.bg3.s3")],
     },
     {
       num: "Background 4",
-      title: t("services.label") === "Formas de Trabajar Juntos" ? "Estrategia Digital" : "Digital Strategy",
+      title: t("services.bg4.title"),
       color: "bg-sky",
-      services: t("services.label") === "Formas de Trabajar Juntos"
-        ? ["Pensamiento web, de contenido y conversión", "Sistemas digitales en lugar de activos desconectados", "Una ruta práctica de la idea a la interfaz"]
-        : ["Web, content, and conversion thinking", "Digital systems rather than disconnected assets", "A practical route from idea to interface"],
+      services: [t("services.bg4.s1"), t("services.bg4.s2"), t("services.bg4.s3")],
     },
   ];
 
@@ -99,9 +75,9 @@ const Services = () => {
 
         <div className="grid gap-6 md:grid-cols-2">
           {waysToWork.map((item, index) => (
-            <ScrollReveal key={item.titleKey} delay={index * 80}>
+            <ScrollReveal key={item.title} delay={index * 80}>
               <div className="rounded-card border border-border bg-card p-8 h-full">
-                <h2 className="text-2xl font-medium mb-3">{item.titleKey}</h2>
+                <h2 className="text-2xl font-medium mb-3">{item.title}</h2>
                 <p className="text-muted-foreground font-light leading-relaxed mb-5">{item.description}</p>
                 <ul className="space-y-3">
                   {item.items.map((service) => (
