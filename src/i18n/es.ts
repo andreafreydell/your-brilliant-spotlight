@@ -47,31 +47,29 @@ const es: Record<string, string> = {
   "home.about.seeProof": "Ver Portafolio",
 
   // Course Roadmap
-  "home.roadmap.label": "Ruta de Cursos",
-  "home.roadmap.title": "Empieza con las bases. Luego elige el sistema que quieres activar.",
-  "home.roadmap.subtitle": "Las bases te dan claridad de stack, inputs más limpios y mejor toma de decisiones. Desde ahí, los flujos avanzados te llevan a la ejecución de contenido, imagen y web.",
-  "home.roadmap.foundations": "Bases",
-  "home.roadmap.buildBase": "Construye la base primero",
-  "home.roadmap.step": "Paso",
-  "home.roadmap.advanced": "Flujos Avanzados",
-  "home.roadmap.chooseOutcome": "Elige el resultado que quieres",
-  "home.roadmap.advancedSubtitle": "Una vez que las bases estén en su lugar, elige el camino que te ayude a entregar el siguiente resultado visible.",
-  "home.roadmap.viewAll": "Ver Biblioteca Completa de Cursos",
+  "home.roadmap.label": "Cómo Funciona",
+  "home.roadmap.title": "Dos fases. Un camino claro.",
+  "home.roadmap.subtitle": "Empieza con las bases para ordenar tu stack e inputs. Luego elige el resultado que quieres construir.",
+  "home.roadmap.phase1": "Fase 1",
+  "home.roadmap.foundations": "Construye tu base",
+  "home.roadmap.phase2": "Fase 2",
+  "home.roadmap.advanced": "Elige tu camino",
+  "home.roadmap.viewAll": "Ver Biblioteca Completa",
 
   // Foundation path outcomes
-  "home.foundation.techStack": "Elige las herramientas correctas primero.",
-  "home.foundation.imageBackwards": "Analiza visuales fuertes y adáptalos a tu marca.",
-  "home.foundation.keyFiles": "Organiza los inputs que la IA necesita.",
-  "home.foundation.lovable": "Prototipa interfaces útiles más rápido.",
-  "home.foundation.github": "Construye con Claude Code, OpenAI Codex y GitHub con más seguridad y menos caos.",
+  "home.foundation.techStack": "Elige las herramientas correctas antes de construir.",
+  "home.foundation.imageBackwards": "Estudia buenos visuales y adáptalos.",
+  "home.foundation.keyFiles": "Organiza los archivos que la IA necesita.",
+  "home.foundation.lovable": "Prototipa interfaces más rápido.",
+  "home.foundation.github": "Publica código con más seguridad y menos caos.",
 
   // Advanced lanes
   "home.advanced.content": "Sistemas de Contenido",
-  "home.advanced.content.desc": "Convierte la estrategia en un motor de publicación repetible.",
-  "home.advanced.brand": "Control de Marca e Imagen",
-  "home.advanced.brand.desc": "Escala visuales sin perder consistencia de marca.",
+  "home.advanced.content.desc": "Flujos de publicación repetibles.",
+  "home.advanced.brand": "Marca e Imagen",
+  "home.advanced.brand.desc": "Visuales on-brand a escala.",
   "home.advanced.website": "Sistemas Web",
-  "home.advanced.website.desc": "Entrega visuales web y copy más fuertes con menos fricción.",
+  "home.advanced.website.desc": "Páginas, assets y copy — más rápido.",
 
   // Proof section (home)
   "home.proof.label": "Portafolio",
