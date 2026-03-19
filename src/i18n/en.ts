@@ -47,31 +47,29 @@ const en: Record<string, string> = {
   "home.about.seeProof": "See Proof",
 
   // Course Roadmap
-  "home.roadmap.label": "Course Roadmap",
-  "home.roadmap.title": "Start with the foundations. Then choose the system you want live next.",
-  "home.roadmap.subtitle": "The foundations give you stack clarity, cleaner inputs, and better decision-making. From there, the advanced workflows take you into content, image, and website execution.",
-  "home.roadmap.foundations": "Foundations",
-  "home.roadmap.buildBase": "Build the base first",
-  "home.roadmap.step": "Step",
-  "home.roadmap.advanced": "Advanced Workflows",
-  "home.roadmap.chooseOutcome": "Choose the outcome you want",
-  "home.roadmap.advancedSubtitle": "Once the foundations are in place, pick the lane that helps you ship the next visible result.",
+  "home.roadmap.label": "How It Works",
+  "home.roadmap.title": "Two phases. One clear path.",
+  "home.roadmap.subtitle": "Start with the foundations to get your stack and inputs right. Then pick the outcome you want to build.",
+  "home.roadmap.phase1": "Phase 1",
+  "home.roadmap.foundations": "Build your base",
+  "home.roadmap.phase2": "Phase 2",
+  "home.roadmap.advanced": "Pick your lane",
   "home.roadmap.viewAll": "View Full Course Library",
 
   // Foundation path outcomes
-  "home.foundation.techStack": "Choose the right tools first.",
-  "home.foundation.imageBackwards": "Reverse-engineer strong visuals and adapt them to your brand.",
-  "home.foundation.keyFiles": "Organize the inputs AI needs.",
-  "home.foundation.lovable": "Prototype useful interfaces faster.",
-  "home.foundation.github": "Build with Claude Code, OpenAI Codex, and GitHub with more safety and less chaos.",
+  "home.foundation.techStack": "Pick the right tools before you build.",
+  "home.foundation.imageBackwards": "Study strong visuals, then adapt them.",
+  "home.foundation.keyFiles": "Organize the files AI needs to work well.",
+  "home.foundation.lovable": "Prototype interfaces faster.",
+  "home.foundation.github": "Ship code with more safety, less chaos.",
 
   // Advanced lanes
   "home.advanced.content": "Content Systems",
-  "home.advanced.content.desc": "Turn strategy into a repeatable publishing engine.",
-  "home.advanced.brand": "Brand and Image Control",
-  "home.advanced.brand.desc": "Scale visuals without losing brand consistency.",
+  "home.advanced.content.desc": "Repeatable publishing workflows.",
+  "home.advanced.brand": "Brand & Image",
+  "home.advanced.brand.desc": "On-brand visuals at scale.",
   "home.advanced.website": "Website Systems",
-  "home.advanced.website.desc": "Ship stronger website visuals and copy with less friction.",
+  "home.advanced.website.desc": "Pages, assets, and copy — faster.",
 
   // Proof section (home)
   "home.proof.label": "Proof",

@@ -188,106 +188,68 @@ const Index = () => {
       <Divider />
 
       <section id="course-roadmap" className="px-6 py-20 md:py-24">
-        <div className="container mx-auto">
+        <div className="container mx-auto max-w-4xl">
           <ScrollReveal>
-            <div className="mb-12 max-w-3xl">
+            <div className="mb-12 text-center">
               <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.roadmap.label")}</p>
               <h2 className="mb-4 text-3xl font-normal md:text-4xl" style={{ letterSpacing: "-0.01em" }}>
                 {t("home.roadmap.title")}
               </h2>
-              <p className="font-light leading-relaxed text-muted-foreground">
+              <p className="mx-auto max-w-2xl font-light leading-relaxed text-muted-foreground">
                 {t("home.roadmap.subtitle")}
               </p>
             </div>
           </ScrollReveal>
 
-          <div className="grid gap-6 lg:grid-cols-[0.95fr_auto_1.05fr] lg:items-start">
+          <div className="grid gap-8 md:grid-cols-2">
+            {/* Phase 1 — Foundations */}
             <ScrollReveal>
               <div className="rounded-card border border-border bg-card p-8">
-                <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.roadmap.foundations")}</p>
-                <h3 className="mb-6 text-2xl font-medium">{t("home.roadmap.buildBase")}</h3>
-                <div className="space-y-4">
-                  {foundationPath.map((step, index) => {
+                <p className="mb-1 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.roadmap.phase1")}</p>
+                <h3 className="mb-6 text-xl font-medium">{t("home.roadmap.foundations")}</h3>
+                <ol className="space-y-4">
+                  {foundationSteps.map((step, i) => {
                     const course = courseMap.get(step.slug);
-                    const Icon = step.icon;
-
-                    if (!course) {
-                      return null;
-                    }
-
+                    if (!course) return null;
                     return (
-                      <div key={step.slug} className="rounded-card border border-border bg-background/70 p-5">
-                        <div className="mb-4 flex items-start justify-between gap-4">
-                          <div className="flex items-center gap-3">
-                            <div className={`inline-flex h-10 w-10 items-center justify-center rounded-full ${step.accent}`}>
-                              <Icon size={18} />
-                            </div>
-                            <div>
-                              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                                {t("home.roadmap.step")} {index + 1}
-                              </p>
-                              <h4 className="text-lg font-medium">{step.label}</h4>
-                            </div>
-                          </div>
-                          <p className="text-sm font-medium text-muted-foreground">{course.priceLabel}</p>
+                      <li key={step.slug} className="flex items-start gap-3">
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-medium text-muted-foreground">
+                          {i + 1}
+                        </span>
+                        <div>
+                          <p className="text-sm font-medium">{course.title}</p>
+                          <p className="text-sm text-muted-foreground">{t(step.labelKey)}</p>
                         </div>
-                        <p className="text-sm leading-relaxed text-muted-foreground">{t(step.outcomeKey)}</p>
-                        {course.limitedTimeNote && (
-                          <p className="mt-4 inline-flex rounded-full bg-brass/10 px-3 py-1 text-xs font-medium text-brass">
-                            {course.limitedTimeNote}
-                          </p>
-                        )}
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
+            </ScrollReveal>
+
+            {/* Phase 2 — Pick your lane */}
+            <ScrollReveal delay={80}>
+              <div className="rounded-card border border-border bg-card p-8">
+                <p className="mb-1 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.roadmap.phase2")}</p>
+                <h3 className="mb-6 text-xl font-medium">{t("home.roadmap.advanced")}</h3>
+                <div className="space-y-4">
+                  {advancedLanes.map((lane) => {
+                    const Icon = lane.icon;
+                    return (
+                      <div key={lane.titleKey} className="flex items-start gap-3">
+                        <div className={`mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${lane.accent}`}>
+                          <Icon size={15} />
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium">{t(lane.titleKey)}</p>
+                          <p className="text-sm text-muted-foreground">{t(lane.descKey)}</p>
+                        </div>
                       </div>
                     );
                   })}
                 </div>
               </div>
             </ScrollReveal>
-
-            <div className="hidden h-full items-start justify-center lg:flex">
-              <div className="mt-24 inline-flex h-16 w-16 items-center justify-center rounded-full border border-border bg-card">
-                <ArrowRight size={22} className="text-muted-foreground" />
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <ScrollReveal delay={80}>
-                <div className="rounded-card border border-border bg-card p-8">
-                  <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.roadmap.advanced")}</p>
-                  <h3 className="mb-3 text-2xl font-medium">{t("home.roadmap.chooseOutcome")}</h3>
-                  <p className="font-light leading-relaxed text-muted-foreground">
-                    {t("home.roadmap.advancedSubtitle")}
-                  </p>
-                </div>
-              </ScrollReveal>
-
-              {advancedLanes.map((lane, index) => {
-                const Icon = lane.icon;
-
-                return (
-                  <ScrollReveal key={lane.titleKey} delay={index * 90 + 120}>
-                    <div className="rounded-card border border-border bg-card p-8">
-                      <div className="mb-5 flex items-center gap-4">
-                        <div className={`inline-flex h-12 w-12 items-center justify-center rounded-full ${lane.accent}`}>
-                          <Icon size={20} />
-                        </div>
-                        <div>
-                          <h4 className="text-xl font-medium">{t(lane.titleKey)}</h4>
-                          <p className="text-sm text-muted-foreground">{t(lane.descKey)}</p>
-                        </div>
-                      </div>
-                      <div className="grid gap-3 sm:grid-cols-2">
-                        {lane.courseItems.map((item) => (
-                          <div key={item.slug} className="rounded-card border border-border bg-background/70 p-4">
-                            <p className="text-sm font-medium leading-snug">{item.label}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </ScrollReveal>
-                );
-              })}
-            </div>
           </div>
 
           <ScrollReveal delay={120}>
