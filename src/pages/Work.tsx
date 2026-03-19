@@ -2,27 +2,28 @@ import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 import ProjectCard from "@/components/ProjectCard";
 import { getProjectsByPillar } from "@/data/projects";
-
-const filters = [
-  { key: "all", label: "All" },
-  { key: "consulting", label: "Consulting" },
-  { key: "creative", label: "Creative" },
-  { key: "digital", label: "Digital" },
-  { key: "ai", label: "Scaling with AI" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Work = () => {
+  const { t } = useLanguage();
   const [active, setActive] = useState("all");
   const filtered = getProjectsByPillar(active);
+
+  const filters = [
+    { key: "all", labelKey: "work.filter.all" },
+    { key: "consulting", labelKey: "work.filter.consulting" },
+    { key: "creative", labelKey: "work.filter.creative" },
+    { key: "digital", labelKey: "work.filter.digital" },
+    { key: "ai", labelKey: "work.filter.ai" },
+  ];
 
   return (
     <main className="pt-24 pb-16 px-6">
       <div className="container mx-auto">
         <ScrollReveal>
-          <h1 className="text-4xl md:text-5xl font-light mb-4" style={{ letterSpacing: "-0.02em" }}>Proof & Case Studies</h1>
+          <h1 className="text-4xl md:text-5xl font-light mb-4" style={{ letterSpacing: "-0.02em" }}>{t("work.title")}</h1>
           <p className="text-lg text-muted-foreground font-light max-w-2xl mb-12">
-            These projects show the strategic, creative, digital, and AI systems thinking behind the work. Use them if you want to
-            see the level of taste, range, and execution that informs the products and custom builds.
+            {t("work.subtitle")}
           </p>
         </ScrollReveal>
 
@@ -38,7 +39,7 @@ const Work = () => {
                     : "bg-muted text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {f.label}
+                {t(f.labelKey)}
               </button>
             ))}
           </div>
