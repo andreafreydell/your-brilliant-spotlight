@@ -21,17 +21,17 @@ const es: Record<string, string> = {
   "home.hero.subtitle": "Cursos, plantillas de flujos de trabajo y soporte personalizado para fundadores que quieren resultados más rápidos, mejor control de marca y un stack de IA más limpio.",
   "home.hero.cta1": "Empieza con los Cursos Gratuitos",
   "home.hero.cta2": "Ver la Ruta de Cursos",
-  "home.hero.whatYouCanBuild": "Flujos reales que la gente está construyendo",
+  "home.hero.whatYouCanBuild": "Lo que puedes construir",
 
   // Hero highlights
-  "home.highlight.content": "LinkedIn semanal + newsletter",
-  "home.highlight.content.desc": "Redacta 5 posts y un newsletter en una sola sesión con una cadena de prompts — luego revisa, edita y programa en menos de una hora.",
-  "home.highlight.image": "Fotografía de producto para e-commerce",
-  "home.highlight.image.desc": "Genera fotos de producto estilizadas, mockups lifestyle e imágenes listas para catálogo sin fotógrafo ni estudio.",
-  "home.highlight.website": "Lanza una landing page en un fin de semana",
-  "home.highlight.website.desc": "Pasa de un brief de marca a un sitio en vivo con copy, imágenes y formulario de contacto — sin desarrollador ni idas y vueltas.",
-  "home.highlight.ai": "Dashboard interno de operaciones",
-  "home.highlight.ai.desc": "Conecta Notion, GitHub y herramientas de IA en un solo espacio donde tu equipo gestiona tareas, contenido y lanzamientos desde una sola vista.",
+  "home.highlight.content": "Sistemas de contenido",
+  "home.highlight.content.desc": "Planifica, genera, revisa y empaqueta contenido más rápido.",
+  "home.highlight.image": "Flujos de imagen",
+  "home.highlight.image.desc": "Crea resultados visuales más limpios y alineados con tu marca a escala.",
+  "home.highlight.website": "Producción web",
+  "home.highlight.website.desc": "Convierte inputs de marca en páginas, assets y copy listo para lanzar.",
+  "home.highlight.ai": "Stack de IA",
+  "home.highlight.ai.desc": "Usa Lovable, Claude Code, OpenAI Codex, GitHub y Notion con más control.",
 
   // Offers section
   "home.offers.label": "Ofertas",
