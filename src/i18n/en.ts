@@ -17,7 +17,7 @@ const en: Record<string, string> = {
 
   // Home Hero
   "home.hero.label": "AI Workflow Library",
-  "home.hero.title": "Build content, image, and website systems without hiring a full team first.",
+  "home.hero.title": "Build content, image, and website systems without hiring a full team.",
   "home.hero.subtitle": "Courses, workflow blueprints, and custom support for founders who want faster output, tighter brand control, and a cleaner AI stack.",
   "home.hero.cta1": "Start With the Free Courses",
   "home.hero.cta2": "See the Course Path",
