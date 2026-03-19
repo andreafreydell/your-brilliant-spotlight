@@ -46,7 +46,7 @@ const OfferCard = ({ offer, className }: OfferCardProps) => {
     <div
       className={cn(
         "rounded-card border border-border bg-card p-6",
-        offer.slug === "limited-time" && "border-brass/40 bg-brass/5",
+        offer.slug === "custom-builds" && "border-brass/40 bg-brass/5",
         className
       )}
     >
@@ -62,10 +62,17 @@ const OfferCard = ({ offer, className }: OfferCardProps) => {
           </li>
         ))}
       </ul>
+      {offer.slug === "custom-builds" && (
+        <ContactDialog>
+          <button className="mt-6 inline-flex items-center justify-center rounded-btn bg-brass px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-brass/90">
+            {t("nav.cta")}
+          </button>
+        </ContactDialog>
+      )}
       {offer.slug === "limited-time" && (
         <Link
           to="/courses/image-backwards-engineering/lessons/ai-jewelry-prompt-lab"
-          className="mt-6 inline-flex items-center justify-center rounded-btn bg-brass px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-brass/90"
+          className="mt-6 inline-flex items-center justify-center rounded-btn border border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
         >
           {t("offerCard.viewFree")}
         </Link>
