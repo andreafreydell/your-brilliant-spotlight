@@ -53,7 +53,7 @@ const advancedLanes: Array<{
 
 const Index = () => {
   const { t } = useLanguage();
-  const featuredProjects = getFeaturedProjects().slice(0, 3);
+  const allProjects = projects;
   const courseMap = new Map(courses.map((course) => [course.slug, course]));
 
   return (
