@@ -2,14 +2,10 @@ import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Bot,
-  Code2,
-  Compass,
-  FolderTree,
   Image,
   MessageSquare,
   Monitor,
   Palette,
-  Workflow,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import andreaPortrait from "@/assets/andrea-portrait.webp";
