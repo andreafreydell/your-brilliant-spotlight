@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import type { Offer } from "@/data/coursePlatform";
 import { useLanguage } from "@/contexts/LanguageContext";
+import ContactDialog from "@/components/ContactDialog";
 
 interface OfferCardProps {
   offer: Offer;
@@ -14,14 +15,14 @@ const offerTranslationMap: Record<string, { label: string; title: string; price:
     title: "offer.limitedTime.title",
     price: "offer.limitedTime.price",
     desc: "offer.limitedTime.desc",
-    highlights: ["offer.limitedTime.h1", "offer.limitedTime.h2", "offer.limitedTime.h3"],
+    highlights: ["offer.limitedTime.h1", "offer.limitedTime.h2"],
   },
   membership: {
     label: "offer.membership.label",
     title: "offer.membership.title",
     price: "offer.membership.price",
     desc: "offer.membership.desc",
-    highlights: ["offer.membership.h1", "offer.membership.h2", "offer.membership.h3"],
+    highlights: ["offer.membership.h1", "offer.membership.h2"],
   },
   "custom-builds": {
     label: "offer.custom.label",
@@ -46,7 +47,7 @@ const OfferCard = ({ offer, className }: OfferCardProps) => {
     <div
       className={cn(
         "rounded-card border border-border bg-card p-6",
-        offer.slug === "limited-time" && "border-brass/40 bg-brass/5",
+        offer.slug === "custom-builds" && "border-brass/40 bg-brass/5",
         className
       )}
     >
@@ -62,10 +63,17 @@ const OfferCard = ({ offer, className }: OfferCardProps) => {
           </li>
         ))}
       </ul>
+      {offer.slug === "custom-builds" && (
+        <ContactDialog>
+          <button className="mt-6 inline-flex items-center justify-center rounded-btn bg-brass px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-brass/90">
+            {t("nav.cta")}
+          </button>
+        </ContactDialog>
+      )}
       {offer.slug === "limited-time" && (
         <Link
           to="/courses/image-backwards-engineering/lessons/ai-jewelry-prompt-lab"
-          className="mt-6 inline-flex items-center justify-center rounded-btn bg-brass px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-brass/90"
+          className="mt-6 inline-flex items-center justify-center rounded-btn border border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
         >
           {t("offerCard.viewFree")}
         </Link>

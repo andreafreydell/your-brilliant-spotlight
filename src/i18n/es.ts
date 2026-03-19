@@ -34,9 +34,9 @@ const es: Record<string, string> = {
   "home.highlight.ai.desc": "Usa Lovable, Claude Code, OpenAI Codex, GitHub y Notion con más control.",
 
   // Offers section
-  "home.offers.label": "Ofertas",
-  "home.offers.title": "Elige el camino que te funcione.",
-  "home.offers.subtitle": "Empieza gratis, profundiza con mentoría o agenda una llamada.",
+  "home.offers.label": "Formas de Trabajar",
+  "home.offers.title": "Veamos qué necesitas.",
+  "home.offers.subtitle": "La mayoría empieza con una llamada. También puedes explorar los cursos por tu cuenta.",
 
   // About section (home)
   "home.about.label": "Sobre mí",
@@ -264,27 +264,25 @@ const es: Record<string, string> = {
   "projectCard.viewCaseStudy": "Ver Caso de Estudio",
 
   // Offer data
+  "offer.custom.label": "Recomendado",
+  "offer.custom.title": "Trabaja Conmigo",
+  "offer.custom.price": "Llamada intro gratis",
+  "offer.custom.desc": "15 minutos para mapear tu stack, diagnosticar cuellos de botella y planear tu próximo build.",
+  "offer.custom.h1": "Diagnóstico de flujo y stack",
+  "offer.custom.h2": "Plan de build con alcance",
+  "offer.custom.h3": "Opciones de soporte continuo",
   "offer.limitedTime.label": "Gratis",
   "offer.limitedTime.title": "Empieza Aquí",
   "offer.limitedTime.price": "Disponible ahora",
-  "offer.limitedTime.desc": "Dos cursos base, gratis por tiempo limitado.",
+  "offer.limitedTime.desc": "Dos cursos base, sin compromiso.",
   "offer.limitedTime.h1": "Tech Stack Overview",
   "offer.limitedTime.h2": "Image Backwards Engineering",
-  "offer.limitedTime.h3": "Sin compromiso",
-  "offer.membership.label": "Acceso Completo",
+  "offer.membership.label": "A Tu Ritmo",
   "offer.membership.title": "Mentoría",
-  "offer.membership.price": "$49/mes o $447/año",
-  "offer.membership.desc": "Todos los cursos, futuros lanzamientos y comunidad en un plan.",
-  "offer.membership.h1": "Biblioteca completa",
+  "offer.membership.price": "$49/mes",
+  "offer.membership.desc": "Biblioteca completa y futuros lanzamientos.",
+  "offer.membership.h1": "Todos los cursos incluidos",
   "offer.membership.h2": "Nuevos flujos cada mes",
-  "offer.membership.h3": "Comunidad y hoja de ruta bilingüe",
-  "offer.custom.label": "1-a-1",
-  "offer.custom.title": "Consulta Gratuita",
-  "offer.custom.price": "15 minutos",
-  "offer.custom.desc": "Hablemos de tu stack, alcance o siguiente paso.",
-  "offer.custom.h1": "Diagnóstico de flujo",
-  "offer.custom.h2": "Recomendación de stack",
-  "offer.custom.h3": "Siguiente paso personalizado",
 
   // FAQ data
   "faq.q1": "¿Por dónde debería empezar si soy nuevo en esto?",

@@ -34,9 +34,9 @@ const en: Record<string, string> = {
   "home.highlight.ai.desc": "Use Lovable, Claude Code, OpenAI Codex, GitHub, and Notion with more control.",
 
   // Offers section
-  "home.offers.label": "Offers",
-  "home.offers.title": "Pick the path that fits.",
-  "home.offers.subtitle": "Start free, go deeper with mentorship, or book a call.",
+  "home.offers.label": "Ways to Work",
+  "home.offers.title": "Let's figure out what you need.",
+  "home.offers.subtitle": "Most people start with a call. You can also explore the courses on your own.",
 
   // About section (home)
   "home.about.label": "About",
@@ -264,27 +264,25 @@ const en: Record<string, string> = {
   "projectCard.viewCaseStudy": "View Case Study",
 
   // Offer data
+  "offer.custom.label": "Recommended",
+  "offer.custom.title": "Work With Me",
+  "offer.custom.price": "Free intro call",
+  "offer.custom.desc": "A 15-minute call to map your stack, diagnose bottlenecks, and plan your next build.",
+  "offer.custom.h1": "Workflow and stack diagnosis",
+  "offer.custom.h2": "Scoped build plan",
+  "offer.custom.h3": "Ongoing support options",
   "offer.limitedTime.label": "Free",
   "offer.limitedTime.title": "Start Here",
   "offer.limitedTime.price": "Available now",
-  "offer.limitedTime.desc": "Two foundation courses, free for a limited time.",
+  "offer.limitedTime.desc": "Two foundation courses, no commitment.",
   "offer.limitedTime.h1": "Tech Stack Overview",
   "offer.limitedTime.h2": "Image Backwards Engineering",
-  "offer.limitedTime.h3": "No commitment required",
-  "offer.membership.label": "Full Access",
+  "offer.membership.label": "Self-Paced",
   "offer.membership.title": "Mentorship",
-  "offer.membership.price": "$49/month or $447/year",
-  "offer.membership.desc": "Every course, future drops, and community access in one plan.",
-  "offer.membership.h1": "Full course library",
+  "offer.membership.price": "$49/mo",
+  "offer.membership.desc": "Full course library and future drops.",
+  "offer.membership.h1": "Every course included",
   "offer.membership.h2": "New workflows monthly",
-  "offer.membership.h3": "Community and bilingual roadmap",
-  "offer.custom.label": "1-on-1",
-  "offer.custom.title": "Free Consultation",
-  "offer.custom.price": "15 minutes",
-  "offer.custom.desc": "Talk through your stack, scope, or next step.",
-  "offer.custom.h1": "Workflow diagnosis",
-  "offer.custom.h2": "Stack recommendation",
-  "offer.custom.h3": "Personalized next step",
 
   // FAQ data
   "faq.q1": "Where should I start if I am new to this?",
