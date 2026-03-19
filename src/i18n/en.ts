@@ -21,17 +21,17 @@ const en: Record<string, string> = {
   "home.hero.subtitle": "Courses, workflow blueprints, and custom support for founders who want faster output, tighter brand control, and a cleaner AI stack.",
   "home.hero.cta1": "Start With the Free Courses",
   "home.hero.cta2": "See the Course Path",
-  "home.hero.whatYouCanBuild": "What you can build",
+  "home.hero.whatYouCanBuild": "Real flows people are building",
 
   // Hero highlights
-  "home.highlight.content": "Content systems",
-  "home.highlight.content.desc": "Plan, generate, review, and package content faster.",
-  "home.highlight.image": "Image workflows",
-  "home.highlight.image.desc": "Create cleaner, more on-brand visual outputs at scale.",
-  "home.highlight.website": "Website production",
-  "home.highlight.website.desc": "Turn brand inputs into pages, assets, and launch-ready copy.",
-  "home.highlight.ai": "AI build stack",
-  "home.highlight.ai.desc": "Use Lovable, Claude Code, OpenAI Codex, GitHub, and Notion with more control.",
+  "home.highlight.content": "Weekly LinkedIn + newsletter",
+  "home.highlight.content.desc": "Draft 5 posts and a newsletter in one sitting using a prompt chain — then review, edit, and schedule in under an hour.",
+  "home.highlight.image": "Product photography for e-commerce",
+  "home.highlight.image.desc": "Generate styled product shots, lifestyle mockups, and catalog-ready images without a photographer or studio day.",
+  "home.highlight.website": "Launch a landing page in a weekend",
+  "home.highlight.website.desc": "Go from brand brief to a live site with copy, images, and a contact form — no developer, no back-and-forth.",
+  "home.highlight.ai": "Internal ops dashboard",
+  "home.highlight.ai.desc": "Connect Notion, GitHub, and AI tools into one workspace where your team tracks tasks, content, and launches from a single view.",
 
   // Offers section
   "home.offers.label": "Offers",
