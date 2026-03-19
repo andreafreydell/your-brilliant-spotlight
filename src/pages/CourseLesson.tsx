@@ -5,11 +5,13 @@ import ScrollReveal from "@/components/ScrollReveal";
 import Divider from "@/components/Divider";
 import { getCourseBySlug } from "@/data/coursePlatform";
 import { getLessonByCourseAndSlug } from "@/data/courseLessons";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CourseLesson = () => {
   const { slug, lessonSlug } = useParams<{ slug: string; lessonSlug: string }>();
   const course = getCourseBySlug(slug || "");
   const lesson = getLessonByCourseAndSlug(slug || "", lessonSlug || "");
+  const { t } = useLanguage();
 
   if (!course || !lesson) {
     return <Navigate to="/courses" replace />;
@@ -24,7 +26,7 @@ const CourseLesson = () => {
             className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft size={16} />
-            Back to {course.title}
+            {t("courseLesson.backTo")} {course.title}
           </Link>
         </ScrollReveal>
 
@@ -45,7 +47,7 @@ const CourseLesson = () => {
               </p>
               <div className="flex flex-wrap gap-3">
                 <Button asChild className="rounded-btn">
-                  <Link to={`/courses/${course.slug}`}>Back to Course</Link>
+                  <Link to={`/courses/${course.slug}`}>{t("courseLesson.backToCourse")}</Link>
                 </Button>
                 <Button asChild variant="outline" className="rounded-btn">
                   <a href={lesson.meetingUrl} target="_blank" rel="noreferrer">
@@ -59,15 +61,15 @@ const CourseLesson = () => {
           <ScrollReveal delay={80}>
             <aside className="rounded-card border border-border bg-card p-8">
               <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                Lesson Overview
+                {t("courseLesson.lessonOverview")}
               </p>
               <div className="space-y-6">
                 <div>
-                  <p className="mb-2 text-sm font-medium">Linked course</p>
+                  <p className="mb-2 text-sm font-medium">{t("courseLesson.linkedCourse")}</p>
                   <p className="text-muted-foreground">{course.title}</p>
                 </div>
                 <div>
-                  <p className="mb-2 text-sm font-medium">What this lesson gives you</p>
+                  <p className="mb-2 text-sm font-medium">{t("courseLesson.whatThisGives")}</p>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     {lesson.objectives.map((objective) => (
                       <li key={objective} className="flex items-start gap-3">
@@ -78,7 +80,7 @@ const CourseLesson = () => {
                   </ul>
                 </div>
                 <div>
-                  <p className="mb-2 text-sm font-medium">Tools used</p>
+                  <p className="mb-2 text-sm font-medium">{t("courseLesson.toolsUsed")}</p>
                   <div className="flex flex-wrap gap-2">
                     {lesson.tools.map((tool) => (
                       <span key={tool} className="rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground">
@@ -98,10 +100,10 @@ const CourseLesson = () => {
           <ScrollReveal>
             <div className="mb-8 max-w-3xl">
               <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                Action Items
+                {t("courseLesson.actionItems")}
               </p>
               <h2 className="mb-4 text-3xl font-normal" style={{ letterSpacing: "-0.01em" }}>
-                What to do after the lesson
+                {t("courseLesson.whatToDo")}
               </h2>
             </div>
           </ScrollReveal>
@@ -110,7 +112,7 @@ const CourseLesson = () => {
               <ScrollReveal key={item} delay={index * 60}>
                 <div className="rounded-card border border-border bg-card p-6">
                   <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                    Action {index + 1}
+                    {t("courseLesson.action")} {index + 1}
                   </p>
                   <p className="font-light leading-relaxed text-muted-foreground">{item}</p>
                 </div>
@@ -125,10 +127,10 @@ const CourseLesson = () => {
           <ScrollReveal>
             <div className="mb-8 max-w-3xl">
               <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                Detailed Notes
+                {t("courseLesson.detailedNotes")}
               </p>
               <h2 className="mb-4 text-3xl font-normal" style={{ letterSpacing: "-0.01em" }}>
-                Full breakdown of the class
+                {t("courseLesson.fullBreakdown")}
               </h2>
             </div>
           </ScrollReveal>
@@ -183,10 +185,10 @@ const CourseLesson = () => {
           <ScrollReveal>
             <div className="mb-8 max-w-3xl">
               <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                Prompt Library
+                {t("courseLesson.promptLibrary")}
               </p>
               <h2 className="mb-4 text-3xl font-normal" style={{ letterSpacing: "-0.01em" }}>
-                Source prompts and adaptation notes
+                {t("courseLesson.sourcePrompts")}
               </h2>
             </div>
           </ScrollReveal>
@@ -215,10 +217,10 @@ const CourseLesson = () => {
           <ScrollReveal>
             <div className="rounded-card border border-border bg-card p-8">
               <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                Assignment
+                {t("courseLesson.assignment")}
               </p>
               <h2 className="mb-5 text-3xl font-normal" style={{ letterSpacing: "-0.01em" }}>
-                What to build next
+                {t("courseLesson.whatToBuild")}
               </h2>
               <ul className="space-y-3">
                 {lesson.assignment.map((item) => (
@@ -235,7 +237,7 @@ const CourseLesson = () => {
             <ScrollReveal delay={80}>
               <div className="rounded-card border border-border bg-card p-8">
                 <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                  Next Up
+                  {t("courseLesson.nextUp")}
                 </p>
                 <p className="font-light leading-relaxed text-muted-foreground">{lesson.nextUp}</p>
               </div>
