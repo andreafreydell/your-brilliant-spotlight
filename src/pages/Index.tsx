@@ -21,7 +21,7 @@ import Divider from "@/components/Divider";
 import ProjectCardMini from "@/components/ProjectCardMini";
 import ContactDialog from "@/components/ContactDialog";
 import OfferCard from "@/components/OfferCard";
-import { getFeaturedProjects } from "@/data/projects";
+import { projects } from "@/data/projects";
 import { courses, offers } from "@/data/coursePlatform";
 import { useLanguage } from "@/contexts/LanguageContext";
 
