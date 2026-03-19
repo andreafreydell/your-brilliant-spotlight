@@ -36,19 +36,12 @@ const heroHighlightKeys = [
   { titleKey: "home.highlight.ai", descKey: "home.highlight.ai.desc", icon: Bot, accent: "bg-seafoam text-seafoam-foreground" },
 ];
 
-const foundationPath: Array<{
-  slug: string;
-  labelKey?: string;
-  label: string;
-  outcomeKey: string;
-  icon: LucideIcon;
-  accent: string;
-}> = [
-  { slug: "tech-stack-overview", label: "Tech Stack Overview", outcomeKey: "home.foundation.techStack", icon: Compass, accent: "bg-seafoam text-seafoam-foreground" },
-  { slug: "image-backwards-engineering", label: "Image Backwards Engineering", outcomeKey: "home.foundation.imageBackwards", icon: Image, accent: "bg-blush-peach text-blush-peach-foreground" },
-  { slug: "key-business-files", label: "Key Business Files", outcomeKey: "home.foundation.keyFiles", icon: FolderTree, accent: "bg-sky text-sky-foreground" },
-  { slug: "lovable-crash-course", label: "Lovable Crash Course", outcomeKey: "home.foundation.lovable", icon: Workflow, accent: "bg-lavender text-lavender-foreground" },
-  { slug: "github-claude-workflow", label: "GitHub + Claude Code + OpenAI Codex Workflow", outcomeKey: "home.foundation.github", icon: Code2, accent: "bg-seafoam text-seafoam-foreground" },
+const foundationSteps = [
+  { slug: "tech-stack-overview", labelKey: "home.foundation.techStack" },
+  { slug: "image-backwards-engineering", labelKey: "home.foundation.imageBackwards" },
+  { slug: "key-business-files", labelKey: "home.foundation.keyFiles" },
+  { slug: "lovable-crash-course", labelKey: "home.foundation.lovable" },
+  { slug: "github-claude-workflow", labelKey: "home.foundation.github" },
 ];
 
 const advancedLanes: Array<{
@@ -56,29 +49,10 @@ const advancedLanes: Array<{
   descKey: string;
   icon: LucideIcon;
   accent: string;
-  courseItems: Array<{ slug: string; label: string }>;
 }> = [
-  {
-    titleKey: "home.advanced.content", descKey: "home.advanced.content.desc", icon: MessageSquare, accent: "bg-lavender text-lavender-foreground",
-    courseItems: [
-      { slug: "ig-content-builder-3pillar", label: "3-Pillar Instagram Content Builder" },
-      { slug: "personal-instagram-content-builder", label: "Personal Instagram Content Builder" },
-    ],
-  },
-  {
-    titleKey: "home.advanced.brand", descKey: "home.advanced.brand.desc", icon: Palette, accent: "bg-blush-peach text-blush-peach-foreground",
-    courseItems: [
-      { slug: "on-brand-automation", label: "On-Brand Automation" },
-      { slug: "wide-range-image-generation", label: "Wide-Range Image Generation" },
-    ],
-  },
-  {
-    titleKey: "home.advanced.website", descKey: "home.advanced.website.desc", icon: Monitor, accent: "bg-sky text-sky-foreground",
-    courseItems: [
-      { slug: "website-photo-generator", label: "Website Photo Generator" },
-      { slug: "website-content-generator", label: "Website Content Generator" },
-    ],
-  },
+  { titleKey: "home.advanced.content", descKey: "home.advanced.content.desc", icon: MessageSquare, accent: "bg-lavender text-lavender-foreground" },
+  { titleKey: "home.advanced.brand", descKey: "home.advanced.brand.desc", icon: Palette, accent: "bg-blush-peach text-blush-peach-foreground" },
+  { titleKey: "home.advanced.website", descKey: "home.advanced.website.desc", icon: Monitor, accent: "bg-sky text-sky-foreground" },
 ];
 
 const Index = () => {
