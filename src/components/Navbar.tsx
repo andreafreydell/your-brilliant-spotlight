@@ -1,19 +1,23 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ContactDialog from "@/components/ContactDialog";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const navLinks = [
-  { to: "/courses", label: "Courses" },
-  { to: "/work", label: "Proof" },
-  { to: "/services", label: "Ways to Work" },
-  { to: "/about", label: "About" },
+  { to: "/courses", key: "nav.courses" },
+  { to: "/work", key: "nav.proof" },
+  { to: "/services", key: "nav.services" },
+  { to: "/about", key: "nav.about" },
 ];
 
 const Navbar = () => {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const toggleLang = () => setLanguage(language === "en" ? "es" : "en");
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
@@ -31,11 +35,19 @@ const Navbar = () => {
                 location.pathname.startsWith(link.to) ? "text-foreground" : "text-muted-foreground"
               }`}
             >
-              {link.label}
+              {t(link.key)}
             </Link>
           ))}
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            aria-label="Switch language"
+          >
+            <Globe size={16} />
+            {language === "en" ? "ES" : "EN"}
+          </button>
           <ContactDialog>
-            <Button className="rounded-btn text-sm font-medium">Book Free Consultation</Button>
+            <Button className="rounded-btn text-sm font-medium">{t("nav.cta")}</Button>
           </ContactDialog>
         </div>
 
@@ -59,12 +71,19 @@ const Navbar = () => {
                 location.pathname.startsWith(link.to) ? "text-foreground" : "text-muted-foreground"
               }`}
             >
-              {link.label}
+              {t(link.key)}
             </Link>
           ))}
+          <button
+            onClick={toggleLang}
+            className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
+          >
+            <Globe size={16} />
+            {language === "en" ? "Español" : "English"}
+          </button>
           <ContactDialog>
             <Button className="w-full rounded-btn text-sm font-medium" onClick={() => setMobileOpen(false)}>
-              Book Free Consultation
+              {t("nav.cta")}
             </Button>
           </ContactDialog>
         </div>
