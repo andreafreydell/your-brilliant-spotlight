@@ -40,7 +40,7 @@ export const offers: Offer[] = [
     label: "Recommended",
     title: "Work With Me",
     price: "Free intro call",
-    description: "A 15-minute call to map your stack, diagnose bottlenecks, and plan your next build.",
+    description: "15 minutes to map your stack, find the bottleneck, and plan what to build next.",
     highlights: [
       "Workflow and stack diagnosis",
       "Scoped build plan",
@@ -50,9 +50,9 @@ export const offers: Offer[] = [
   {
     slug: "limited-time",
     label: "Free",
-    title: "Start Here",
+    title: "Steal My Systems",
     price: "Available now",
-    description: "Two foundation courses, no commitment.",
+    description: "Two foundation systems, free — no strings.",
     highlights: [
       "Tech Stack Overview",
       "Image Backwards Engineering",
@@ -61,28 +61,28 @@ export const offers: Offer[] = [
   {
     slug: "membership",
     label: "Self-Paced",
-    title: "Mentorship",
+    title: "Copy My Workflows",
     price: "$49/mo",
-    description: "Full course library and future drops.",
+    description: "Every system I build, current and future.",
     highlights: [
-      "Every course included",
+      "Full system library",
       "New workflows monthly",
     ],
   },
 ];
 
 export const platformStats = [
-  { value: "11", label: "courses and workflow builds" },
-  { value: "2", label: "foundation courses currently free for a limited time" },
-  { value: "1+", label: "new membership release each month" },
+  { value: "11", label: "workflow systems" },
+  { value: "2", label: "free foundation systems to start" },
+  { value: "1+", label: "new system drop each month" },
   { value: "2", label: "tracks: foundations and advanced" },
 ];
 
 export const trustBullets = [
-  "Start with the first two foundations, both currently free for a limited time",
+  "Start with two free foundation systems — no commitment",
   "Built for non-technical founders and lean teams",
-  "Membership includes the full current library plus future releases",
-  "Free consultation available when the catalog is not the right fit",
+  "Copy My Workflows includes the full library plus future releases",
+  "Free call available when the systems aren't the right fit",
 ];
 
 export const homeFaqs = [
