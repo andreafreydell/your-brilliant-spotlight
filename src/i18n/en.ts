@@ -35,8 +35,8 @@ const en: Record<string, string> = {
 
   // Offers section
   "home.offers.label": "Offers",
-  "home.offers.title": "Start with the offer that fits how fast you want to move.",
-  "home.offers.subtitle": "Begin with the limited-time free courses, unlock the full library, or book direct support if you want help choosing the right build.",
+  "home.offers.title": "Pick the path that fits.",
+  "home.offers.subtitle": "Start free, go deeper with mentorship, or book a call.",
 
   // About section (home)
   "home.about.label": "About",
