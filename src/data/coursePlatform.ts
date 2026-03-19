@@ -37,41 +37,38 @@ const LIMITED_TIME_NOTE = "Currently free for a limited time.";
 export const offers: Offer[] = [
   {
     slug: "limited-time",
-    label: "Limited-Time Offer",
-    title: "Steps 1 and 2 Are Currently Free",
+    label: "Free",
+    title: "Start Here",
     price: "Available now",
-    description:
-      "The Tech Stack Overview and Image Backwards Engineering are currently free for a limited time, giving you the clearest place to start.",
+    description: "Two foundation courses, free for a limited time.",
     highlights: [
-      "Start with stack clarity before moving into creative execution",
-      "Learn how to break strong visuals into repeatable decisions",
-      "Best starting point for founders building from zero",
+      "Tech Stack Overview",
+      "Image Backwards Engineering",
+      "No commitment required",
     ],
   },
   {
     slug: "membership",
-    label: "Best Value",
-    title: "Membership",
+    label: "Full Access",
+    title: "Mentorship",
     price: "$49/month or $447/year",
-    description:
-      "Get the full current library, future releases, and at least one new workflow drop every month in one subscription.",
+    description: "Every course, future drops, and community access in one plan.",
     highlights: [
-      "All current courses and workflows",
-      "Future releases included",
-      "Community access and bilingual roadmap",
+      "Full course library",
+      "New workflows monthly",
+      "Community and bilingual roadmap",
     ],
   },
   {
     slug: "custom-builds",
-    label: "Custom Support",
-    title: "Free 15-Minute Consultation",
-    price: "Talk through your use case",
-    description:
-      "For founders who want help choosing the right workflow, cleaning up their stack, or scoping a more custom build.",
+    label: "1-on-1",
+    title: "Free Consultation",
+    price: "15 minutes",
+    description: "Talk through your stack, scope, or next step.",
     highlights: [
       "Workflow diagnosis",
-      "Recommended stack and scope",
-      "Course, membership, or custom-build recommendation",
+      "Stack recommendation",
+      "Personalized next step",
     ],
   },
 ];
