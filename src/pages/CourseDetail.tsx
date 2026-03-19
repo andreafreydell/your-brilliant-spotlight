@@ -6,6 +6,7 @@ import Divider from "@/components/Divider";
 import CourseCard from "@/components/CourseCard";
 import ContactDialog from "@/components/ContactDialog";
 import { getCourseBySlug, getRelatedCourses } from "@/data/coursePlatform";
+import { getLessonsForCourse } from "@/data/courseLessons";
 
 const CourseDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -16,6 +17,7 @@ const CourseDetail = () => {
   }
 
   const relatedCourses = getRelatedCourses(course);
+  const lessons = getLessonsForCourse(course.slug);
 
   return (
     <main className="pt-24 pb-16 px-6">
@@ -52,6 +54,11 @@ const CourseDetail = () => {
                     {course.limitedTimeNote ? "Get Free Access" : "Request Access"}
                   </a>
                 </Button>
+                {lessons.length > 0 && (
+                  <Button asChild variant="outline" size="lg" className="rounded-btn">
+                    <Link to={`/courses/${course.slug}/lessons/${lessons[0].slug}`}>View Course Content</Link>
+                  </Button>
+                )}
                 <ContactDialog>
                   <Button variant="outline" size="lg" className="rounded-btn">
                     Book Free Consultation
@@ -131,6 +138,22 @@ const CourseDetail = () => {
 
           <ScrollReveal delay={80}>
             <section>
+              {lessons.length > 0 && (
+                <div className="rounded-card border border-border bg-card p-8 mb-6">
+                  <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3">Course Content</p>
+                  <div className="space-y-4">
+                    {lessons.map((lesson) => (
+                      <div key={lesson.slug} className="rounded-card border border-border bg-background/70 p-5">
+                        <h2 className="text-xl font-medium mb-2">{lesson.title}</h2>
+                        <p className="text-sm text-muted-foreground leading-relaxed mb-4">{lesson.summary}</p>
+                        <Button asChild variant="outline" className="rounded-btn">
+                          <Link to={`/courses/${course.slug}/lessons/${lesson.slug}`}>Open lesson page</Link>
+                        </Button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
               <p className="text-xs uppercase tracking-[0.22em] text-muted-foreground mb-3">What they walk away with</p>
               <div className="rounded-card border border-border bg-card p-8 mb-6">
                 <ul className="space-y-3">

@@ -12,6 +12,7 @@ import {
   Workflow,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import andreaPortrait from "@/assets/andrea-portrait.webp";
 import { Button } from "@/components/ui/button";
 import {
   Accordion,
@@ -230,6 +231,56 @@ const Index = () => {
                 <OfferCard offer={offer} />
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <Divider />
+
+      <section className="px-6 py-20 md:py-24">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid items-start gap-12 md:grid-cols-5">
+            <ScrollReveal className="md:col-span-2">
+              <img
+                src={andreaPortrait}
+                alt="Andrea Freydell - founder and operator"
+                className="aspect-[3/4] w-full rounded-btn object-cover"
+                loading="lazy"
+              />
+            </ScrollReveal>
+
+            <ScrollReveal delay={100} className="md:col-span-3">
+              <div>
+                <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">About</p>
+                <h2 className="mb-6 text-4xl font-light md:text-5xl" style={{ letterSpacing: "-0.02em" }}>
+                  Andrea Freydell
+                </h2>
+                <div className="space-y-4 font-light leading-relaxed text-muted-foreground">
+                  <p>
+                    Andrea is a founder and operator building at the intersection of brand, systems, ecommerce, and
+                    AI-assisted execution. She leads GEA and Grupo Ambiente and builds practical workflow systems for
+                    founders who want more speed, control, and better output.
+                  </p>
+                  <p>
+                    Her background spans management thinking, brand building, digital strategy, and creative direction.
+                    The result is a point of view that stays useful for non-technical founders: serious enough to build
+                    from, clear enough to act on.
+                  </p>
+                  <p>
+                    The work is designed for people who care about quality, brand consistency, and execution, but do
+                    not want to build their business around a bloated team or a chaotic tool stack.
+                  </p>
+                </div>
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                  <Button asChild className="rounded-btn">
+                    <Link to="/about">Read More About Andrea</Link>
+                  </Button>
+                  <Button asChild variant="outline" className="rounded-btn">
+                    <Link to="/work">See Proof</Link>
+                  </Button>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>

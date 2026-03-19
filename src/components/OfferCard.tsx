@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import type { Offer } from "@/data/coursePlatform";
 
@@ -26,6 +27,14 @@ const OfferCard = ({ offer, className }: OfferCardProps) => (
         </li>
       ))}
     </ul>
+    {offer.slug === "limited-time" && (
+      <Link
+        to="/courses/image-backwards-engineering/lessons/ai-jewelry-prompt-lab"
+        className="mt-6 inline-flex items-center justify-center rounded-btn bg-brass px-5 py-3 text-sm font-medium text-background transition-colors hover:bg-brass/90"
+      >
+        View Free Course Content
+      </Link>
+    )}
   </div>
 );
 
