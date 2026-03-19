@@ -27,115 +27,53 @@ import ContactDialog from "@/components/ContactDialog";
 import OfferCard from "@/components/OfferCard";
 import { getFeaturedProjects } from "@/data/projects";
 import { courses, homeFaqs, offers } from "@/data/coursePlatform";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const heroHighlights: Array<{
-  title: string;
-  description: string;
-  icon: LucideIcon;
-  accent: string;
-}> = [
-  {
-    title: "Content systems",
-    description: "Plan, generate, review, and package content faster.",
-    icon: MessageSquare,
-    accent: "bg-lavender text-lavender-foreground",
-  },
-  {
-    title: "Image workflows",
-    description: "Create cleaner, more on-brand visual outputs at scale.",
-    icon: Image,
-    accent: "bg-blush-peach text-blush-peach-foreground",
-  },
-  {
-    title: "Website production",
-    description: "Turn brand inputs into pages, assets, and launch-ready copy.",
-    icon: Monitor,
-    accent: "bg-sky text-sky-foreground",
-  },
-  {
-    title: "AI build stack",
-    description: "Use Lovable, Claude Code, OpenAI Codex, GitHub, and Notion with more control.",
-    icon: Bot,
-    accent: "bg-seafoam text-seafoam-foreground",
-  },
+const heroHighlightKeys = [
+  { titleKey: "home.highlight.content", descKey: "home.highlight.content.desc", icon: MessageSquare, accent: "bg-lavender text-lavender-foreground" },
+  { titleKey: "home.highlight.image", descKey: "home.highlight.image.desc", icon: Image, accent: "bg-blush-peach text-blush-peach-foreground" },
+  { titleKey: "home.highlight.website", descKey: "home.highlight.website.desc", icon: Monitor, accent: "bg-sky text-sky-foreground" },
+  { titleKey: "home.highlight.ai", descKey: "home.highlight.ai.desc", icon: Bot, accent: "bg-seafoam text-seafoam-foreground" },
 ];
 
 const foundationPath: Array<{
   slug: string;
+  labelKey?: string;
   label: string;
-  outcome: string;
+  outcomeKey: string;
   icon: LucideIcon;
   accent: string;
 }> = [
-  {
-    slug: "tech-stack-overview",
-    label: "Tech Stack Overview",
-    outcome: "Choose the right tools first.",
-    icon: Compass,
-    accent: "bg-seafoam text-seafoam-foreground",
-  },
-  {
-    slug: "image-backwards-engineering",
-    label: "Image Backwards Engineering",
-    outcome: "Reverse-engineer strong visuals and adapt them to your brand.",
-    icon: Image,
-    accent: "bg-blush-peach text-blush-peach-foreground",
-  },
-  {
-    slug: "key-business-files",
-    label: "Key Business Files",
-    outcome: "Organize the inputs AI needs.",
-    icon: FolderTree,
-    accent: "bg-sky text-sky-foreground",
-  },
-  {
-    slug: "lovable-crash-course",
-    label: "Lovable Crash Course",
-    outcome: "Prototype useful interfaces faster.",
-    icon: Workflow,
-    accent: "bg-lavender text-lavender-foreground",
-  },
-  {
-    slug: "github-claude-workflow",
-    label: "GitHub + Claude Code + OpenAI Codex Workflow",
-    outcome: "Build with Claude Code, OpenAI Codex, and GitHub with more safety and less chaos.",
-    icon: Code2,
-    accent: "bg-seafoam text-seafoam-foreground",
-  },
+  { slug: "tech-stack-overview", label: "Tech Stack Overview", outcomeKey: "home.foundation.techStack", icon: Compass, accent: "bg-seafoam text-seafoam-foreground" },
+  { slug: "image-backwards-engineering", label: "Image Backwards Engineering", outcomeKey: "home.foundation.imageBackwards", icon: Image, accent: "bg-blush-peach text-blush-peach-foreground" },
+  { slug: "key-business-files", label: "Key Business Files", outcomeKey: "home.foundation.keyFiles", icon: FolderTree, accent: "bg-sky text-sky-foreground" },
+  { slug: "lovable-crash-course", label: "Lovable Crash Course", outcomeKey: "home.foundation.lovable", icon: Workflow, accent: "bg-lavender text-lavender-foreground" },
+  { slug: "github-claude-workflow", label: "GitHub + Claude Code + OpenAI Codex Workflow", outcomeKey: "home.foundation.github", icon: Code2, accent: "bg-seafoam text-seafoam-foreground" },
 ];
 
 const advancedLanes: Array<{
-  title: string;
-  description: string;
+  titleKey: string;
+  descKey: string;
   icon: LucideIcon;
   accent: string;
   courseItems: Array<{ slug: string; label: string }>;
 }> = [
   {
-    title: "Content Systems",
-    description: "Turn strategy into a repeatable publishing engine.",
-    icon: MessageSquare,
-    accent: "bg-lavender text-lavender-foreground",
+    titleKey: "home.advanced.content", descKey: "home.advanced.content.desc", icon: MessageSquare, accent: "bg-lavender text-lavender-foreground",
     courseItems: [
       { slug: "ig-content-builder-3pillar", label: "3-Pillar Instagram Content Builder" },
       { slug: "personal-instagram-content-builder", label: "Personal Instagram Content Builder" },
     ],
   },
   {
-    title: "Brand and Image Control",
-    description: "Scale visuals without losing brand consistency.",
-    icon: Palette,
-    accent: "bg-blush-peach text-blush-peach-foreground",
+    titleKey: "home.advanced.brand", descKey: "home.advanced.brand.desc", icon: Palette, accent: "bg-blush-peach text-blush-peach-foreground",
     courseItems: [
       { slug: "on-brand-automation", label: "On-Brand Automation" },
       { slug: "wide-range-image-generation", label: "Wide-Range Image Generation" },
     ],
   },
   {
-    title: "Website Systems",
-    description: "Ship stronger website visuals and copy with less friction.",
-    icon: Monitor,
-    accent: "bg-sky text-sky-foreground",
+    titleKey: "home.advanced.website", descKey: "home.advanced.website.desc", icon: Monitor, accent: "bg-sky text-sky-foreground",
     courseItems: [
       { slug: "website-photo-generator", label: "Website Photo Generator" },
       { slug: "website-content-generator", label: "Website Content Generator" },
@@ -144,6 +82,7 @@ const advancedLanes: Array<{
 ];
 
 const Index = () => {
+  const { t } = useLanguage();
   const featuredProjects = getFeaturedProjects().slice(0, 3);
   const courseMap = new Map(courses.map((course) => [course.slug, course]));
 
@@ -156,32 +95,31 @@ const Index = () => {
             <div>
               <ScrollReveal>
                 <p className="mb-5 text-xs uppercase tracking-[0.24em] text-muted-foreground">
-                  AI Workflow Library
+                  {t("home.hero.label")}
                 </p>
                 <h1
                   className="mb-6 max-w-4xl text-4xl font-light leading-tight md:text-6xl lg:text-7xl"
                   style={{ letterSpacing: "-0.03em" }}
                 >
-                  Build content, image, and website systems without hiring a full team first.
+                  {t("home.hero.title")}
                 </h1>
               </ScrollReveal>
               <ScrollReveal delay={120}>
                 <p className="mb-8 max-w-2xl text-lg font-light leading-relaxed text-muted-foreground md:text-xl">
-                  Courses, workflow blueprints, and custom support for founders who want faster output,
-                  tighter brand control, and a cleaner AI stack.
+                  {t("home.hero.subtitle")}
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={220}>
                 <div className="flex flex-col gap-4 sm:flex-row">
                   <Button asChild size="lg" className="rounded-btn text-sm font-medium">
-                    <a href="#offers">Start With the Free Courses</a>
+                    <a href="#offers">{t("home.hero.cta1")}</a>
                   </Button>
                   <Button asChild variant="outline" size="lg" className="rounded-btn text-sm font-medium">
-                    <a href="#course-roadmap">See the Course Path</a>
+                    <a href="#course-roadmap">{t("home.hero.cta2")}</a>
                   </Button>
                   <ContactDialog>
                     <Button variant="outline" size="lg" className="rounded-btn text-sm font-medium">
-                      Book Free Consultation
+                      {t("nav.cta")}
                     </Button>
                   </ContactDialog>
                 </div>
@@ -190,17 +128,17 @@ const Index = () => {
 
             <ScrollReveal delay={280}>
               <div className="rounded-card border border-border bg-card/90 p-8 backdrop-blur-sm">
-                <p className="mb-6 text-xs uppercase tracking-[0.22em] text-muted-foreground">What you can build</p>
+                <p className="mb-6 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.hero.whatYouCanBuild")}</p>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  {heroHighlights.map((item) => {
+                  {heroHighlightKeys.map((item) => {
                     const Icon = item.icon;
                     return (
-                      <div key={item.title} className="rounded-card border border-border bg-background/70 p-5">
+                      <div key={item.titleKey} className="rounded-card border border-border bg-background/70 p-5">
                         <div className={`mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full ${item.accent}`}>
                           <Icon size={18} />
                         </div>
-                        <h2 className="mb-2 text-lg font-medium">{item.title}</h2>
-                        <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+                        <h2 className="mb-2 text-lg font-medium">{t(item.titleKey)}</h2>
+                        <p className="text-sm leading-relaxed text-muted-foreground">{t(item.descKey)}</p>
                       </div>
                     );
                   })}
@@ -215,13 +153,12 @@ const Index = () => {
         <div className="container mx-auto">
           <ScrollReveal>
             <div className="mb-8 max-w-2xl">
-              <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">Offers</p>
+              <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.offers.label")}</p>
               <h2 className="mb-4 text-3xl font-normal md:text-4xl" style={{ letterSpacing: "-0.01em" }}>
-                Start with the offer that fits how fast you want to move.
+                {t("home.offers.title")}
               </h2>
               <p className="font-light leading-relaxed text-muted-foreground">
-                Begin with the limited-time free courses, unlock the full library, or book direct support if you
-                want help choosing the right build.
+                {t("home.offers.subtitle")}
               </p>
             </div>
           </ScrollReveal>
@@ -251,32 +188,21 @@ const Index = () => {
 
             <ScrollReveal delay={100} className="md:col-span-3">
               <div>
-                <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">About</p>
+                <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.about.label")}</p>
                 <h2 className="mb-6 text-4xl font-light md:text-5xl" style={{ letterSpacing: "-0.02em" }}>
                   Andrea Freydell
                 </h2>
                 <div className="space-y-4 font-light leading-relaxed text-muted-foreground">
-                  <p>
-                    Andrea is a founder and operator building at the intersection of brand, systems, ecommerce, and
-                    AI-assisted execution. She leads GEA and Grupo Ambiente and builds practical workflow systems for
-                    founders who want more speed, control, and better output.
-                  </p>
-                  <p>
-                    Her background spans management thinking, brand building, digital strategy, and creative direction.
-                    The result is a point of view that stays useful for non-technical founders: serious enough to build
-                    from, clear enough to act on.
-                  </p>
-                  <p>
-                    The work is designed for people who care about quality, brand consistency, and execution, but do
-                    not want to build their business around a bloated team or a chaotic tool stack.
-                  </p>
+                  <p>{t("home.about.bio1")}</p>
+                  <p>{t("home.about.bio2")}</p>
+                  <p>{t("home.about.bio3")}</p>
                 </div>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                   <Button asChild className="rounded-btn">
-                    <Link to="/about">Read More About Andrea</Link>
+                    <Link to="/about">{t("home.about.readMore")}</Link>
                   </Button>
                   <Button asChild variant="outline" className="rounded-btn">
-                    <Link to="/work">See Proof</Link>
+                    <Link to="/work">{t("home.about.seeProof")}</Link>
                   </Button>
                 </div>
               </div>
@@ -291,13 +217,12 @@ const Index = () => {
         <div className="container mx-auto">
           <ScrollReveal>
             <div className="mb-12 max-w-3xl">
-              <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">Course Roadmap</p>
+              <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.roadmap.label")}</p>
               <h2 className="mb-4 text-3xl font-normal md:text-4xl" style={{ letterSpacing: "-0.01em" }}>
-                Start with the foundations. Then choose the system you want live next.
+                {t("home.roadmap.title")}
               </h2>
               <p className="font-light leading-relaxed text-muted-foreground">
-                The foundations give you stack clarity, cleaner inputs, and better decision-making. From there,
-                the advanced workflows take you into content, image, and website execution.
+                {t("home.roadmap.subtitle")}
               </p>
             </div>
           </ScrollReveal>
@@ -305,8 +230,8 @@ const Index = () => {
           <div className="grid gap-6 lg:grid-cols-[0.95fr_auto_1.05fr] lg:items-start">
             <ScrollReveal>
               <div className="rounded-card border border-border bg-card p-8">
-                <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">Foundations</p>
-                <h3 className="mb-6 text-2xl font-medium">Build the base first</h3>
+                <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.roadmap.foundations")}</p>
+                <h3 className="mb-6 text-2xl font-medium">{t("home.roadmap.buildBase")}</h3>
                 <div className="space-y-4">
                   {foundationPath.map((step, index) => {
                     const course = courseMap.get(step.slug);
@@ -325,14 +250,14 @@ const Index = () => {
                             </div>
                             <div>
                               <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                                Step {index + 1}
+                                {t("home.roadmap.step")} {index + 1}
                               </p>
                               <h4 className="text-lg font-medium">{step.label}</h4>
                             </div>
                           </div>
                           <p className="text-sm font-medium text-muted-foreground">{course.priceLabel}</p>
                         </div>
-                        <p className="text-sm leading-relaxed text-muted-foreground">{step.outcome}</p>
+                        <p className="text-sm leading-relaxed text-muted-foreground">{t(step.outcomeKey)}</p>
                         {course.limitedTimeNote && (
                           <p className="mt-4 inline-flex rounded-full bg-brass/10 px-3 py-1 text-xs font-medium text-brass">
                             {course.limitedTimeNote}
@@ -354,10 +279,10 @@ const Index = () => {
             <div className="space-y-6">
               <ScrollReveal delay={80}>
                 <div className="rounded-card border border-border bg-card p-8">
-                  <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">Advanced Workflows</p>
-                  <h3 className="mb-3 text-2xl font-medium">Choose the outcome you want</h3>
+                  <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.roadmap.advanced")}</p>
+                  <h3 className="mb-3 text-2xl font-medium">{t("home.roadmap.chooseOutcome")}</h3>
                   <p className="font-light leading-relaxed text-muted-foreground">
-                    Once the foundations are in place, pick the lane that helps you ship the next visible result.
+                    {t("home.roadmap.advancedSubtitle")}
                   </p>
                 </div>
               </ScrollReveal>
@@ -366,15 +291,15 @@ const Index = () => {
                 const Icon = lane.icon;
 
                 return (
-                  <ScrollReveal key={lane.title} delay={index * 90 + 120}>
+                  <ScrollReveal key={lane.titleKey} delay={index * 90 + 120}>
                     <div className="rounded-card border border-border bg-card p-8">
                       <div className="mb-5 flex items-center gap-4">
                         <div className={`inline-flex h-12 w-12 items-center justify-center rounded-full ${lane.accent}`}>
                           <Icon size={20} />
                         </div>
                         <div>
-                          <h4 className="text-xl font-medium">{lane.title}</h4>
-                          <p className="text-sm text-muted-foreground">{lane.description}</p>
+                          <h4 className="text-xl font-medium">{t(lane.titleKey)}</h4>
+                          <p className="text-sm text-muted-foreground">{t(lane.descKey)}</p>
                         </div>
                       </div>
                       <div className="grid gap-3 sm:grid-cols-2">
@@ -394,7 +319,7 @@ const Index = () => {
           <ScrollReveal delay={120}>
             <div className="mt-10 flex justify-center">
               <Button asChild variant="outline" size="lg" className="rounded-btn">
-                <Link to="/courses">View Full Course Library</Link>
+                <Link to="/courses">{t("home.roadmap.viewAll")}</Link>
               </Button>
             </div>
           </ScrollReveal>
@@ -408,20 +333,19 @@ const Index = () => {
           <ScrollReveal>
             <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
               <div className="max-w-3xl">
-                <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">Proof</p>
+                <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.proof.label")}</p>
                 <h2 className="mb-4 text-3xl font-normal md:text-4xl" style={{ letterSpacing: "-0.01em" }}>
-                  See the taste, systems thinking, and execution behind the work.
+                  {t("home.proof.title")}
                 </h2>
                 <p className="font-light leading-relaxed text-muted-foreground">
-                  Browse case studies across brand, digital, strategy, and AI systems if you want a deeper look at how
-                  the work gets applied in the real world.
+                  {t("home.proof.subtitle")}
                 </p>
               </div>
               <Link
                 to="/work"
                 className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
-                View all proof <ArrowRight size={16} />
+                {t("home.proof.viewAll")} <ArrowRight size={16} />
               </Link>
             </div>
           </ScrollReveal>
@@ -441,20 +365,15 @@ const Index = () => {
         <div className="container mx-auto grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <ScrollReveal>
             <div className="rounded-card border border-border bg-card p-8 md:p-10">
-              <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">Need help choosing?</p>
+              <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.cta.label")}</p>
               <h2 className="mb-4 text-3xl font-normal" style={{ letterSpacing: "-0.01em" }}>
-                Start self-serve or book direct support.
+                {t("home.cta.title")}
               </h2>
               <p className="mb-6 font-light leading-relaxed text-muted-foreground">
-                Most founders start with the free courses or a standalone workflow. If your stack is messy or the use
-                case is more specific, book a free consultation and map the fastest path forward.
+                {t("home.cta.subtitle")}
               </p>
               <ul className="mb-8 space-y-3">
-                {[
-                  "Standalone courses for focused implementation",
-                  "Membership for the full library and future releases",
-                  "Custom guidance when you need a business-specific build",
-                ].map((item) => (
+                {[t("home.cta.bullet1"), t("home.cta.bullet2"), t("home.cta.bullet3")].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-muted-foreground">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brass" />
                     <span>{item}</span>
@@ -463,11 +382,11 @@ const Index = () => {
               </ul>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Button asChild className="rounded-btn">
-                  <Link to="/courses">Browse Courses</Link>
+                  <Link to="/courses">{t("home.cta.browseCourses")}</Link>
                 </Button>
                 <ContactDialog>
                   <Button variant="outline" className="rounded-btn">
-                    Book Free Consultation
+                    {t("nav.cta")}
                   </Button>
                 </ContactDialog>
               </div>
@@ -476,7 +395,7 @@ const Index = () => {
 
           <ScrollReveal delay={100}>
             <div className="rounded-card border border-border bg-card p-8 md:p-10">
-              <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">FAQ</p>
+              <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.faq.label")}</p>
               <Accordion type="single" collapsible className="w-full">
                 {homeFaqs.map((faq, index) => (
                   <AccordionItem key={faq.question} value={`faq-${index}`}>
