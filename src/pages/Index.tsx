@@ -18,10 +18,10 @@ import {
 } from "@/components/ui/accordion";
 import ScrollReveal from "@/components/ScrollReveal";
 import Divider from "@/components/Divider";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCardMini from "@/components/ProjectCardMini";
 import ContactDialog from "@/components/ContactDialog";
 import OfferCard from "@/components/OfferCard";
-import { getFeaturedProjects } from "@/data/projects";
+import { projects } from "@/data/projects";
 import { courses, offers } from "@/data/coursePlatform";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -53,7 +53,7 @@ const advancedLanes: Array<{
 
 const Index = () => {
   const { t } = useLanguage();
-  const featuredProjects = getFeaturedProjects().slice(0, 3);
+  const allProjects = projects;
   const courseMap = new Map(courses.map((course) => [course.slug, course]));
 
   return (
@@ -296,10 +296,10 @@ const Index = () => {
               </Link>
             </div>
           </ScrollReveal>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {featuredProjects.map((project, index) => (
-              <ScrollReveal key={project.slug} delay={index * 70}>
-                <ProjectCard {...project} />
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
+            {allProjects.map((project, index) => (
+              <ScrollReveal key={project.slug} delay={Math.min(index * 40, 400)}>
+                <ProjectCardMini {...project} />
               </ScrollReveal>
             ))}
           </div>
