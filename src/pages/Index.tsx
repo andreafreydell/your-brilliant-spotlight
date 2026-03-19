@@ -149,31 +149,6 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="offers" className="px-6 pb-10">
-        <div className="container mx-auto">
-          <ScrollReveal>
-            <div className="mb-8 max-w-2xl">
-              <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.offers.label")}</p>
-              <h2 className="mb-4 text-3xl font-normal md:text-4xl" style={{ letterSpacing: "-0.01em" }}>
-                {t("home.offers.title")}
-              </h2>
-              <p className="font-light leading-relaxed text-muted-foreground">
-                {t("home.offers.subtitle")}
-              </p>
-            </div>
-          </ScrollReveal>
-          <div className="grid gap-6 lg:grid-cols-3">
-            {offers.map((offer, index) => (
-              <ScrollReveal key={offer.slug} delay={index * 80}>
-                <OfferCard offer={offer} />
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <Divider />
-
       <section className="px-6 py-20 md:py-24">
         <div className="container mx-auto max-w-5xl">
           <div className="grid items-start gap-12 md:grid-cols-5">
@@ -207,6 +182,31 @@ const Index = () => {
                 </div>
               </div>
             </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      <Divider />
+
+      <section id="offers" className="px-6 pb-10">
+        <div className="container mx-auto">
+          <ScrollReveal>
+            <div className="mb-8 max-w-2xl">
+              <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.offers.label")}</p>
+              <h2 className="mb-4 text-3xl font-normal md:text-4xl" style={{ letterSpacing: "-0.01em" }}>
+                {t("home.offers.title")}
+              </h2>
+              <p className="font-light leading-relaxed text-muted-foreground">
+                {t("home.offers.subtitle")}
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="grid gap-6 lg:grid-cols-3">
+            {offers.map((offer, index) => (
+              <ScrollReveal key={offer.slug} delay={index * 80}>
+                <OfferCard offer={offer} />
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
