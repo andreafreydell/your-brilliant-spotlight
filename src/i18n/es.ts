@@ -35,8 +35,8 @@ const es: Record<string, string> = {
 
   // Offers section
   "home.offers.label": "Ofertas",
-  "home.offers.title": "Empieza con la oferta que se ajuste a la velocidad con la que quieres avanzar.",
-  "home.offers.subtitle": "Comienza con los cursos gratuitos por tiempo limitado, desbloquea la biblioteca completa o reserva soporte directo si necesitas ayuda eligiendo el proyecto correcto.",
+  "home.offers.title": "Elige el camino que te funcione.",
+  "home.offers.subtitle": "Empieza gratis, profundiza con mentoría o agenda una llamada.",
 
   // About section (home)
   "home.about.label": "Sobre mí",
