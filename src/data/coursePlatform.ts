@@ -36,39 +36,37 @@ const LIMITED_TIME_NOTE = "Currently free for a limited time.";
 
 export const offers: Offer[] = [
   {
+    slug: "custom-builds",
+    label: "Recommended",
+    title: "Work With Me",
+    price: "Free intro call",
+    description: "A 15-minute call to map your stack, diagnose bottlenecks, and plan your next build.",
+    highlights: [
+      "Workflow and stack diagnosis",
+      "Scoped build plan",
+      "Ongoing support options",
+    ],
+  },
+  {
     slug: "limited-time",
     label: "Free",
     title: "Start Here",
     price: "Available now",
-    description: "Two foundation courses, free for a limited time.",
+    description: "Two foundation courses, no commitment.",
     highlights: [
       "Tech Stack Overview",
       "Image Backwards Engineering",
-      "No commitment required",
     ],
   },
   {
     slug: "membership",
-    label: "Full Access",
+    label: "Self-Paced",
     title: "Mentorship",
-    price: "$49/month or $447/year",
-    description: "Every course, future drops, and community access in one plan.",
+    price: "$49/mo",
+    description: "Full course library and future drops.",
     highlights: [
-      "Full course library",
+      "Every course included",
       "New workflows monthly",
-      "Community and bilingual roadmap",
-    ],
-  },
-  {
-    slug: "custom-builds",
-    label: "1-on-1",
-    title: "Free Consultation",
-    price: "15 minutes",
-    description: "Talk through your stack, scope, or next step.",
-    highlights: [
-      "Workflow diagnosis",
-      "Stack recommendation",
-      "Personalized next step",
     ],
   },
 ];
