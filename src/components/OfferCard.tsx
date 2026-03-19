@@ -14,14 +14,14 @@ const offerTranslationMap: Record<string, { label: string; title: string; price:
     title: "offer.limitedTime.title",
     price: "offer.limitedTime.price",
     desc: "offer.limitedTime.desc",
-    highlights: ["offer.limitedTime.h1", "offer.limitedTime.h2", "offer.limitedTime.h3"],
+    highlights: ["offer.limitedTime.h1", "offer.limitedTime.h2"],
   },
   membership: {
     label: "offer.membership.label",
     title: "offer.membership.title",
     price: "offer.membership.price",
     desc: "offer.membership.desc",
-    highlights: ["offer.membership.h1", "offer.membership.h2", "offer.membership.h3"],
+    highlights: ["offer.membership.h1", "offer.membership.h2"],
   },
   "custom-builds": {
     label: "offer.custom.label",
