@@ -296,10 +296,10 @@ const Index = () => {
               </Link>
             </div>
           </ScrollReveal>
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {featuredProjects.map((project, index) => (
-              <ScrollReveal key={project.slug} delay={index * 70}>
-                <ProjectCard {...project} />
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5">
+            {allProjects.map((project, index) => (
+              <ScrollReveal key={project.slug} delay={Math.min(index * 40, 400)}>
+                <ProjectCardMini {...project} />
               </ScrollReveal>
             ))}
           </div>
