@@ -1,4 +1,6 @@
 import { createContext, useContext, useState, useCallback, type ReactNode } from "react";
+import enTranslations from "@/i18n/en";
+import esTranslations from "@/i18n/es";
 
 export type Language = "en" | "es";
 
@@ -9,25 +11,6 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
-
-// Lazy-load translations
-let translations: Record<Language, Record<string, string>> = { en: {}, es: {} };
-let loaded = false;
-
-async function loadTranslations() {
-  const [en, es] = await Promise.all([
-    import("@/i18n/en").then((m) => m.default),
-    import("@/i18n/es").then((m) => m.default),
-  ]);
-  translations = { en, es };
-  loaded = true;
-}
-
-// Eagerly start loading
-const loadPromise = loadTranslations();
-
-import enTranslations from "@/i18n/en";
-import esTranslations from "@/i18n/es";
 
 const allTranslations: Record<Language, Record<string, string>> = {
   en: enTranslations,
