@@ -34,9 +34,9 @@ const es: Record<string, string> = {
   "home.highlight.ai.desc": "Usa Lovable, Claude Code, OpenAI Codex, GitHub y Notion con más control.",
 
   // Offers section
-  "home.offers.label": "Ofertas",
-  "home.offers.title": "Elige el camino que te funcione.",
-  "home.offers.subtitle": "Empieza gratis, profundiza con mentoría o agenda una llamada.",
+  "home.offers.label": "Formas de Trabajar",
+  "home.offers.title": "Veamos qué necesitas.",
+  "home.offers.subtitle": "La mayoría empieza con una llamada. También puedes explorar los cursos por tu cuenta.",
 
   // About section (home)
   "home.about.label": "Sobre mí",
