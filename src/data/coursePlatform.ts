@@ -10,6 +10,8 @@ export interface Course {
   slug: string;
   title: string;
   track: CourseTrack;
+  contextNote?: string;
+  isFreeAccess?: boolean;
   hook: string;
   summary: string;
   audience: string;
@@ -488,6 +490,47 @@ export const courses: Course[] = [
         title: "Editing and Packaging",
         summary: "Review, tighten, and store copy in a reusable format.",
         output: "A final content package.",
+      },
+    ],
+  },
+  {
+    slug: "literal-fina-perfumeria-app-course",
+    title: "Literal Fina Perfumeria App Course",
+    track: "advanced",
+    contextNote: "Internal course for Grupo Ambiente",
+    isFreeAccess: true,
+    hook: "Learn how to run the Literal app, generate a full week of Instagram assets, and handle the review loop without reteaching the workflow every time.",
+    summary:
+      "An operational course built from a live internal training for Grupo Ambiente. It shows how to use the Literal Lovable app, manage the Weekly Planner, review outputs in Drive, post to Instagram, and report the issues that still need manual correction.",
+    audience: "Grupo Ambiente team members and collaborators who manage Literal's content workflow.",
+    priceLabel: "Free Access",
+    prerequisites: [],
+    tools: ["Literal app", "Google Drive", "Instagram", "WhatsApp", "Lovable"],
+    outputs: [
+      "A repeatable weekly content-generation process",
+      "A review and escalation checklist",
+      "A shared repository lesson your team can revisit instead of repeating live training",
+    ],
+    modules: [
+      {
+        title: "System Inputs and Structure",
+        summary: "Understand what the app pulls from Drive, what must stay updated, and how the content folders are organized.",
+        output: "A cleaner setup for source files and generated outputs.",
+      },
+      {
+        title: "Weekly Planner Workflow",
+        summary: "Use auto-fill, generate a full week of content, and push approved assets into Drive.",
+        output: "A weekly production routine that takes about 15 minutes.",
+      },
+      {
+        title: "Review, Posting, and Asset Reuse",
+        summary: "Review generated images, choose what to post, and keep the archive useful instead of disposable.",
+        output: "A practical publishing and storage workflow.",
+      },
+      {
+        title: "Troubleshooting and Feedback Loops",
+        summary: "Know which errors to ignore, which ones to report, and how to keep improving the app with short review cycles.",
+        output: "A debugging and iteration process for the team.",
       },
     ],
   },

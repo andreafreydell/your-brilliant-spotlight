@@ -21,6 +21,9 @@ export interface CourseLesson {
   summary: string;
   meetingUrl: string;
   meetingLabel: string;
+  promptSectionEyebrow?: string;
+  promptSectionTitle?: string;
+  promptSectionDescription?: string;
   objectives: string[];
   tools: string[];
   actionItems: string[];
@@ -31,6 +34,229 @@ export interface CourseLesson {
 }
 
 export const courseLessons: CourseLesson[] = [
+  {
+    courseSlug: "literal-fina-perfumeria-app-course",
+    slug: "literal-app-operations",
+    title: "How to Use the Literal App",
+    eyebrow: "Internal Training",
+    summary:
+      "A practical operations lesson for Grupo Ambiente on running the Literal app, generating weekly Instagram content, reviewing errors, and keeping the workflow documented so the team does not have to relearn it live each time.",
+    meetingUrl: "https://literal.lovable.app",
+    meetingLabel: "Open the Literal app",
+    promptSectionEyebrow: "Resource Library",
+    promptSectionTitle: "Operational resources and templates",
+    promptSectionDescription:
+      "These are the reusable guardrails and templates that came out of the training, so the workflow can be repeated more consistently by the team.",
+    objectives: [
+      "Understand what the Literal app does, what it needs from Drive, and what outputs it creates each week.",
+      "Use the Weekly Planner to generate a full batch of posts, stories, and ads in one session.",
+      "Know how to review the generated assets before posting because the workflow is not fully automatic yet.",
+      "Report issues in a way that makes the next round of app improvements faster and more precise.",
+    ],
+    tools: [
+      "Literal app at literal.lovable.app",
+      "Shared Google Drive folder for Literal",
+      "Instagram mobile app",
+      "WhatsApp for error reporting",
+      "Lovable credits and internal troubleshooting",
+    ],
+    actionItems: [
+      "Verify Instagram login credentials for the Literal account before trying to post from a mobile phone.",
+      "Run the content-generation workflow and log any freezes, missing images, or product-switching errors.",
+      "Send screenshots through WhatsApp when an error appears so the bug can be reproduced and fixed faster.",
+      "Keep a short weekly 15-minute review with Maria Andrea Freydell to share what worked, what broke, and what should be improved next.",
+      "Top up Lovable credits when generation slows down because the account may have run out during image creation.",
+    ],
+    sections: [
+      {
+        title: "Course Context",
+        description:
+          "This lesson comes from an internal Grupo Ambiente training on how Laura can operate the Literal app for Literal Fina Perfumeria without needing a fresh walkthrough every week.",
+        bullets: [
+          "The app is a custom Lovable build made to support Literal's Instagram marketing workflow.",
+          "This course is intentionally being documented as a reusable internal lesson so the process can be reviewed by employees and collaborators later.",
+          "The live app to use is https://literal.lovable.app.",
+        ],
+        note:
+          "The original notes referenced literal.logo.app during the call, but the current working URL provided for this course is literal.lovable.app.",
+      },
+      {
+        title: "What the System Does",
+        description:
+          "The system generates a week of social media content using the product materials stored in Drive, then packages the results into dated folders that are ready for review.",
+        bullets: [
+          "The Weekly Planner creates content for Monday through Saturday.",
+          "Each day can include three content types: post, story, and ad.",
+          "A full weekly run can generate 36 pieces of content across the week.",
+          "The result is stored in a dated Google Drive folder so the team can review and post from there.",
+          "A full batch usually takes around 15 minutes to generate.",
+        ],
+      },
+      {
+        title: "Required Inputs Before You Generate",
+        description:
+          "The app performs best when the source materials in Drive are complete and current. The workflow depends on product information, not only on a single product image.",
+        bullets: [
+          "The shared Google Drive folder for Literal should contain the current catalog PDFs and supporting product imagery.",
+          "Products that are no longer active should be removed from the source material when possible.",
+          "If only a product photo is available, the app can still work, but the result will be weaker because the richer catalog details are missing.",
+          "If new files are added to Drive, use the sync function in the app so it can re-read the updated inputs.",
+        ],
+      },
+      {
+        title: "Main Areas of the App",
+        description:
+          "The training showed two primary tabs and a few support controls that matter for daily operation.",
+        bullets: [
+          "Perfume Content Engine: used for generating or regenerating single pieces of content and testing specific images.",
+          "Weekly Planner: used for batching a full week of outputs much faster.",
+          "Drive buttons: open the relevant folders directly from the app.",
+          "Language switcher: allows content generation in another language if needed.",
+          "Sync button: refreshes the app after changes are made to the Drive source materials.",
+        ],
+      },
+      {
+        title: "Weekly Planner Workflow",
+        description:
+          "The Weekly Planner is the main operating mode for the team because it reduces repetitive daily work and creates a full batch in one sitting.",
+        numbered: [
+          "Open the Weekly Planner tab inside the Literal app.",
+          "Review the selected products or let the planner fill the week automatically.",
+          "Use auto-fill to assign varied product and content types across the calendar.",
+          "Click generate to build the week. This can take around 15 minutes, especially because image creation is the slowest part.",
+          "Wait until the content finishes loading and review the generated cards for each day.",
+          "When the week is ready, load the content to Drive so the team can access the dated output folder.",
+        ],
+        note:
+          "The point is not full automation yet. The point is to reduce the work dramatically while keeping a manual review step before anything gets published.",
+      },
+      {
+        title: "Content Types and Brand Guardrails",
+        description:
+          "The app varies both the visuals and the copy automatically, but it does so inside a set of built-in brand rules that should stay intact unless the workflow owner decides to update them.",
+        bullets: [
+          "Short copy should stay very concise, roughly 90 characters, and start with a direct sensory hook.",
+          "Long copy should use three concrete beats, grounded details, and a tactile close rather than vague poetry.",
+          "The prohibited vocabulary includes unsupported words such as exclusivo, magico, exotico, or artesanal without evidence, plus gendered language like para el or para ella.",
+          "The brand tone is honest, precise, and warm: someone who loves their craft and tells the truth without trying to impress.",
+          "The visual system rotates across multiple archetypes such as monumental bottle, macro ingredient, scented pyramid, ritual intimo, editorial de moda, paisaje de origen, and macro monumental.",
+          "The Literal filter gives the images a more vintage and distinctive feel, and is generally recommended.",
+        ],
+      },
+      {
+        title: "How to Review and Post the Output",
+        description:
+          "The workflow still requires human review. The team should treat the generated files as strong draft assets, not as fully autonomous publishing.",
+        bullets: [
+          "Open the dated Drive folder created by the app and review each day's assets.",
+          "Choose the strongest image or images from the options generated for each content type.",
+          "If one image is wrong but another is usable, keep the usable asset and move forward instead of blocking the whole day.",
+          "Copy the final text into Instagram on mobile and post from the Literal account manually.",
+          "Treat every generated asset as a company asset. Archive, rename, and reuse good outputs rather than deleting them casually.",
+        ],
+      },
+      {
+        title: "Known Limitations and What to Do",
+        description:
+          "The training made it clear that the tool is useful now, but still in a minimally viable stage. Some mistakes are expected and should be handled calmly.",
+        bullets: [
+          "Bottle-switching bug: the system sometimes changes the product packaging in the generated image.",
+          "Credit exhaustion: generation can stall if the Lovable account runs out of credits.",
+          "Occasional freezing: refreshing the page and retrying can solve some stuck generations.",
+          "Repeated or confusing source items in the interface may appear, but they do not necessarily block the workflow.",
+          "The app is not ready for direct Instagram publishing because visual errors still need manual review.",
+        ],
+        note:
+          "If an error persists across more than one attempt, document what product, day, and content type triggered it so the workflow can be corrected rather than guessed at.",
+      },
+      {
+        title: "Escalation and Feedback Loop",
+        description:
+          "The app improves through short weekly feedback cycles. The better the team reports problems, the faster the workflow becomes more automatic.",
+        numbered: [
+          "Take a screenshot when the generation freezes or produces a visible error.",
+          "Send the screenshot through WhatsApp with a short description of what you were generating.",
+          "Mention the exact product involved if the issue is product-specific, such as a bottle-switching problem.",
+          "Share whether the problem resolved after refreshing or regenerating.",
+          "Bring repeated issues into the weekly 15-minute check-in so Maria Andrea Freydell can adjust the parameters or debug the build.",
+        ],
+      },
+      {
+        title: "Roles and Next Automation Steps",
+        description:
+          "The process already saves meaningful time, but there is still room to automate more once the error rate is lower.",
+        bullets: [
+          "Laura is the day-to-day operator for Literal posting.",
+          "Leandro handles ad placement or pauta.",
+          "Maria Andrea Freydell owns the app logic, parameters, and troubleshooting.",
+          "A later phase could connect the content to a scheduler like Later so the team can review the batch and then schedule the week in one move.",
+          "The current goal is operational reliability first, then deeper automation second.",
+        ],
+      },
+    ],
+    prompts: [
+      {
+        title: "Literal Copywriting Parameters",
+        description:
+          "This is the condensed version of the copy guardrails described during the training. Use it when reviewing whether generated text still sounds like Literal.",
+        language: "text",
+        content: `Short copy
+- Around 90 characters
+- Direct sensory hook
+- No setup, fluff, or vague intros
+
+Long copy
+- Three concrete beats
+- Real ingredient, origin, behavior, or person
+- End with a tactile or sensory close
+
+Avoid
+- Unsupported adjectives such as exclusivo, magico, exotico, or artesanal without proof
+- Gendered language such as para el or para ella
+- Empty poetry or generic luxury language
+
+Tone
+- Honest
+- Precise
+- Warm
+- Adult
+- Clear enough to understand
+- Difficult to forget`,
+      },
+      {
+        title: "Error Reporting Template",
+        description:
+          "Use this short structure when sending a problem back to Maria so the debugging loop is specific instead of vague.",
+        language: "text",
+        content: `Issue type:
+Day and content type:
+Product involved:
+What happened:
+Did refresh help:
+Screenshot attached:
+What I need next:`,
+      },
+      {
+        title: "Weekly Review Agenda",
+        description:
+          "A lightweight template for the 15-minute check-in so the team keeps improving the system without turning the review into a long meeting.",
+        language: "text",
+        content: `1. What generated well this week
+2. Which products or image types failed
+3. Any copy issues that repeated
+4. Any Instagram posting friction
+5. Which adjustment should be tested next week`,
+      },
+    ],
+    assignment: [
+      "Generate one full week inside the Weekly Planner and store the output in Drive without deleting the underlying assets.",
+      "Review each day and mark which images are ready, which need regeneration, and which should be reported as bugs.",
+      "Post at least one approved asset manually through Instagram to make sure the end-to-end workflow is clear.",
+      "Bring one repeated issue and one improvement idea into the next weekly review so the course becomes a living internal repository.",
+    ],
+    nextUp:
+      "Next lesson idea: how to turn approved weekly content into a lighter publishing workflow with naming conventions, scheduling rules, and a cleaner archive system.",
+  },
   {
     courseSlug: "image-backwards-engineering",
     slug: "ai-jewelry-prompt-lab",

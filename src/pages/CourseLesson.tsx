@@ -36,10 +36,12 @@ const CourseLesson = () => {
               <p className="mb-4 text-xs uppercase tracking-[0.22em] text-muted-foreground">
                 {lesson.eyebrow}
               </p>
-              <h1
-                className="mb-4 text-4xl font-light md:text-5xl"
-                style={{ letterSpacing: "-0.02em" }}
-              >
+              {course.contextNote && (
+                <p className="mb-4 inline-flex rounded-full bg-sky/15 px-3 py-1 text-xs font-medium text-sky-foreground">
+                  {course.contextNote}
+                </p>
+              )}
+              <h1 className="mb-4 text-4xl font-light md:text-5xl" style={{ letterSpacing: "-0.02em" }}>
                 {lesson.title}
               </h1>
               <p className="mb-6 text-xl font-light leading-relaxed text-muted-foreground">
@@ -185,11 +187,16 @@ const CourseLesson = () => {
           <ScrollReveal>
             <div className="mb-8 max-w-3xl">
               <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                {t("courseLesson.promptLibrary")}
+                {lesson.promptSectionEyebrow ?? t("courseLesson.promptLibrary")}
               </p>
               <h2 className="mb-4 text-3xl font-normal" style={{ letterSpacing: "-0.01em" }}>
-                {t("courseLesson.sourcePrompts")}
+                {lesson.promptSectionTitle ?? t("courseLesson.sourcePrompts")}
               </h2>
+              {lesson.promptSectionDescription && (
+                <p className="font-light leading-relaxed text-muted-foreground">
+                  {lesson.promptSectionDescription}
+                </p>
+              )}
             </div>
           </ScrollReveal>
           <div className="space-y-6">

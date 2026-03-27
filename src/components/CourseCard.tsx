@@ -30,12 +30,21 @@ const CourseCard = ({ course, className }: CourseCardProps) => {
         className
       )}
     >
-      <div className="flex items-start justify-between gap-4 mb-4">
+      <div className="mb-4 flex items-start justify-between gap-4">
         <span className={cn("inline-flex rounded-full px-3 py-1 text-xs font-semibold", trackStyles[course.track])}>
           {trackLabels[course.track]}
         </span>
         <div className="text-right">
-          <span className={cn("text-sm font-medium", course.limitedTimeNote ? "text-brass" : "text-muted-foreground")}>
+          <span
+            className={cn(
+              "text-sm font-medium",
+              course.limitedTimeNote
+                ? "text-brass"
+                : course.isFreeAccess
+                  ? "text-dusty-teal"
+                  : "text-muted-foreground"
+            )}
+          >
             {course.priceLabel}
           </span>
           {course.limitedTimeNote && (
@@ -48,9 +57,14 @@ const CourseCard = ({ course, className }: CourseCardProps) => {
           {course.limitedTimeNote}
         </p>
       )}
-      <h3 className="text-xl font-medium mb-3">{course.title}</h3>
-      <p className="text-sm text-muted-foreground leading-relaxed mb-4">{course.hook}</p>
-      <div className="flex flex-wrap gap-2 mb-5">
+      {course.contextNote && (
+        <p className="mb-4 inline-flex rounded-full bg-sky/15 px-3 py-1 text-xs font-medium text-sky-foreground">
+          {course.contextNote}
+        </p>
+      )}
+      <h3 className="mb-3 text-xl font-medium">{course.title}</h3>
+      <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{course.hook}</p>
+      <div className="mb-5 flex flex-wrap gap-2">
         {course.tools.slice(0, 3).map((tool) => (
           <span key={tool} className="rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground">
             {tool}

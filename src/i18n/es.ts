@@ -202,6 +202,7 @@ const es: Record<string, string> = {
   "courseDetail.atAGlance": "De un vistazo",
   "courseDetail.price": "Precio",
   "courseDetail.bestFor": "Ideal para",
+  "courseDetail.context": "Contexto",
   "courseDetail.tools": "Herramientas",
   "courseDetail.prerequisites": "Prerrequisitos",
   "courseDetail.noPrerequisites": "Sin prerrequisitos.",
