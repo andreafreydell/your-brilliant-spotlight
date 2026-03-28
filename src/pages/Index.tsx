@@ -22,7 +22,7 @@ import ProjectCardMini from "@/components/ProjectCardMini";
 import ContactDialog from "@/components/ContactDialog";
 import OfferCard from "@/components/OfferCard";
 import { projects } from "@/data/projects";
-import { courses, offers } from "@/data/coursePlatform";
+import { getCourses, offers } from "@/data/coursePlatform";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const heroHighlightKeys = [
@@ -52,9 +52,10 @@ const advancedLanes: Array<{
 ];
 
 const Index = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const allProjects = projects;
-  const courseMap = new Map(courses.map((course) => [course.slug, course]));
+  const localizedCourses = getCourses(language);
+  const courseMap = new Map(localizedCourses.map((course) => [course.slug, course]));
 
   return (
     <main>

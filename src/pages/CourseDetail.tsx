@@ -9,17 +9,29 @@ import { getCourseBySlug, getRelatedCourses } from "@/data/coursePlatform";
 import { getLessonsForCourse } from "@/data/courseLessons";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+const localizeLiteralLessonCard = (title: string, summary: string, language: string) => {
+  if (language !== "es") {
+    return { title, summary };
+  }
+
+  return {
+    title: "Como Usar la App de Literal",
+    summary:
+      "Una leccion practica de operaciones para Grupo Ambiente sobre como usar la app de Literal, generar contenido semanal para Instagram, revisar errores y dejar documentado el flujo para que el equipo no tenga que reaprenderlo en vivo cada vez.",
+  };
+};
+
 const CourseDetail = () => {
   const { slug } = useParams<{ slug: string }>();
-  const course = getCourseBySlug(slug || "");
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const course = getCourseBySlug(slug || "", language);
 
   if (!course) {
     return <Navigate to="/courses" replace />;
   }
 
-  const relatedCourses = getRelatedCourses(course);
-  const lessons = getLessonsForCourse(course.slug);
+  const relatedCourses = getRelatedCourses(course, language);
+  const lessons = getLessonsForCourse(course.slug, language);
 
   return (
     <main className="px-6 pt-24 pb-16">
@@ -167,8 +179,16 @@ const CourseDetail = () => {
                   <div className="space-y-4">
                     {lessons.map((lesson) => (
                       <div key={lesson.slug} className="rounded-card border border-border bg-background/70 p-5">
-                        <h2 className="mb-2 text-xl font-medium">{lesson.title}</h2>
-                        <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{lesson.summary}</p>
+                        <h2 className="mb-2 text-xl font-medium">
+                          {lesson.courseSlug === "literal-fina-perfumeria-app-course"
+                            ? localizeLiteralLessonCard(lesson.title, lesson.summary, language).title
+                            : lesson.title}
+                        </h2>
+                        <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                          {lesson.courseSlug === "literal-fina-perfumeria-app-course"
+                            ? localizeLiteralLessonCard(lesson.title, lesson.summary, language).summary
+                            : lesson.summary}
+                        </p>
                         <Button asChild variant="outline" className="rounded-btn">
                           <Link to={`/courses/${course.slug}/lessons/${lesson.slug}`}>{t("courseDetail.openLesson")}</Link>
                         </Button>

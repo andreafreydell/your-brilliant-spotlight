@@ -8,7 +8,7 @@ import CourseCard from "@/components/CourseCard";
 import OfferCard from "@/components/OfferCard";
 import ContactDialog from "@/components/ContactDialog";
 import {
-  courses,
+  getCourses,
   getCoursesByTrack,
   getLimitedTimeCourses,
   offers,
@@ -17,10 +17,11 @@ import {
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Courses = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [activeTrack, setActiveTrack] = useState<CourseTrack | "all">("all");
-  const visibleCourses = useMemo(() => getCoursesByTrack(activeTrack), [activeTrack]);
-  const limitedTimeCourses = getLimitedTimeCourses();
+  const allCourses = useMemo(() => getCourses(language), [language]);
+  const visibleCourses = useMemo(() => getCoursesByTrack(activeTrack, language), [activeTrack, language]);
+  const limitedTimeCourses = getLimitedTimeCourses(language);
 
   const filters: Array<{ key: CourseTrack | "all"; labelKey: string }> = [
     { key: "all", labelKey: "courses.filter.all" },
@@ -82,7 +83,7 @@ const Courses = () => {
             <div>
               <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("courses.browse.label")}</p>
               <h2 className="text-3xl font-normal" style={{ letterSpacing: "-0.01em" }}>
-                {courses.length} {t("courses.browse.suffix")}
+                {allCourses.length} {t("courses.browse.suffix")}
               </h2>
             </div>
             <div className="flex flex-wrap gap-2">

@@ -1,4 +1,7 @@
+import type { Language } from "@/contexts/LanguageContext";
+
 export type CourseTrack = "foundations" | "advanced";
+export type LocalizedText = string | Record<Language, string>;
 
 export interface CourseModule {
   title: string;
@@ -23,6 +26,29 @@ export interface Course {
   modules: CourseModule[];
 }
 
+interface CourseModuleSource {
+  title: LocalizedText;
+  summary: LocalizedText;
+  output: LocalizedText;
+}
+
+interface CourseSource {
+  slug: string;
+  title: LocalizedText;
+  track: CourseTrack;
+  contextNote?: LocalizedText;
+  isFreeAccess?: boolean;
+  hook: LocalizedText;
+  summary: LocalizedText;
+  audience: LocalizedText;
+  priceLabel: LocalizedText;
+  limitedTimeNote?: LocalizedText;
+  prerequisites: LocalizedText[];
+  tools: LocalizedText[];
+  outputs: LocalizedText[];
+  modules: CourseModuleSource[];
+}
+
 export interface Offer {
   slug: string;
   label: string;
@@ -35,6 +61,30 @@ export interface Offer {
 const CLAUDE_CODE_LABEL = "Claude Code + OpenAI Codex (Free Module)";
 const COWORK_LABEL = "Claude Cowork (Now Featuring Free Codex Upgrade)";
 const LIMITED_TIME_NOTE = "Currently free for a limited time.";
+
+const resolveText = (value: LocalizedText, language: Language): string =>
+  typeof value === "string" ? value : value[language];
+
+const resolveCourse = (course: CourseSource, language: Language): Course => ({
+  slug: course.slug,
+  title: resolveText(course.title, language),
+  track: course.track,
+  contextNote: course.contextNote ? resolveText(course.contextNote, language) : undefined,
+  isFreeAccess: course.isFreeAccess,
+  hook: resolveText(course.hook, language),
+  summary: resolveText(course.summary, language),
+  audience: resolveText(course.audience, language),
+  priceLabel: resolveText(course.priceLabel, language),
+  limitedTimeNote: course.limitedTimeNote ? resolveText(course.limitedTimeNote, language) : undefined,
+  prerequisites: course.prerequisites.map((item) => resolveText(item, language)),
+  tools: course.tools.map((item) => resolveText(item, language)),
+  outputs: course.outputs.map((item) => resolveText(item, language)),
+  modules: course.modules.map((module) => ({
+    title: resolveText(module.title, language),
+    summary: resolveText(module.summary, language),
+    output: resolveText(module.output, language),
+  })),
+});
 
 export const offers: Offer[] = [
   {
@@ -110,7 +160,7 @@ export const homeFaqs = [
   },
 ];
 
-export const courses: Course[] = [
+const courseCatalog: CourseSource[] = [
   {
     slug: "tech-stack-overview",
     title: "The Tech Stack Overview",
@@ -495,55 +545,134 @@ export const courses: Course[] = [
   },
   {
     slug: "literal-fina-perfumeria-app-course",
-    title: "Literal Fina Perfumeria App Course",
+    title: {
+      en: "Literal Content System",
+      es: "Sistema de Contenido Literal",
+    },
     track: "advanced",
-    contextNote: "Internal course for Grupo Ambiente",
+    contextNote: {
+      en: "Internal course for Grupo Ambiente",
+      es: "Curso interno para Grupo Ambiente",
+    },
     isFreeAccess: true,
-    hook: "Learn how to run the Literal app, generate a full week of Instagram assets, and handle the review loop without reteaching the workflow every time.",
-    summary:
-      "An operational course built from a live internal training for Grupo Ambiente. It shows how to use the Literal Lovable app, manage the Weekly Planner, review outputs in Drive, post to Instagram, and report the issues that still need manual correction.",
-    audience: "Grupo Ambiente team members and collaborators who manage Literal's content workflow.",
-    priceLabel: "Free Access",
+    hook: {
+      en: "Learn how to run the Literal app, generate a full week of Instagram assets, and handle the review loop without reteaching the workflow every time.",
+      es: "Aprende a usar la app de Literal, generar una semana completa de assets para Instagram y manejar el circuito de revision sin tener que volver a ensenar el proceso cada vez.",
+    },
+    summary: {
+      en: "An operational course built from a live internal training for Grupo Ambiente. It shows how to use the Literal Lovable app, manage the Weekly Planner, review outputs in Drive, post to Instagram, and report the issues that still need manual correction.",
+      es: "Un sistema operativo interno construido a partir de una capacitacion en vivo para Grupo Ambiente. Muestra como usar la app de Literal en Lovable, manejar el Weekly Planner, revisar resultados en Drive, publicar en Instagram y reportar los errores que todavia requieren correccion manual.",
+    },
+    audience: {
+      en: "Grupo Ambiente team members and collaborators who manage Literal's content workflow.",
+      es: "Miembros del equipo de Grupo Ambiente y colaboradores que gestionan el flujo de contenido de Literal.",
+    },
+    priceLabel: {
+      en: "Free Access",
+      es: "Acceso Gratuito",
+    },
     prerequisites: [],
-    tools: ["Literal app", "Google Drive", "Instagram", "WhatsApp", "Lovable"],
+    tools: [
+      { en: "Literal app", es: "App de Literal" },
+      "Google Drive",
+      "Instagram",
+      "WhatsApp",
+      "Lovable",
+    ],
     outputs: [
-      "A repeatable weekly content-generation process",
-      "A review and escalation checklist",
-      "A shared repository lesson your team can revisit instead of repeating live training",
+      {
+        en: "A repeatable weekly content-generation process",
+        es: "Un proceso repetible para generar contenido semanal",
+      },
+      {
+        en: "A review and escalation checklist",
+        es: "Una lista de revision y escalamiento",
+      },
+      {
+        en: "A shared repository lesson your team can revisit instead of repeating live training",
+        es: "Una leccion compartida que el equipo puede revisar sin repetir la capacitacion en vivo",
+      },
     ],
     modules: [
       {
-        title: "System Inputs and Structure",
-        summary: "Understand what the app pulls from Drive, what must stay updated, and how the content folders are organized.",
-        output: "A cleaner setup for source files and generated outputs.",
+        title: {
+          en: "System Inputs and Structure",
+          es: "Insumos y Estructura del Sistema",
+        },
+        summary: {
+          en: "Understand what the app pulls from Drive, what must stay updated, and how the content folders are organized.",
+          es: "Entiende que toma la app desde Drive, que debe mantenerse actualizado y como se organizan las carpetas de contenido.",
+        },
+        output: {
+          en: "A cleaner setup for source files and generated outputs.",
+          es: "Una configuracion mas clara para archivos fuente y resultados generados.",
+        },
       },
       {
-        title: "Weekly Planner Workflow",
-        summary: "Use auto-fill, generate a full week of content, and push approved assets into Drive.",
-        output: "A weekly production routine that takes about 15 minutes.",
+        title: {
+          en: "Weekly Planner Workflow",
+          es: "Flujo del Weekly Planner",
+        },
+        summary: {
+          en: "Use auto-fill, generate a full week of content, and push approved assets into Drive.",
+          es: "Usa auto-fill, genera una semana completa de contenido y sube los assets aprobados a Drive.",
+        },
+        output: {
+          en: "A weekly production routine that takes about 15 minutes.",
+          es: "Una rutina semanal de produccion que toma alrededor de 15 minutos.",
+        },
       },
       {
-        title: "Review, Posting, and Asset Reuse",
-        summary: "Review generated images, choose what to post, and keep the archive useful instead of disposable.",
-        output: "A practical publishing and storage workflow.",
+        title: {
+          en: "Review, Posting, and Asset Reuse",
+          es: "Revision, Publicacion y Reuso de Assets",
+        },
+        summary: {
+          en: "Review generated images, choose what to post, and keep the archive useful instead of disposable.",
+          es: "Revisa las imagenes generadas, elige que publicar y conserva el archivo como un recurso util en vez de desechable.",
+        },
+        output: {
+          en: "A practical publishing and storage workflow.",
+          es: "Un flujo practico de publicacion y almacenamiento.",
+        },
       },
       {
-        title: "Troubleshooting and Feedback Loops",
-        summary: "Know which errors to ignore, which ones to report, and how to keep improving the app with short review cycles.",
-        output: "A debugging and iteration process for the team.",
+        title: {
+          en: "Troubleshooting and Feedback Loops",
+          es: "Resolucion de Errores y Ciclos de Feedback",
+        },
+        summary: {
+          en: "Know which errors to ignore, which ones to report, and how to keep improving the app with short review cycles.",
+          es: "Sabe que errores ignorar, cuales reportar y como seguir mejorando la app con ciclos cortos de revision.",
+        },
+        output: {
+          en: "A debugging and iteration process for the team.",
+          es: "Un proceso de depuracion e iteracion para el equipo.",
+        },
       },
     ],
   },
 ];
 
-export const getCoursesByTrack = (track: CourseTrack | "all") =>
-  track === "all" ? courses : courses.filter((course) => course.track === track);
+export const getCourses = (language: Language = "en") =>
+  courseCatalog.map((course) => resolveCourse(course, language));
 
-export const getCourseBySlug = (slug: string) =>
-  courses.find((course) => course.slug === slug);
+export const courses: Course[] = getCourses("en");
 
-export const getLimitedTimeCourses = () =>
-  courses.filter((course) => Boolean(course.limitedTimeNote));
+export const getCoursesByTrack = (track: CourseTrack | "all", language: Language = "en") => {
+  const localizedCourses = getCourses(language);
+  return track === "all" ? localizedCourses : localizedCourses.filter((course) => course.track === track);
+};
 
-export const getRelatedCourses = (course: Course) =>
-  courses.filter((item) => item.track === course.track && item.slug !== course.slug).slice(0, 3);
+export const getCourseBySlug = (slug: string, language: Language = "en") => {
+  const course = courseCatalog.find((item) => item.slug === slug);
+  return course ? resolveCourse(course, language) : undefined;
+};
+
+export const getLimitedTimeCourses = (language: Language = "en") =>
+  getCourses(language).filter((course) => Boolean(course.limitedTimeNote));
+
+export const getRelatedCourses = (course: Course, language: Language = "en") =>
+  getCourses(language)
+    .filter((item) => item.track === course.track && item.slug !== course.slug)
+    .slice(0, 3);
