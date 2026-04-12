@@ -31,7 +31,7 @@ const CourseDetail = () => {
   }
 
   const relatedCourses = getRelatedCourses(course, language);
-  const lessons = getLessonsForCourse(course.slug, language);
+  const lessons = getLessonsForCourse(course.slug);
 
   return (
     <main className="px-6 pt-24 pb-16">
