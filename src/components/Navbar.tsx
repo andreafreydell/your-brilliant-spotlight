@@ -6,10 +6,10 @@ import ContactDialog from "@/components/ContactDialog";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const navLinks = [
-  { to: "/courses", key: "nav.courses" },
-  { to: "/work", key: "nav.proof" },
-  { to: "/services", key: "nav.services" },
+  { to: "/work", key: "nav.work" },
   { to: "/about", key: "nav.about" },
+  { to: "/services", key: "nav.services" },
+  { to: "/contact", key: "nav.contact" },
 ];
 
 const Navbar = () => {

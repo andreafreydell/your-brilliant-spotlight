@@ -1,97 +1,70 @@
 const es: Record<string, string> = {
   // Nav
-  "nav.courses": "Sistemas",
-  "nav.proof": "Portafolio",
-  "nav.services": "Servicios",
+  "nav.work": "Trabajo",
   "nav.about": "Sobre mí",
-  "nav.cta": "Agenda una Llamada Gratis",
+  "nav.services": "Servicios",
+  "nav.contact": "Contacto",
+  "nav.courses": "Sistemas",
+  "nav.cta": "Conversemos",
 
   // Footer
-  "footer.tagline": "Sistemas de flujos de trabajo con IA para fundadores que se mueven rápido y les importa la calidad.",
+  "footer.tagline": "Arquitectura organizacional — estrategia, marca, digital e IA.",
   "footer.email": "Correo",
   "footer.rights": "Todos los derechos reservados.",
 
   // Contact Dialog
   "contact.title": "Hablemos",
-  "contact.description": "Cuéntame qué estás construyendo y dónde estás atorado. Te apunto en la dirección correcta.",
+  "contact.description": "Cuéntame en qué estás trabajando y dónde necesitas claridad. Te apunto en la dirección correcta.",
 
   // Home Hero
-  "home.hero.label": "Para fundadores que construyen",
-  "home.hero.title": "Construyo tus sistemas de IA contigo.",
-  "home.hero.subtitle": "Flujos de contenido, imagen y web — construidos con el mismo stack que uso para mis propios negocios. Roba mis sistemas o déjame construir los tuyos.",
-  "home.hero.cta1": "Agenda una Llamada Gratis",
-  "home.hero.cta2": "Roba Mis Sistemas",
-  "home.hero.whatYouCanBuild": "Lo que te ayudo a construir",
-
-  // Hero highlights
-  "home.highlight.content": "Motores de contenido",
-  "home.highlight.content.desc": "Sistemas de publicación repetibles, no posts sueltos.",
-  "home.highlight.image": "Pipelines de imagen",
-  "home.highlight.image.desc": "Visuales on-brand a escala — sin ruleta de prompts.",
-  "home.highlight.website": "Sistemas web",
-  "home.highlight.website.desc": "Páginas, copy y assets — del brief al lanzamiento.",
-  "home.highlight.ai": "Setup de stack IA",
-  "home.highlight.ai.desc": "Las herramientas y flujos exactos que uso cada día, configurados para tu negocio.",
-
-  // Offers section
-  "home.offers.label": "Formas de Trabajar",
-  "home.offers.title": "La mayoría empieza con una llamada.",
-  "home.offers.subtitle": "Cuéntame dónde estás atorado. Te digo qué construir — y si me necesitas a mí o solo mis sistemas.",
+  "home.hero.title": "Arquitectura organizacional — estrategia, marca, digital e IA.",
+  "home.hero.subtitle": "Diseño y construyo sistemas operativos para negocios que les importa cómo funcionan. Desde infraestructura de marca hasta flujos asistidos por IA — con el pensamiento estratégico para conectarlos.",
+  "home.hero.cta1": "Ver el Trabajo",
+  "home.hero.cta2": "Conversemos",
 
   // About section (home)
-  "home.about.label": "Quién construye esto",
-  "home.about.bio1": "Andrea es fundadora y operadora al frente de GEA y Grupo Ambiente. Construye los mismos sistemas de flujos de trabajo con IA que enseña — contenido, imagen, web y operaciones — y los usa para manejar negocios reales todos los días.",
-  "home.about.bio2": "Su experiencia abarca consultoría de gestión, construcción de marca, estrategia digital y dirección creativa. Trabaja con fundadores que les importa la calidad y quieren moverse más rápido sin un equipo inflado.",
-  "home.about.bio3": "",
+  "home.about.bio1": "Andrea es fundadora y operadora al frente de GEA y Grupo Ambiente. Su trabajo abarca consultoría de gestión, construcción de marca, estrategia digital, dirección creativa y operaciones asistidas por IA — aplicado a negocios reales todos los días.",
+  "home.about.bio2": "Trabaja con organizaciones que les importa la calidad, la consistencia de marca y la ejecución — y les ayuda a construir los sistemas para moverse más rápido sin un equipo inflado.",
   "home.about.readMore": "Más Sobre Andrea",
-  "home.about.seeProof": "Ver el Trabajo",
 
-  // Steal My System (formerly Course Roadmap)
-  "home.roadmap.label": "Roba Mi Sistema",
-  "home.roadmap.title": "El playbook exacto que uso para manejar dos negocios con IA.",
-  "home.roadmap.subtitle": "Empieza con las bases — son gratis. Luego copia los flujos que realmente uso para contenido, marca y web.",
-  "home.roadmap.phase1": "Empieza aquí — Gratis",
-  "home.roadmap.foundations": "Primero las bases",
-  "home.roadmap.phase2": "Luego copia estos",
-  "home.roadmap.advanced": "Copia Mis Flujos",
-  "home.roadmap.viewAll": "Ver Todos los Sistemas",
-
-  // Foundation path outcomes
-  "home.foundation.techStack": "Ve las herramientas exactas que uso y por qué.",
-  "home.foundation.imageBackwards": "Ingeniería inversa de visuales fuertes.",
-  "home.foundation.keyFiles": "Configura los archivos que la IA necesita.",
-  "home.foundation.lovable": "Construye interfaces sin código.",
-  "home.foundation.github": "Publica con seguridad usando control de versiones.",
-
-  // Advanced lanes (Copy My Workflows)
-  "home.advanced.content": "Sistema de Contenido",
-  "home.advanced.content.desc": "El motor de publicación que corro cada semana.",
-  "home.advanced.brand": "Sistema de Marca e Imagen",
-  "home.advanced.brand.desc": "Cómo genero visuales on-brand a escala.",
-  "home.advanced.website": "Sistema Web",
-  "home.advanced.website.desc": "Del brief a páginas en vivo — mi flujo completo.",
-
-  // Proof section (home)
-  "home.proof.label": "Portafolio",
-  "home.proof.title": "Esto no es teoría. Aquí está el trabajo.",
-  "home.proof.subtitle": "Proyectos reales en marca, digital, estrategia e IA — mostrando el pensamiento de sistemas y ejecución detrás de todo lo que construyo y enseño.",
+  // Proof / Portfolio section (home)
+  "home.proof.label": "Trabajo Seleccionado",
+  "home.proof.title": "El trabajo habla por sí mismo.",
+  "home.proof.subtitle": "Proyectos en estrategia, marca, digital e IA — mostrando el pensamiento de sistemas y la ejecución detrás de todo.",
   "home.proof.viewAll": "Ver todo el trabajo",
 
+  // Services section (home — light)
+  "home.services.label": "Capacidades",
+  "home.services.title": "Lo que traigo a la mesa.",
+  "home.services.viewAll": "Más sobre servicios",
+  "home.cap.arch": "Arquitectura Organizacional con IA",
+  "home.cap.arch.desc": "Diseño de sistemas operativos, flujos de trabajo y capas asistidas por IA que permiten a equipos lean operar a escala.",
+  "home.cap.strategy": "Estrategia y Operaciones",
+  "home.cap.strategy.desc": "Marco financiero, decisiones de crecimiento y claridad operativa antes de la ejecución.",
+  "home.cap.brand": "Marca y Dirección Creativa",
+  "home.cap.brand.desc": "Calidad de marca como input operativo — sistemas visuales, dirección creativa y mejor gusto integrado en los flujos.",
+  "home.cap.digital": "Sistemas Digitales",
+  "home.cap.digital.desc": "Pensamiento web, de contenido y conversión — rutas prácticas de la idea a la interfaz.",
+
   // CTA section (home)
-  "home.cta.label": "¿Listo?",
-  "home.cta.title": "Veamos tu siguiente movimiento.",
-  "home.cta.subtitle": "Ya sea que quieras copiar mis sistemas, que te los construya, o solo necesites 15 minutos de claridad — la llamada es gratis.",
-  "home.cta.bullet1": "Sales con un siguiente paso claro, aunque nunca trabajemos juntos",
-  "home.cta.bullet2": "Roba mis flujos gratis y avanza por tu cuenta",
-  "home.cta.bullet3": "O déjame definir y construir el sistema para ti",
-  "home.cta.browseCourses": "Ver Sistemas",
+  "home.cta.label": "¿Interesado?",
+  "home.cta.title": "Veamos el siguiente paso correcto.",
+  "home.cta.subtitle": "Ya sea que necesites claridad estratégica, un sistema construido, o solo quieras explorar cómo podríamos trabajar juntos — la conversación empieza aquí.",
 
   // FAQ
   "home.faq.label": "Preguntas Frecuentes",
+  "faq.q1": "¿Qué tipo de trabajo haces?",
+  "faq.a1": "Ayudo a negocios a diseñar y construir su arquitectura operativa — desde sistemas de marca y estrategia digital hasta flujos asistidos por IA. El hilo común es pensamiento de sistemas aplicado a operaciones reales.",
+  "faq.q2": "¿Necesito saber programar?",
+  "faq.a2": "No. Todo está construido para líderes no técnicos. Tú diriges las herramientas, no escribes el código.",
+  "faq.q3": "¿Cómo es trabajar juntos?",
+  "faq.a3": "Depende del alcance. Puede ir desde una sesión de asesoría enfocada hasta un build de sistema completo. Empezamos con una conversación para entender qué necesitas y luego definimos el formato correcto.",
+  "faq.q4": "¿Qué tan rápido puedo ver resultados?",
+  "faq.a4": "La mayoría de los proyectos empiezan a entregar claridad desde la primera conversación. Un build de sistema con alcance definido típicamente toma de una a cuatro semanas según la complejidad.",
 
   // Work page
-  "work.title": "Portafolio y Casos de Estudio",
-  "work.subtitle": "Estos proyectos muestran el pensamiento estratégico, creativo, digital y de sistemas de IA detrás del trabajo. Úsalos si quieres ver el nivel de gusto, rango y ejecución que informa los productos y proyectos personalizados.",
+  "work.title": "Trabajo y Casos de Estudio",
+  "work.subtitle": "Proyectos en estrategia, marca, digital e IA — mostrando el pensamiento de sistemas y la ejecución detrás del trabajo.",
   "work.filter.all": "Todos",
   "work.filter.consulting": "Consultoría",
   "work.filter.creative": "Creativo",
@@ -111,19 +84,19 @@ const es: Record<string, string> = {
   "courses.filter.foundations": "Bases",
   "courses.filter.advanced": "Sistemas Avanzados",
   "courses.recommendation.label": "¿No sabes por dónde empezar?",
-  "courses.recommendation.title": "Agenda una llamada gratis y te digo exactamente qué construir primero.",
+  "courses.recommendation.title": "Agenda una llamada y te digo exactamente qué construir primero.",
   "courses.recommendation.subtitle": "Si ya conoces el cuello de botella, toma el sistema que lo resuelve. Si no, 15 minutos en una llamada te ahorran horas de adivinar.",
   "courses.recommendation.backHome": "Volver al Inicio",
 
   // Services page
-  "services.label": "Formas de Trabajar Juntos",
+  "services.label": "Servicios",
   "services.title": "Elige el nivel de soporte que coincida con cómo quieres avanzar.",
-  "services.subtitle": "Empieza con mis sistemas, desbloquea la biblioteca completa o reserva ayuda directa si tu caso necesita algo más específico.",
+  "services.subtitle": "Desde sistemas self-serve hasta builds personalizados — elige el formato que te funcione.",
   "services.background.label": "De qué está hecho el trabajo",
   "services.background.title": "Estrategia, marca y pensamiento de sistemas en el mismo lugar.",
-  "services.background.subtitle": "Estas son las capacidades detrás de los sistemas, la mentoría y los builds personalizados.",
+  "services.background.subtitle": "Estas son las capacidades detrás de todo lo que construyo.",
   "services.cta.title": "¿No sabes qué necesitas?",
-  "services.cta.subtitle": "La llamada gratis te ayuda a elegir. Si mis sistemas son suficientes, eso queda claro rápido. Si no, la llamada crea un siguiente paso enfocado.",
+  "services.cta.subtitle": "Empecemos con una conversación. Si mis sistemas son suficientes, eso queda claro rápido. Si no, definimos un siguiente paso enfocado.",
 
   // Services - Ways to Work
   "services.courseLibrary.title": "Biblioteca de Sistemas",
@@ -142,7 +115,7 @@ const es: Record<string, string> = {
   "services.customBuilds.item2": "Stack recomendado",
   "services.customBuilds.item3": "Ruta de build personalizado",
   "services.advisory.title": "Asesoría Estratégica",
-  "services.advisory.desc": "Para fundadores que necesitan ayuda decidiendo qué construir primero y dónde la IA debería crear palanca.",
+  "services.advisory.desc": "Para líderes que necesitan ayuda decidiendo qué construir primero y dónde crear palanca.",
   "services.advisory.item1": "Mapeo de prioridades",
   "services.advisory.item2": "Decisiones de stack",
   "services.advisory.item3": "Secuenciación de flujos",
@@ -167,23 +140,23 @@ const es: Record<string, string> = {
 
   // About page
   "about.label": "Sobre mí",
-  "about.bio1": "Andrea es fundadora y operadora construyendo en la intersección de marca, sistemas, ecommerce y ejecución asistida por IA. Lidera GEA y Grupo Ambiente y construye sistemas de flujos de trabajo prácticos para fundadores que quieren más velocidad, control y mejor producción.",
-  "about.bio2": "Su experiencia abarca pensamiento de gestión, construcción de marca, estrategia digital y dirección creativa. El resultado es un punto de vista que sigue siendo útil para fundadores no técnicos: lo suficientemente serio para construir desde él, lo suficientemente claro para actuar.",
+  "about.bio1": "Andrea es fundadora y operadora construyendo en la intersección de marca, sistemas, ecommerce y ejecución asistida por IA. Lidera GEA y Grupo Ambiente y construye sistemas operativos prácticos para negocios que quieren más velocidad, control y mejor producción.",
+  "about.bio2": "Su experiencia abarca pensamiento de gestión, construcción de marca, estrategia digital y dirección creativa. El resultado es un punto de vista que sigue siendo útil para líderes no técnicos: lo suficientemente serio para construir desde él, lo suficientemente claro para actuar.",
   "about.bio3": "El trabajo está diseñado para personas que se preocupan por la calidad, la consistencia de marca y la ejecución, pero no quieren construir su negocio alrededor de un equipo inflado o un stack de herramientas caótico.",
   "about.industries": "Industrias",
   "about.tools": "Herramientas y Stack Operativo",
-  "about.ctaTitle": "¿Quieres ayuda para decidir por dónde empezar?",
+  "about.ctaTitle": "¿Quieres explorar cómo podríamos trabajar juntos?",
 
   // Contact page
   "contact.label": "Contacto",
-  "contact.title2": "Encontremos el punto de entrada correcto.",
-  "contact.subtitle": "Usa esta página si quieres ayuda eligiendo entre la biblioteca de sistemas, mentoría o un build personalizado.",
+  "contact.title2": "Empecemos una conversación.",
+  "contact.subtitle": "Cuéntame en qué estás trabajando y qué tipo de soporte buscas.",
   "contact.name": "Nombre",
   "contact.namePlaceholder": "Tu nombre",
   "contact.email": "Correo electrónico",
   "contact.emailPlaceholder": "tu@ejemplo.com",
   "contact.message": "¿En qué estás trabajando?",
-  "contact.messagePlaceholder": "Cuéntame sobre tu negocio, tu cuello de botella y cómo se vería el éxito.",
+  "contact.messagePlaceholder": "Cuéntame sobre tu negocio, tu reto y cómo se vería el éxito.",
   "contact.interests": "¿Qué te interesa?",
   "contact.interest.courses": "Sistemas",
   "contact.interest.membership": "Mentoría",
@@ -213,7 +186,7 @@ const es: Record<string, string> = {
   "courseDetail.openLesson": "Abrir página de la lección",
   "courseDetail.walkAway": "Con qué te vas",
   "courseDetail.needHelp": "¿Quieres que te lo construya?",
-  "courseDetail.needHelpDesc": "Si prefieres que implemente este sistema en tu negocio en vez de hacerlo tú, agenda una llamada gratis y lo definimos juntos.",
+  "courseDetail.needHelpDesc": "Si prefieres que implemente este sistema en tu negocio en vez de hacerlo tú, hablemos y lo definimos juntos.",
   "courseDetail.viewAllCourses": "Ver Todos los Sistemas",
   "courseDetail.related": "Relacionados",
   "courseDetail.moreFromTrack": "Más de la misma ruta",
@@ -238,14 +211,14 @@ const es: Record<string, string> = {
   "courseLesson.nextUp": "Siguiente",
 
   // CaseStudy page
-  "caseStudy.backToProof": "<- Volver al Portafolio",
+  "caseStudy.backToProof": "<- Volver al Trabajo",
   "caseStudy.way": "FORMA",
   "caseStudy.theProblem": "El Problema",
   "caseStudy.theShift": "El Cambio",
   "caseStudy.theSystem": "El Sistema",
   "caseStudy.theAssets": "Los Resultados",
   "caseStudy.wantApplied": "¿Quieres esto aplicado a tu negocio?",
-  "caseStudy.wantAppliedDesc": "Si quieres construir sistemas más fuertes con este nivel de estrategia, control de marca y ejecución, agenda una llamada gratis y lo definimos juntos.",
+  "caseStudy.wantAppliedDesc": "Si quieres construir sistemas más fuertes con este nivel de estrategia, control de marca y ejecución — hablemos.",
 
   // NotFound page
   "notFound.title": "404",
@@ -264,36 +237,31 @@ const es: Record<string, string> = {
   // ProjectCard
   "projectCard.viewCaseStudy": "Ver Caso de Estudio",
 
-  // Offer data
+  // Offer data (kept for Services page)
   "offer.custom.label": "Recomendado",
   "offer.custom.title": "Trabaja Conmigo",
   "offer.custom.price": "Llamada intro gratis",
-  "offer.custom.desc": "15 minutos para mapear tu stack, encontrar el cuello de botella y planear qué construir.",
+  "offer.custom.desc": "15 minutos para mapear tu situación, encontrar el cuello de botella y planear qué construir.",
   "offer.custom.h1": "Diagnóstico de flujo y stack",
   "offer.custom.h2": "Plan de build con alcance",
   "offer.custom.h3": "Opciones de soporte continuo",
   "offer.limitedTime.label": "Gratis",
-  "offer.limitedTime.title": "Roba Mis Sistemas",
+  "offer.limitedTime.title": "Biblioteca de Sistemas",
   "offer.limitedTime.price": "Disponible ahora",
-  "offer.limitedTime.desc": "Dos sistemas base, gratis — sin compromiso.",
+  "offer.limitedTime.desc": "Sistemas base, gratis — sin compromiso.",
   "offer.limitedTime.h1": "Tech Stack Overview",
   "offer.limitedTime.h2": "Image Backwards Engineering",
   "offer.membership.label": "A Tu Ritmo",
-  "offer.membership.title": "Copia Mis Flujos",
+  "offer.membership.title": "Acceso Completo",
   "offer.membership.price": "$49/mes",
-  "offer.membership.desc": "Todos los sistemas que construyo, actuales y futuros.",
+  "offer.membership.desc": "Todos los sistemas, actuales y futuros.",
   "offer.membership.h1": "Biblioteca completa de sistemas",
   "offer.membership.h2": "Nuevos flujos cada mes",
 
-  // FAQ data
-  "faq.q1": "¿Por dónde debería empezar?",
-  "faq.a1": "Agenda una llamada gratis. En 15 minutos te digo exactamente qué construir primero — o empieza con los dos sistemas base gratuitos si quieres explorar por tu cuenta.",
-  "faq.q2": "¿Necesito saber programar?",
-  "faq.a2": "No. Todo está construido para fundadores no técnicos. Tú diriges las herramientas, no escribes el código.",
-  "faq.q3": "¿Cuál es la diferencia entre robar tus sistemas y trabajar contigo?",
-  "faq.a3": "Los sistemas son self-serve — los copias e implementas por tu cuenta. Trabajar conmigo significa que diagnostico tu situación específica y construyo el sistema para ti o guío la implementación.",
-  "faq.q4": "¿Qué tan rápido puedo ver resultados?",
-  "faq.a4": "Las bases gratuitas toman unas horas. Una llamada de build personalizado toma 15 minutos para definir alcance. La mayoría de los fundadores ven su primer sistema funcionando en una semana.",
+  // Home offers (kept for reference)
+  "home.offers.label": "Formas de Trabajar",
+  "home.offers.title": "La mayoría empieza con una llamada.",
+  "home.offers.subtitle": "Cuéntame dónde estás atorado. Te digo qué construir — y si me necesitas a mí o solo mis sistemas.",
 };
 
 export default es;

@@ -1,97 +1,70 @@
 const en: Record<string, string> = {
   // Nav
-  "nav.courses": "Systems",
-  "nav.proof": "Proof",
-  "nav.services": "Ways to Work",
+  "nav.work": "Work",
   "nav.about": "About",
-  "nav.cta": "Book a Free Call",
+  "nav.services": "Services",
+  "nav.contact": "Contact",
+  "nav.courses": "Systems",
+  "nav.cta": "Get in Touch",
 
   // Footer
-  "footer.tagline": "AI-powered workflow systems for founders who move fast and care about quality.",
+  "footer.tagline": "Organizational architecture — strategy, brand, digital, and AI.",
   "footer.email": "Email",
   "footer.rights": "All rights reserved.",
 
   // Contact Dialog
   "contact.title": "Let's talk",
-  "contact.description": "Tell me what you're building and where you're stuck. I'll point you in the right direction.",
+  "contact.description": "Tell me what you're working on and where you need clarity. I'll point you in the right direction.",
 
   // Home Hero
-  "home.hero.label": "For founders who build",
-  "home.hero.title": "I'll build your AI systems with you.",
-  "home.hero.subtitle": "Content, image, and website workflows — built on the same stack I use to run my own businesses. Steal my systems or let me build yours.",
-  "home.hero.cta1": "Book a Free Call",
-  "home.hero.cta2": "Steal My Systems",
-  "home.hero.whatYouCanBuild": "What I help you build",
-
-  // Hero highlights
-  "home.highlight.content": "Content engines",
-  "home.highlight.content.desc": "Repeatable publishing systems, not one-off posts.",
-  "home.highlight.image": "Image pipelines",
-  "home.highlight.image.desc": "On-brand visuals at scale — no more prompt roulette.",
-  "home.highlight.website": "Website systems",
-  "home.highlight.website.desc": "Pages, copy, and assets — from brief to launch.",
-  "home.highlight.ai": "AI stack setup",
-  "home.highlight.ai.desc": "The exact tools and workflows I use daily, configured for your business.",
-
-  // Offers section
-  "home.offers.label": "Ways to Work",
-  "home.offers.title": "Most people start with a call.",
-  "home.offers.subtitle": "Tell me where you're stuck. I'll tell you what to build next — and whether you need me or just my systems.",
+  "home.hero.title": "Organizational architecture — strategy, brand, digital, and AI.",
+  "home.hero.subtitle": "I design and build operating systems for businesses that care about how they work. From brand infrastructure to AI-assisted workflows — with the strategic thinking to connect them.",
+  "home.hero.cta1": "See the Work",
+  "home.hero.cta2": "Get in Touch",
 
   // About section (home)
-  "home.about.label": "Who builds this",
-  "home.about.bio1": "Andrea is a founder and operator running GEA and Grupo Ambiente. She builds the same AI workflow systems she teaches — content, image, website, and operations — and uses them to run real businesses every day.",
-  "home.about.bio2": "Her background spans management consulting, brand building, digital strategy, and creative direction. She works with founders who care about quality and want to move faster without a bloated team.",
-  "home.about.bio3": "",
+  "home.about.bio1": "Andrea is a founder and operator leading GEA and Grupo Ambiente. Her work spans management consulting, brand building, digital strategy, creative direction, and AI-assisted operations — applied to real businesses every day.",
+  "home.about.bio2": "She works with organizations that care about quality, brand consistency, and execution — and helps them build the systems to move faster without a bloated team.",
   "home.about.readMore": "More About Andrea",
-  "home.about.seeProof": "See the Work",
 
-  // Steal My System (formerly Course Roadmap)
-  "home.roadmap.label": "Steal My System",
-  "home.roadmap.title": "The exact playbook I use to run two businesses with AI.",
-  "home.roadmap.subtitle": "Start with the foundations — they're free. Then copy the workflows I actually use for content, brand, and web.",
-  "home.roadmap.phase1": "Start here — Free",
-  "home.roadmap.foundations": "Get the foundations right",
-  "home.roadmap.phase2": "Then copy these",
-  "home.roadmap.advanced": "Copy My Workflows",
-  "home.roadmap.viewAll": "Browse All Systems",
-
-  // Foundation path outcomes
-  "home.foundation.techStack": "See the exact tools I use and why.",
-  "home.foundation.imageBackwards": "Reverse-engineer strong visuals.",
-  "home.foundation.keyFiles": "Set up the files AI needs to perform.",
-  "home.foundation.lovable": "Build interfaces without code.",
-  "home.foundation.github": "Ship safely with version control.",
-
-  // Advanced lanes (Copy My Workflows)
-  "home.advanced.content": "Content System",
-  "home.advanced.content.desc": "The publishing engine I run weekly.",
-  "home.advanced.brand": "Brand & Image System",
-  "home.advanced.brand.desc": "How I generate on-brand visuals at scale.",
-  "home.advanced.website": "Website System",
-  "home.advanced.website.desc": "From brief to live pages — my full flow.",
-
-  // Proof section (home)
-  "home.proof.label": "Proof",
-  "home.proof.title": "This isn't theory. Here's the work.",
-  "home.proof.subtitle": "Real projects across brand, digital, strategy, and AI — showing the systems thinking and execution behind everything I build and teach.",
+  // Proof / Portfolio section (home)
+  "home.proof.label": "Selected Work",
+  "home.proof.title": "The work speaks for itself.",
+  "home.proof.subtitle": "Projects across strategy, brand, digital, and AI — showing the systems thinking and execution behind everything.",
   "home.proof.viewAll": "See all work",
 
+  // Services section (home — light)
+  "home.services.label": "Capabilities",
+  "home.services.title": "What I bring to the table.",
+  "home.services.viewAll": "Learn more about services",
+  "home.cap.arch": "Organizational Architecture with AI",
+  "home.cap.arch.desc": "Designing operating systems, workflows, and AI-assisted layers that let lean teams move at scale.",
+  "home.cap.strategy": "Strategy & Operations",
+  "home.cap.strategy.desc": "Financial framing, growth decisions, and operational clarity before execution.",
+  "home.cap.brand": "Brand & Creative Direction",
+  "home.cap.brand.desc": "Brand quality as an operating input — visual systems, creative direction, and stronger taste embedded into workflows.",
+  "home.cap.digital": "Digital Systems",
+  "home.cap.digital.desc": "Web, content, and conversion thinking — practical routes from idea to interface.",
+
   // CTA section (home)
-  "home.cta.label": "Ready?",
-  "home.cta.title": "Let's figure out your next move.",
-  "home.cta.subtitle": "Whether you want to copy my systems, have me build yours, or just need 15 minutes of clarity — the call is free.",
-  "home.cta.bullet1": "Walk away with a clear next step, even if we never work together",
-  "home.cta.bullet2": "Steal my workflows for free and go self-serve",
-  "home.cta.bullet3": "Or let me scope and build the system for you",
-  "home.cta.browseCourses": "Browse Systems",
+  "home.cta.label": "Interested?",
+  "home.cta.title": "Let's figure out the right next step.",
+  "home.cta.subtitle": "Whether you need strategic clarity, a system built, or just want to explore how we might work together — the conversation starts here.",
 
   // FAQ
   "home.faq.label": "FAQ",
+  "faq.q1": "What kind of work do you do?",
+  "faq.a1": "I help businesses design and build their operating architecture — from brand systems and digital strategy to AI-assisted workflows. The common thread is systems thinking applied to real operations.",
+  "faq.q2": "Do I need to know how to code?",
+  "faq.a2": "No. Everything is built for non-technical leaders. You direct the tools, not write the code.",
+  "faq.q3": "What does working together look like?",
+  "faq.a3": "It depends on the scope. It can range from a focused advisory session to a full system build. We start with a conversation to understand what you need, then scope the right engagement.",
+  "faq.q4": "How fast can I see results?",
+  "faq.a4": "Most engagements start delivering clarity within the first conversation. A scoped system build typically takes one to four weeks depending on complexity.",
 
   // Work page
-  "work.title": "Proof & Case Studies",
-  "work.subtitle": "These projects show the strategic, creative, digital, and AI systems thinking behind the work. Use them if you want to see the level of taste, range, and execution that informs the products and custom builds.",
+  "work.title": "Work & Case Studies",
+  "work.subtitle": "Projects across strategy, brand, digital, and AI — showing the systems thinking and execution behind the work.",
   "work.filter.all": "All",
   "work.filter.consulting": "Consulting",
   "work.filter.creative": "Creative",
@@ -116,14 +89,14 @@ const en: Record<string, string> = {
   "courses.recommendation.backHome": "Back to Homepage",
 
   // Services page
-  "services.label": "Ways to Work Together",
+  "services.label": "Services",
   "services.title": "Choose the level of support that matches how you want to move.",
-  "services.subtitle": "Start with my systems, unlock the full library, or book direct help if your use case needs a more specific build.",
+  "services.subtitle": "From self-serve systems to full custom builds — pick the engagement that fits.",
   "services.background.label": "What the work is built from",
   "services.background.title": "Strategy, brand, and systems thinking in the same room.",
-  "services.background.subtitle": "These are the capabilities behind the systems, the mentorship, and the custom builds.",
+  "services.background.subtitle": "These are the capabilities behind everything I build.",
   "services.cta.title": "Not sure what you need?",
-  "services.cta.subtitle": "The free call is there to help you choose. If my systems are enough, that will be clear quickly. If not, the call creates a focused next step.",
+  "services.cta.subtitle": "Let's start with a conversation. If my systems are enough, that will be clear quickly. If not, we'll scope a focused next step.",
 
   // Services - Ways to Work
   "services.courseLibrary.title": "System Library",
@@ -142,7 +115,7 @@ const en: Record<string, string> = {
   "services.customBuilds.item2": "Recommended stack",
   "services.customBuilds.item3": "Custom build path",
   "services.advisory.title": "Strategic Advisory",
-  "services.advisory.desc": "For founders who need help deciding what to build first and where AI should create leverage.",
+  "services.advisory.desc": "For leaders who need help deciding what to build first and where to create leverage.",
   "services.advisory.item1": "Priority mapping",
   "services.advisory.item2": "Stack decisions",
   "services.advisory.item3": "Workflow sequencing",
@@ -167,23 +140,23 @@ const en: Record<string, string> = {
 
   // About page
   "about.label": "About",
-  "about.bio1": "Andrea is a founder and operator building at the intersection of brand, systems, ecommerce, and AI-assisted execution. She leads GEA and Grupo Ambiente and builds practical workflow systems for founders who want more speed, control, and better output.",
-  "about.bio2": "Her background spans management thinking, brand building, digital strategy, and creative direction. The result is a point of view that stays useful for non-technical founders: serious enough to build from, clear enough to act on.",
+  "about.bio1": "Andrea is a founder and operator building at the intersection of brand, systems, ecommerce, and AI-assisted execution. She leads GEA and Grupo Ambiente and builds practical operating systems for businesses that want more speed, control, and better output.",
+  "about.bio2": "Her background spans management thinking, brand building, digital strategy, and creative direction. The result is a point of view that stays useful for non-technical leaders: serious enough to build from, clear enough to act on.",
   "about.bio3": "The work is designed for people who care about quality, brand consistency, and execution, but do not want to build their business around a bloated team or a chaotic tool stack.",
   "about.industries": "Industries",
   "about.tools": "Tools & Operating Stack",
-  "about.ctaTitle": "Want help deciding where to start?",
+  "about.ctaTitle": "Want to explore how we might work together?",
 
   // Contact page
   "contact.label": "Contact",
-  "contact.title2": "Let's figure out the right entry point.",
-  "contact.subtitle": "Use this page if you want help choosing between the system library, mentorship, or a custom build.",
+  "contact.title2": "Let's start a conversation.",
+  "contact.subtitle": "Tell me what you're working on and what kind of support you're looking for.",
   "contact.name": "Name",
   "contact.namePlaceholder": "Your name",
   "contact.email": "Email",
   "contact.emailPlaceholder": "you@example.com",
   "contact.message": "What are you working on?",
-  "contact.messagePlaceholder": "Tell me about your business, your bottleneck, and what success would look like.",
+  "contact.messagePlaceholder": "Tell me about your business, your challenge, and what success would look like.",
   "contact.interests": "What are you interested in?",
   "contact.interest.courses": "Systems",
   "contact.interest.membership": "Mentorship",
@@ -213,7 +186,7 @@ const en: Record<string, string> = {
   "courseDetail.openLesson": "Open lesson page",
   "courseDetail.walkAway": "What you walk away with",
   "courseDetail.needHelp": "Want this built for you?",
-  "courseDetail.needHelpDesc": "If you'd rather have me implement this system in your business instead of doing it yourself, book a free call and we'll scope it together.",
+  "courseDetail.needHelpDesc": "If you'd rather have me implement this system in your business instead of doing it yourself, let's talk and we'll scope it together.",
   "courseDetail.viewAllCourses": "View All Systems",
   "courseDetail.related": "Related",
   "courseDetail.moreFromTrack": "More from the same track",
@@ -238,14 +211,14 @@ const en: Record<string, string> = {
   "courseLesson.nextUp": "Next Up",
 
   // CaseStudy page
-  "caseStudy.backToProof": "<- Back to Proof",
+  "caseStudy.backToProof": "<- Back to Work",
   "caseStudy.way": "WAY",
   "caseStudy.theProblem": "The Problem",
   "caseStudy.theShift": "The Shift",
   "caseStudy.theSystem": "The System",
   "caseStudy.theAssets": "The Assets",
   "caseStudy.wantApplied": "Want this applied to your business?",
-  "caseStudy.wantAppliedDesc": "If you want to build stronger systems with this level of strategy, brand control, and execution, book a free call and let's scope it together.",
+  "caseStudy.wantAppliedDesc": "If you want to build stronger systems with this level of strategy, brand control, and execution — let's talk.",
 
   // NotFound page
   "notFound.title": "404",
@@ -264,36 +237,31 @@ const en: Record<string, string> = {
   // ProjectCard
   "projectCard.viewCaseStudy": "View Case Study",
 
-  // Offer data
+  // Offer data (kept for Services page)
   "offer.custom.label": "Recommended",
   "offer.custom.title": "Work With Me",
   "offer.custom.price": "Free intro call",
-  "offer.custom.desc": "15 minutes to map your stack, find the bottleneck, and plan what to build next.",
+  "offer.custom.desc": "15 minutes to map your situation, find the bottleneck, and plan what to build next.",
   "offer.custom.h1": "Workflow and stack diagnosis",
   "offer.custom.h2": "Scoped build plan",
   "offer.custom.h3": "Ongoing support options",
   "offer.limitedTime.label": "Free",
-  "offer.limitedTime.title": "Steal My Systems",
+  "offer.limitedTime.title": "System Library",
   "offer.limitedTime.price": "Available now",
-  "offer.limitedTime.desc": "Two foundation systems, free — no strings.",
+  "offer.limitedTime.desc": "Foundation systems, free — no strings.",
   "offer.limitedTime.h1": "Tech Stack Overview",
   "offer.limitedTime.h2": "Image Backwards Engineering",
   "offer.membership.label": "Self-Paced",
-  "offer.membership.title": "Copy My Workflows",
+  "offer.membership.title": "Full Library Access",
   "offer.membership.price": "$49/mo",
-  "offer.membership.desc": "Every system I build, current and future.",
+  "offer.membership.desc": "Every system, current and future.",
   "offer.membership.h1": "Full system library",
   "offer.membership.h2": "New workflows monthly",
 
-  // FAQ data
-  "faq.q1": "Where should I start?",
-  "faq.a1": "Book a free call. In 15 minutes I'll tell you exactly what to build first — or start with the two free foundation systems if you want to explore on your own.",
-  "faq.q2": "Do I need to know how to code?",
-  "faq.a2": "No. Everything is built for non-technical founders. You'll direct the tools, not write the code.",
-  "faq.q3": "What's the difference between stealing your systems and working with you?",
-  "faq.a3": "The systems are self-serve — you copy them and implement on your own. Working with me means I diagnose your specific situation and either build the system for you or guide the implementation.",
-  "faq.q4": "How fast can I get results?",
-  "faq.a4": "The free foundations take a few hours. A custom build call takes 15 minutes to scope. Most founders see their first working system within a week.",
+  // Home offers (kept for reference, removed from homepage)
+  "home.offers.label": "Ways to Work",
+  "home.offers.title": "Most people start with a call.",
+  "home.offers.subtitle": "Tell me where you're stuck. I'll tell you what to build next — and whether you need me or just my systems.",
 };
 
 export default en;
