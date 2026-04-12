@@ -232,7 +232,7 @@ const CourseLesson = () => {
   const { slug, lessonSlug } = useParams<{ slug: string; lessonSlug: string }>();
   const { t, language } = useLanguage();
   const course = getCourseBySlug(slug || "", language);
-  const lesson = getLessonByCourseAndSlug(slug || "", lessonSlug || "", language);
+  const lesson = getLessonByCourseAndSlug(slug || "", lessonSlug || "");
 
   if (!course || !lesson) {
     return <Navigate to="/courses" replace />;
