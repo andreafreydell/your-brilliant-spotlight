@@ -32,19 +32,6 @@ const Courses = () => {
   return (
     <main className="px-6 pt-24 pb-16">
       <div className="container mx-auto">
-        <ScrollReveal>
-          <div className="mb-12 max-w-3xl">
-            <p className="mb-4 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              {t("courses.label")}
-            </p>
-            <h1 className="mb-4 text-4xl font-light md:text-5xl" style={{ letterSpacing: "-0.02em" }}>
-              {t("courses.title")}
-            </h1>
-            <p className="text-lg font-light leading-relaxed text-muted-foreground">
-              {t("courses.subtitle")}
-            </p>
-          </div>
-        </ScrollReveal>
 
 
         <ScrollReveal>
