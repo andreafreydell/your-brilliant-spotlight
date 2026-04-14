@@ -1,17 +1,12 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import Divider from "@/components/Divider";
 import CourseCard from "@/components/CourseCard";
-import OfferCard from "@/components/OfferCard";
 import ContactDialog from "@/components/ContactDialog";
 import {
-  getCourses,
   getCoursesByTrack,
-  getLimitedTimeCourses,
-  offers,
   type CourseTrack,
 } from "@/data/coursePlatform";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -19,9 +14,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const Courses = () => {
   const { t, language } = useLanguage();
   const [activeTrack, setActiveTrack] = useState<CourseTrack | "all">("all");
-  const allCourses = useMemo(() => getCourses(language), [language]);
   const visibleCourses = useMemo(() => getCoursesByTrack(activeTrack, language), [activeTrack, language]);
-  const limitedTimeCourses = getLimitedTimeCourses(language);
 
   const filters: Array<{ key: CourseTrack | "all"; labelKey: string }> = [
     { key: "all", labelKey: "courses.filter.all" },
@@ -33,59 +26,7 @@ const Courses = () => {
     <main className="px-6 pt-24 pb-16">
       <div className="container mx-auto">
         <ScrollReveal>
-          <div className="mb-12 max-w-3xl">
-            <p className="mb-4 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              {t("courses.label")}
-            </p>
-            <h1 className="mb-4 text-4xl font-light md:text-5xl" style={{ letterSpacing: "-0.02em" }}>
-              {t("courses.title")}
-            </h1>
-            <p className="text-lg font-light leading-relaxed text-muted-foreground">
-              {t("courses.subtitle")}
-            </p>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={70}>
-          <div className="mb-16 rounded-card border border-brass/35 bg-brass/5 p-6 md:p-8">
-            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-              <div className="flex items-start gap-4">
-                <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brass/15 text-brass">
-                  <Sparkles size={18} />
-                </div>
-                <div>
-                  <p className="mb-2 text-xs uppercase tracking-[0.22em] text-brass">{t("courses.limitedTime.label")}</p>
-                  <h2 className="mb-2 text-2xl font-medium">{t("courses.limitedTime.title")}</h2>
-                  <p className="font-light leading-relaxed text-muted-foreground">
-                    {limitedTimeCourses.map((course) => course.title).join(" + ")}
-                  </p>
-                </div>
-              </div>
-              <Button asChild variant="outline" className="rounded-btn">
-                <Link to="/">{t("courses.limitedTime.seeCoursePath")}</Link>
-              </Button>
-            </div>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={80}>
-          <div className="mb-16 grid gap-6 lg:grid-cols-3">
-            {offers.map((offer) => (
-              <OfferCard key={offer.slug} offer={offer} />
-            ))}
-          </div>
-        </ScrollReveal>
-
-        <Divider />
-
-        <ScrollReveal>
           <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("courses.browse.label")}</p>
-              <h2 className="text-3xl font-normal" style={{ letterSpacing: "-0.01em" }}>
-                {allCourses.length} {t("courses.browse.suffix")}
-              </h2>
-            </div>
             <div className="flex flex-wrap gap-2">
               {filters.map((filter) => (
                 <button
