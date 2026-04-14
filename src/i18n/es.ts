@@ -24,7 +24,7 @@ const es: Record<string, string> = {
 
   // About section (home)
   "home.about.bio1": "Andrea es fundadora y operadora al frente de GEA y Grupo Ambiente. Su trabajo abarca consultoría de gestión, construcción de marca, estrategia digital, dirección creativa y operaciones asistidas por IA — aplicado a negocios reales todos los días.",
-  "home.about.bio2": "Trabaja con organizaciones que valoran la calidad, la consistencia de marca y la ejecución — y les ayuda a construir los sistemas para moverse más rápido sin perder el lado humano. IA como herramienta de empoderamiento, no de reemplazo.",
+  "home.about.bio2": "Trabaja con organizaciones que valoran la calidad, la consistencia de marca y la ejecución — y les ayuda a construir los sistemas para moverse más rápido con un enfoque en diseños centrados en las personas y el empoderamiento del talento clave.",
   "home.about.readMore": "Más Sobre Andrea",
 
   // Proof / Portfolio section (home)
