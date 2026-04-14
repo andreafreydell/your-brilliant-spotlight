@@ -50,6 +50,8 @@ const es: Record<string, string> = {
   "home.cta.label": "¿Interesado?",
   "home.cta.title": "Veamos el siguiente paso correcto.",
   "home.cta.subtitle": "Ya sea que necesites claridad estratégica, un sistema construido, o solo quieras explorar cómo podríamos trabajar juntos — la conversación empieza aquí.",
+  "home.cta.browseCourses": "Explorar Sistemas",
+  "home.about.seeProof": "Ver el Trabajo",
 
   // FAQ
   "home.faq.label": "Preguntas Frecuentes",
