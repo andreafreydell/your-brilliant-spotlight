@@ -50,6 +50,7 @@ const en: Record<string, string> = {
   "home.cta.label": "Interested?",
   "home.cta.title": "Let's figure out the right next step.",
   "home.cta.subtitle": "Whether you need strategic clarity, a system built, or just want to explore how we might work together — the conversation starts here.",
+  "home.cta.browseCourses": "Browse Systems",
 
   // FAQ
   "home.faq.label": "FAQ",
