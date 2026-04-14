@@ -1,17 +1,12 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import Divider from "@/components/Divider";
 import CourseCard from "@/components/CourseCard";
-import OfferCard from "@/components/OfferCard";
 import ContactDialog from "@/components/ContactDialog";
 import {
-  getCourses,
   getCoursesByTrack,
-  getLimitedTimeCourses,
-  offers,
   type CourseTrack,
 } from "@/data/coursePlatform";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -19,9 +14,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const Courses = () => {
   const { t, language } = useLanguage();
   const [activeTrack, setActiveTrack] = useState<CourseTrack | "all">("all");
-  const allCourses = useMemo(() => getCourses(language), [language]);
   const visibleCourses = useMemo(() => getCoursesByTrack(activeTrack, language), [activeTrack, language]);
-  const limitedTimeCourses = getLimitedTimeCourses(language);
 
   const filters: Array<{ key: CourseTrack | "all"; labelKey: string }> = [
     { key: "all", labelKey: "courses.filter.all" },
@@ -32,16 +25,8 @@ const Courses = () => {
   return (
     <main className="px-6 pt-24 pb-16">
       <div className="container mx-auto">
-
-
         <ScrollReveal>
           <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("courses.browse.label")}</p>
-              <h2 className="text-3xl font-normal" style={{ letterSpacing: "-0.01em" }}>
-                {allCourses.length} {t("courses.browse.suffix")}
-              </h2>
-            </div>
             <div className="flex flex-wrap gap-2">
               {filters.map((filter) => (
                 <button

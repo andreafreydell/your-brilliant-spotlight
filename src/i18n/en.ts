@@ -24,7 +24,7 @@ const en: Record<string, string> = {
 
   // About section (home)
   "home.about.bio1": "Andrea is a founder and operator leading GEA and Grupo Ambiente. Her work spans management consulting, brand building, digital strategy, creative direction, and AI-assisted operations — applied to real businesses every day.",
-  "home.about.bio2": "She works with organizations that care about quality, brand consistency, and execution — and helps them build the systems to move faster with a focus on human-centric designs and the empowerment of key talent.",
+  "home.about.bio2": "She works with organizations that care about quality, brand consistency, and execution — and helps them build the systems to move faster without losing the human side. AI as a tool for empowerment, not replacement.",
   "home.about.readMore": "More About Andrea",
 
   // Proof / Portfolio section (home)
@@ -50,7 +50,6 @@ const en: Record<string, string> = {
   "home.cta.label": "Interested?",
   "home.cta.title": "Let's figure out the right next step.",
   "home.cta.subtitle": "Whether you need strategic clarity, a system built, or just want to explore how we might work together — the conversation starts here.",
-  "home.cta.browseCourses": "Browse Systems",
 
   // FAQ
   "home.faq.label": "FAQ",
