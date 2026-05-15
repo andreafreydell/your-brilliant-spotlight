@@ -206,11 +206,15 @@ const Index = () => {
       <Divider />
 
       {/* ── SERVICES (light capabilities) ── */}
-      <section className="px-6 py-20 md:py-24">
-        <div className="container mx-auto max-w-4xl">
-          <ScrollReveal>
-            <div className="mb-12 text-center">
-              <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.services.label")}</p>
+      <section className="relative px-6 py-20 md:py-24">
+        <ScribbleSquiggle
+          aria-hidden
+          className="absolute left-8 top-12 h-6 w-32 text-blush-peach-foreground opacity-70 hidden md:block"
+        />
+        <ScribbleStar
+          aria-hidden
+          className="absolute right-12 bottom-12 h-8 w-8 text-brass opacity-80 hidden md:block animate-[spin_22s_linear_infinite]"
+        />
               <h2 className="mb-4 text-3xl font-normal md:text-4xl" style={{ letterSpacing: "-0.01em" }}>
                 {t("home.services.title")}
               </h2>
