@@ -152,33 +152,38 @@ const Index = () => {
 
       {/* ── ABOUT (brief) ── */}
       <section className="relative px-6 py-20 md:py-24">
-        <ScribbleArrow
-          aria-hidden
-          className="absolute left-[42%] top-8 h-12 w-20 text-tag-red opacity-70 hidden md:block"
-          style={{ transform: "rotate(-25deg)" }}
-        />
-        <StickyNote
-          color="lavender"
-          rotate={-7}
-          className="absolute right-8 top-16 hidden lg:block text-base"
-        >
-          hi, I'm Andrea ☺
-        </StickyNote>
         <div className="container mx-auto max-w-5xl">
           <div className="grid items-start gap-12 md:grid-cols-5">
-            <ScrollReveal className="md:col-span-2">
+            <ScrollReveal className="relative md:col-span-2">
               <img
                 src={andreaPortrait}
                 alt="Andrea Freydell"
                 className="aspect-[3/4] w-full rounded-btn object-cover"
                 loading="lazy"
               />
+              {/* arrow pointing at the portrait */}
+              <ScribbleArrow
+                aria-hidden
+                className="pointer-events-none absolute -right-10 top-6 h-16 w-24 text-tag-red opacity-80 hidden md:block"
+                style={{ transform: "rotate(160deg)" }}
+              />
+              <StickyNote
+                color="lavender"
+                rotate={-8}
+                className="absolute -right-12 -top-6 hidden lg:block text-base"
+              >
+                hi, I'm Andrea ☺
+              </StickyNote>
             </ScrollReveal>
 
             <ScrollReveal delay={100} className="md:col-span-3">
               <div>
-                <h2 className="mb-6 text-4xl font-light md:text-5xl" style={{ letterSpacing: "-0.02em" }}>
+                <h2 className="relative mb-6 inline-block text-4xl font-light md:text-5xl" style={{ letterSpacing: "-0.02em" }}>
                   Andrea Freydell
+                  <ScribbleUnderline
+                    aria-hidden
+                    className="pointer-events-none absolute -bottom-2 left-0 h-3 w-full text-brass opacity-80 hidden md:block"
+                  />
                 </h2>
                 <div className="space-y-4 font-light leading-relaxed text-muted-foreground">
                   <p>{t("home.about.bio1")}</p>
