@@ -215,6 +215,10 @@ const Index = () => {
           aria-hidden
           className="absolute right-12 bottom-12 h-8 w-8 text-brass opacity-80 hidden md:block animate-[spin_22s_linear_infinite]"
         />
+        <div className="container mx-auto max-w-4xl">
+          <ScrollReveal>
+            <div className="mb-12 text-center">
+              <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.services.label")}</p>
               <h2 className="mb-4 text-3xl font-normal md:text-4xl" style={{ letterSpacing: "-0.01em" }}>
                 {t("home.services.title")}
               </h2>
