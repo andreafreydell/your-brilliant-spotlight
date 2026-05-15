@@ -27,10 +27,16 @@ const Index = () => {
   const allProjects = projects;
 
   return (
-    <main>
+    <main className="relative">
+      {/* ── ANIMATED OMBRE BACKGROUND ── */}
+      <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        <div className="ombre-blob ombre-blob-1" />
+        <div className="ombre-blob ombre-blob-2" />
+        <div className="ombre-blob ombre-blob-3" />
+      </div>
+
       {/* ── HERO ── */}
       <section className="relative overflow-hidden px-6 pt-28 pb-20 md:pt-36 md:pb-28">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(var(--lavender)/0.18)_0%,transparent_52%),radial-gradient(ellipse_at_bottom_right,hsl(var(--seafoam)/0.14)_0%,transparent_48%)]" />
         <div className="container relative mx-auto max-w-3xl text-center">
           <ScrollReveal>
             <h1
