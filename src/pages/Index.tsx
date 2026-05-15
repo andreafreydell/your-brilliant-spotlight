@@ -204,27 +204,36 @@ const Index = () => {
 
       {/* ── SERVICES (light capabilities) ── */}
       <section className="relative px-6 py-20 md:py-24">
-        <ScribbleSquiggle
-          aria-hidden
-          className="absolute left-8 top-12 h-6 w-32 text-blush-peach-foreground opacity-70 hidden md:block"
-        />
-        <ScribbleStar
-          aria-hidden
-          className="absolute right-12 bottom-12 h-8 w-8 text-brass opacity-80 hidden md:block animate-[spin_22s_linear_infinite]"
-        />
         <div className="container mx-auto max-w-4xl">
           <ScrollReveal>
-            <div className="mb-12 text-center">
+            <div className="relative mb-12 text-center">
               <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.services.label")}</p>
-              <h2 className="mb-4 text-3xl font-normal md:text-4xl" style={{ letterSpacing: "-0.01em" }}>
+              <h2 className="relative mb-4 inline-block text-3xl font-normal md:text-4xl" style={{ letterSpacing: "-0.01em" }}>
                 {t("home.services.title")}
+                <ScribbleUnderline
+                  aria-hidden
+                  className="pointer-events-none absolute -bottom-2 left-0 h-3 w-full text-blush-peach-foreground opacity-80 hidden md:block"
+                />
               </h2>
+              <StickyNote
+                color="seafoam"
+                rotate={6}
+                className="absolute right-0 top-0 hidden lg:block text-base"
+              >
+                what I do best
+              </StickyNote>
             </div>
           </ScrollReveal>
           <div className="grid gap-6 sm:grid-cols-2">
             {capabilities.map((cap, i) => (
               <ScrollReveal key={cap.titleKey} delay={i * 80}>
-                <div className="rounded-card border border-border bg-card p-6">
+                <div className="relative rounded-card border border-border bg-card p-6">
+                  {i === 0 && (
+                    <ScribbleStar
+                      aria-hidden
+                      className="pointer-events-none absolute -top-3 -left-3 h-7 w-7 text-tag-red opacity-90 hidden md:block animate-[spin_22s_linear_infinite]"
+                    />
+                  )}
                   <h3 className="mb-2 text-lg font-medium">{t(cap.titleKey)}</h3>
                   <p className="text-sm leading-relaxed text-muted-foreground">{t(cap.descKey)}</p>
                 </div>
@@ -233,9 +242,16 @@ const Index = () => {
           </div>
           <ScrollReveal delay={350}>
             <div className="mt-10 flex justify-center">
-              <Button asChild variant="outline" className="rounded-btn">
-                <Link to="/services">{t("home.services.viewAll")}</Link>
-              </Button>
+              <div className="relative">
+                <Button asChild variant="outline" className="rounded-btn">
+                  <Link to="/services">{t("home.services.viewAll")}</Link>
+                </Button>
+                <ScribbleArrow
+                  aria-hidden
+                  className="pointer-events-none absolute -right-24 -top-4 h-14 w-20 text-brass hidden md:block"
+                  style={{ transform: "rotate(-145deg)" }}
+                />
+              </div>
             </div>
           </ScrollReveal>
         </div>
