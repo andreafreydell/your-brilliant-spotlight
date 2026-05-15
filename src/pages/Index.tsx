@@ -159,7 +159,19 @@ const Index = () => {
       <Divider />
 
       {/* ── ABOUT (brief) ── */}
-      <section className="px-6 py-20 md:py-24">
+      <section className="relative px-6 py-20 md:py-24">
+        <ScribbleArrow
+          aria-hidden
+          className="absolute left-[42%] top-8 h-12 w-20 text-tag-red opacity-70 hidden md:block"
+          style={{ transform: "rotate(-25deg)" }}
+        />
+        <StickyNote
+          color="lavender"
+          rotate={-7}
+          className="absolute right-8 top-16 hidden lg:block text-base"
+        >
+          hi, I'm Andrea ☺
+        </StickyNote>
         <div className="container mx-auto max-w-5xl">
           <div className="grid items-start gap-12 md:grid-cols-5">
             <ScrollReveal className="md:col-span-2">
