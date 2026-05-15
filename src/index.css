@@ -98,8 +98,13 @@
     @apply border-border;
   }
 
+  html {
+    @apply bg-background;
+  }
+
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply text-foreground font-sans;
+    background: transparent;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -119,9 +124,8 @@
   .ombre-blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.55;
-    mix-blend-mode: multiply;
+    filter: blur(80px);
+    opacity: 0.7;
     will-change: transform, border-radius;
   }
   .ombre-blob-1 {
