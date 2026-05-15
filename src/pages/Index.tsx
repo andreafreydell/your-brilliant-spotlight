@@ -102,34 +102,39 @@ const Index = () => {
 
       {/* ── PORTFOLIO GRID ── */}
       <section id="work" className="relative px-6 py-20 md:py-24">
-        <ScribbleCircle
-          aria-hidden
-          className="absolute left-4 top-10 h-16 w-16 text-seafoam-foreground opacity-60 hidden md:block"
-        />
-        <StickyNote
-          color="sky"
-          rotate={4}
-          className="absolute right-6 top-6 hidden lg:block text-base"
-        >
-          recent work →
-        </StickyNote>
         <div className="container mx-auto">
           <ScrollReveal>
             <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-              <div className="max-w-3xl">
+              <div className="relative max-w-3xl">
                 <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted-foreground">{t("home.proof.label")}</p>
-                <h2 className="mb-4 text-3xl font-normal md:text-4xl" style={{ letterSpacing: "-0.01em" }}>
+                <h2 className="relative mb-4 inline-block text-3xl font-normal md:text-4xl" style={{ letterSpacing: "-0.01em" }}>
                   {t("home.proof.title")}
+                  <ScribbleUnderline
+                    aria-hidden
+                    className="pointer-events-none absolute -bottom-2 left-0 h-3 w-full text-seafoam-foreground opacity-80 hidden md:block"
+                  />
                 </h2>
                 <p className="font-light leading-relaxed text-muted-foreground">
                   {t("home.proof.subtitle")}
                 </p>
+                <StickyNote
+                  color="sky"
+                  rotate={-4}
+                  className="absolute -top-6 -right-4 hidden lg:block text-base"
+                >
+                  recent work →
+                </StickyNote>
               </div>
               <Link
                 to="/work"
-                className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className="relative inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 {t("home.proof.viewAll")} <ArrowRight size={16} />
+                <ScribbleCircle
+                  aria-hidden
+                  className="pointer-events-none absolute -inset-2 h-[calc(100%+1rem)] w-[calc(100%+1rem)] text-tag-red opacity-70 hidden md:block"
+                  style={{ transform: "rotate(6deg)" }}
+                />
               </Link>
             </div>
           </ScrollReveal>
