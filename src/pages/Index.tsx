@@ -12,6 +12,14 @@ import ScrollReveal from "@/components/ScrollReveal";
 import Divider from "@/components/Divider";
 import ProjectCardMini from "@/components/ProjectCardMini";
 import ContactDialog from "@/components/ContactDialog";
+import {
+  ScribbleCircle,
+  ScribbleUnderline,
+  ScribbleArrow,
+  ScribbleStar,
+  ScribbleSquiggle,
+  StickyNote,
+} from "@/components/Scribbles";
 import { projects } from "@/data/projects";
 import { useLanguage } from "@/contexts/LanguageContext";
 
