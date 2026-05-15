@@ -115,4 +115,52 @@
     content: '';
     @apply absolute bottom-0 left-0 w-full h-[3px] bg-brass rounded-full;
   }
+
+  .ombre-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.55;
+    mix-blend-mode: multiply;
+    will-change: transform, border-radius;
+  }
+  .ombre-blob-1 {
+    width: 60vw;
+    height: 60vw;
+    top: -10%;
+    left: -15%;
+    background: radial-gradient(circle at 30% 30%, #ff8fb3 0%, #f4a261 45%, transparent 70%);
+    animation: blob-float-1 22s ease-in-out infinite;
+  }
+  .ombre-blob-2 {
+    width: 55vw;
+    height: 55vw;
+    top: 20%;
+    right: -20%;
+    background: radial-gradient(circle at 60% 40%, #8aa6ff 0%, #c89bff 50%, transparent 75%);
+    animation: blob-float-2 28s ease-in-out infinite;
+  }
+  .ombre-blob-3 {
+    width: 50vw;
+    height: 50vw;
+    bottom: -15%;
+    left: 20%;
+    background: radial-gradient(circle at 50% 50%, #ffd66b 0%, #ff9a5a 55%, transparent 78%);
+    animation: blob-float-3 25s ease-in-out infinite;
+  }
+
+  @keyframes blob-float-1 {
+    0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; }
+    33% { transform: translate(8vw, 6vh) scale(1.1) rotate(40deg); border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%; }
+    66% { transform: translate(-5vw, 10vh) scale(0.95) rotate(-30deg); border-radius: 55% 45% 60% 40% / 40% 55% 45% 60%; }
+  }
+  @keyframes blob-float-2 {
+    0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); border-radius: 50% 50% 45% 55% / 55% 45% 50% 50%; }
+    50% { transform: translate(-10vw, 8vh) scale(1.15) rotate(-45deg); border-radius: 45% 55% 60% 40% / 50% 60% 40% 55%; }
+  }
+  @keyframes blob-float-3 {
+    0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); border-radius: 55% 45% 50% 50% / 45% 55% 50% 50%; }
+    40% { transform: translate(6vw, -8vh) scale(1.08) rotate(35deg); border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%; }
+    70% { transform: translate(-4vw, -4vh) scale(0.92) rotate(-25deg); border-radius: 40% 60% 45% 55% / 60% 40% 55% 45%; }
+  }
 }
