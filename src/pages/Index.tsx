@@ -45,6 +45,40 @@ const Index = () => {
 
       {/* ── HERO ── */}
       <section className="relative overflow-hidden px-6 pt-28 pb-20 md:pt-36 md:pb-28">
+        {/* decorative scribbles */}
+        <ScribbleStar
+          aria-hidden
+          className="absolute left-[8%] top-24 h-10 w-10 text-tag-red opacity-70 hidden md:block animate-[spin_18s_linear_infinite]"
+        />
+        <ScribbleCircle
+          aria-hidden
+          className="absolute right-[6%] top-32 h-24 w-24 text-brass opacity-80 hidden md:block"
+          style={{ transform: "rotate(-12deg)" }}
+        />
+        <ScribbleSquiggle
+          aria-hidden
+          className="absolute left-[12%] bottom-24 h-6 w-32 text-seafoam-foreground opacity-70 hidden md:block"
+        />
+        <ScribbleArrow
+          aria-hidden
+          className="absolute right-[10%] bottom-28 h-16 w-24 text-lavender-foreground opacity-80 hidden md:block"
+          style={{ transform: "rotate(15deg) scaleX(-1)" }}
+        />
+        <StickyNote
+          color="peach"
+          rotate={-6}
+          className="absolute left-4 top-44 hidden lg:block text-base"
+        >
+          start here ✿
+        </StickyNote>
+        <StickyNote
+          color="seafoam"
+          rotate={5}
+          className="absolute right-6 bottom-10 hidden lg:block text-base"
+        >
+          built with intention
+        </StickyNote>
+
         <div className="container relative mx-auto max-w-3xl text-center">
           <ScrollReveal>
             <h1
@@ -60,7 +94,7 @@ const Index = () => {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={220}>
-            <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <div className="relative flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Button asChild size="lg" className="rounded-btn text-sm font-medium">
                 <a href="#work">{t("home.hero.cta1")}</a>
               </Button>
@@ -69,13 +103,29 @@ const Index = () => {
                   {t("home.hero.cta2")}
                 </Button>
               </ContactDialog>
+              <ScribbleArrow
+                aria-hidden
+                className="absolute -right-20 -top-10 h-14 w-20 text-brass hidden md:block"
+                style={{ transform: "rotate(20deg)" }}
+              />
             </div>
           </ScrollReveal>
         </div>
       </section>
 
       {/* ── PORTFOLIO GRID ── */}
-      <section id="work" className="px-6 py-20 md:py-24">
+      <section id="work" className="relative px-6 py-20 md:py-24">
+        <ScribbleCircle
+          aria-hidden
+          className="absolute left-4 top-10 h-16 w-16 text-seafoam-foreground opacity-60 hidden md:block"
+        />
+        <StickyNote
+          color="sky"
+          rotate={4}
+          className="absolute right-6 top-6 hidden lg:block text-base"
+        >
+          recent work →
+        </StickyNote>
         <div className="container mx-auto">
           <ScrollReveal>
             <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
