@@ -45,47 +45,18 @@ const Index = () => {
 
       {/* ── HERO ── */}
       <section className="relative overflow-hidden px-6 pt-28 pb-20 md:pt-36 md:pb-28">
-        {/* decorative scribbles */}
-        <ScribbleStar
-          aria-hidden
-          className="absolute left-[8%] top-24 h-10 w-10 text-tag-red opacity-70 hidden md:block animate-[spin_18s_linear_infinite]"
-        />
-        <ScribbleCircle
-          aria-hidden
-          className="absolute right-[6%] top-32 h-24 w-24 text-brass opacity-80 hidden md:block"
-          style={{ transform: "rotate(-12deg)" }}
-        />
-        <ScribbleSquiggle
-          aria-hidden
-          className="absolute left-[12%] bottom-24 h-6 w-32 text-seafoam-foreground opacity-70 hidden md:block"
-        />
-        <ScribbleArrow
-          aria-hidden
-          className="absolute right-[10%] bottom-28 h-16 w-24 text-lavender-foreground opacity-80 hidden md:block"
-          style={{ transform: "rotate(15deg) scaleX(-1)" }}
-        />
-        <StickyNote
-          color="peach"
-          rotate={-6}
-          className="absolute left-4 top-44 hidden lg:block text-base"
-        >
-          start here ✿
-        </StickyNote>
-        <StickyNote
-          color="seafoam"
-          rotate={5}
-          className="absolute right-6 bottom-10 hidden lg:block text-base"
-        >
-          built with intention
-        </StickyNote>
-
         <div className="container relative mx-auto max-w-3xl text-center">
           <ScrollReveal>
             <h1
-              className="mb-6 text-4xl font-light leading-tight md:text-6xl lg:text-7xl"
+              className="relative mb-6 inline-block text-4xl font-light leading-tight md:text-6xl lg:text-7xl"
               style={{ letterSpacing: "-0.03em" }}
             >
               {t("home.hero.title")}
+              {/* underline the whole headline */}
+              <ScribbleUnderline
+                aria-hidden
+                className="pointer-events-none absolute -bottom-3 left-1/2 h-4 w-[80%] -translate-x-1/2 text-tag-red opacity-80 hidden md:block"
+              />
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={120}>
@@ -95,19 +66,35 @@ const Index = () => {
           </ScrollReveal>
           <ScrollReveal delay={220}>
             <div className="relative flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Button asChild size="lg" className="rounded-btn text-sm font-medium">
-                <a href="#work">{t("home.hero.cta1")}</a>
-              </Button>
+              <div className="relative">
+                <Button asChild size="lg" className="rounded-btn text-sm font-medium">
+                  <a href="#work">{t("home.hero.cta1")}</a>
+                </Button>
+                {/* circle the primary CTA */}
+                <ScribbleCircle
+                  aria-hidden
+                  className="pointer-events-none absolute -inset-3 h-[calc(100%+1.5rem)] w-[calc(100%+1.5rem)] text-brass opacity-80 hidden md:block"
+                  style={{ transform: "rotate(-8deg)" }}
+                />
+                {/* arrow pointing to the CTA */}
+                <ScribbleArrow
+                  aria-hidden
+                  className="pointer-events-none absolute -left-28 -top-6 h-14 w-20 text-tag-red hidden md:block"
+                  style={{ transform: "rotate(35deg)" }}
+                />
+                <StickyNote
+                  color="peach"
+                  rotate={-8}
+                  className="absolute -left-44 top-1/2 -translate-y-1/2 hidden lg:block text-base"
+                >
+                  start here ✿
+                </StickyNote>
+              </div>
               <ContactDialog>
                 <Button variant="outline" size="lg" className="rounded-btn text-sm font-medium">
                   {t("home.hero.cta2")}
                 </Button>
               </ContactDialog>
-              <ScribbleArrow
-                aria-hidden
-                className="absolute -right-20 -top-10 h-14 w-20 text-brass hidden md:block"
-                style={{ transform: "rotate(20deg)" }}
-              />
             </div>
           </ScrollReveal>
         </div>
